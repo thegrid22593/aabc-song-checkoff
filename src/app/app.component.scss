@@ -1,0 +1,362 @@
+@import '../sass/partials/base';
+
+
+.central-display {
+  @include center-align;
+
+  form {
+    margin-top: 2rem;
+
+    label {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    button[type="submit"] {
+      margin-top: 2rem;
+      width: 100%;
+    }
+  }
+}
+
+.main-bg {
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.aabc-logo-crown {
+  position: absolute;
+  @include center-align;
+  z-index: 1000;
+  top: 10px;
+
+  img {
+    max-width: 100px;
+  }
+}
+
+.login-sign-up-forms {
+  background: rgba(36, 34, 50, 0.8);
+  @include center-align;
+  width: 50%;
+
+
+  // Dont Have An Account
+  .dont-have-account {
+    display: none;
+    padding: 8.5rem 0 0rem 4rem;
+    &.active {
+      width: 50%;
+      float: left;
+      display: block;
+    }
+    .dont-have-account-content {
+      width: 100%;
+      .dont-have-account-title {
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+      p {
+        color: white;
+        margin-top: -5px;
+        font-size: 1rem;
+        width: 85%;
+      }
+      button {
+        color: white;
+        background: none;
+        border: 2px solid white;
+        padding: 0.5rem 4rem;
+        font-size: 1.5rem;
+        @include aabc-transition(0.2s all ease-in-out);
+        margin-top: 0.5rem;
+
+        &:hover {
+          background: white;
+          color: $aabc-red;
+        }
+      }
+    }
+  }
+
+  .have-an-account {
+    display: none;
+    padding: 8.5rem 0 0rem 4rem;
+    &.active {
+      width: 50%;
+      float: right;
+      display: block;
+    }
+    .have-an-account-content {
+      width: 100%;
+
+      .have-an-account-title {
+        color: white;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      p {
+        color: white;
+        margin-top: -5px;
+        font-size: 1rem;
+      }
+
+      button {
+        color: white;
+        background: none;
+        border: 2px solid white;
+        padding: 0.5rem 4rem;
+        font-size: 1.5rem;
+        @include aabc-transition(0.2s all ease-in-out);
+        margin-top: 2rem;
+
+        &:hover {
+          background: white;
+          color: $aabc-red;
+        }
+      }
+    }
+  }
+
+  // Sign Up Form
+  .sign-up-form {
+    display: none;
+
+    &.active {
+      background: white;
+      width: 50%;
+      float: left;
+      padding: 4rem 2rem;
+      display: block;
+    }
+  }
+
+  h3 {
+    color: $aabc-gold;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  form.sign-up {
+
+    input[type="email"],
+    input[type="password"] {
+      border: none;
+      background: white;
+      box-shadow: none;
+      display: block;
+      width: 100%;
+      padding: 0.5rem 0;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+      color: #333;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      float: right;
+      background: $aabc-red;
+      padding: 0.75rem 3rem;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      margin-top: 4rem;
+      @include aabc-transition(0.2s all ease-in-out);
+
+      &:hover {
+        background: $aabc-dark-blue;
+      }
+    }
+  }
+
+}
+
+.sign-up-form {
+  display: none;
+}
+
+.login-form {
+  display: none;
+  &.active {
+    background: white;
+    width: 50%;
+    float: right;
+    padding: 4rem 2rem;
+    display: block;
+  }
+
+
+  h3 {
+    color: $aabc-gold;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  form.login {
+
+    input[type="email"],
+    input[type="password"] {
+      border: none;
+      background: white;
+      box-shadow: none;
+      display: block;
+      width: 100%;
+      padding: 0.5rem 0;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #ddd;
+      color: #333;
+      @include aabc-transition(0.2s all ease-in-out);
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid darken(#ddd, 20%);
+      }
+    }
+
+    a {
+      display: block;
+      margin-top: 4.5rem;
+      float: left;
+      color: #aaa;
+    }
+
+    button {
+      float: right;
+      background: $aabc-red;
+      padding: 0.75rem 3rem;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      margin-top: 4rem;
+      @include aabc-transition(0.2s all ease-in-out);
+
+      &:hover {
+        background: $aabc-dark-blue;
+      }
+    }
+  }
+}
+
+
+// Audio Player
+
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 6;
+  margin-bottom: -8px;
+
+  .current-song {
+    background: $aabc-dark-blue;
+    list-style: none;
+    padding: 1rem;
+    margin-bottom: 0;
+
+    li {
+      color: $aabc-white;
+
+      span {
+        color: $aabc-gold;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  audio {
+    width: 100%;
+    background: black;
+  }
+}
+
+// Song Detail
+
+.song-detail-panel {
+  position: fixed;
+  width: 20%;
+  background: white;
+  height: 100%;
+  z-index: 5;
+  top: 0;
+  right: -20%;
+  @include aabc-box-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
+  @include aabc-transition(0.2s all ease-in-out);
+
+  &.active {
+    right: 0;
+  }
+
+  .crop-height {
+    max-height: 320px;
+    overflow: hidden;
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto !important;
+      width: auto\9; /* ie8+9 */
+      -ms-interpolation-mode: bicubic;
+    }
+  }
+
+  .song-details {
+    padding: 3rem;
+
+    .song-detail-name {
+      color: $aabc-gold;
+      font-size: 2rem;
+    }
+
+    .song-detail-difficulty {
+      margin-top: -5px;
+      text-transform: uppercase;
+      color: $aabc-cold-grey;
+      letter-spacing: 0.2rem;
+      font-size: 0.9rem;
+
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      .part-name {
+        font-family: $aabc-pt-sans-narrow;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 0.8rem;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 0.6rem;
+      }
+
+      li {
+        @include aabc-transition(0.1s all ease-in-out);
+
+        &:hover {
+          color: $aabc-red;
+          cursor: pointer;
+          i {
+            color: $aabc-red;
+          }
+        }
+        i {
+          color: #ddd;
+          margin-right: 5px;
+          @include aabc-transition(0.1s all ease-in-out);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+/*
+*  _mixins
+*  Author: Garrett Sanderson
+*  -------------------------------------------------------------------------------------------
+*  Notes: Define patterns of property value pairs, which can then be reused in other rule sets
+*/
+
+@mixin fontSmoothing() {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+}
+
+// iOS issue where native components in forms scale view port fix
+@mixin nativeiOScomponentScale() {
+  input[type="text"], input[type="text"]:focus, select:focus, textarea:focus, input:focus {
+    font-size: 16px !important;
+  }
+}
+
+
+// General Transitions
+@mixin aabc-transition($args) {
+  -webkit-transition: #{$args};
+  -moz-transition: #{$args};
+  -ms-transition: #{$args};
+  -o-transition: #{$args};
+  transition: #{$args};
+}
+
+// General Box Shadow
+@mixin aabc-box-shadow($args) {
+  -webkit-box-shadow: #{$args};
+  -moz-box-shadow: #{$args};
+  -ms-box-shadow: #{$args};
+  -o-box-shadow: #{$args};
+  box-shadow: #{$args};
+}
+
+// Responsive
+@mixin mq-xxs {
+  @media (min-width: #{$screen-xxs}) {
+    @content;
+  }
+}
+
+@mixin mq-xs {
+  @media (min-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
+@mixin mq-sm {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin mq-md {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin mq-lg {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin mq-xlg {
+  @media (min-width: #{$screen-xlg}) {
+    @content;
+  }
+}
+
+@mixin mq-xxlg {
+  @media (min-width: #{$screen-xxlg}) {
+    @content;
+  }
+}
+
+@mixin mq-xxxlg {
+  @media (min-width: #{$screen-xxxlg}) {
+    @content;
+  }
+}
+
+// Alignments
+@mixin vertical-align {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin horizontal-align {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin center-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

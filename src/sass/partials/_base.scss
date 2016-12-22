@@ -1,0 +1,12 @@
+@import "../vendors/bootstrap";
+@import "../vendors/block-grid";
+@import "../vendors/font-awesome";
+@import "variables";
+@import "mixins";
+
+
+* {
+  font-family: 'Crimson Text', serif;
+  font-weight: 300;
+  @include fontSmoothing;
+}

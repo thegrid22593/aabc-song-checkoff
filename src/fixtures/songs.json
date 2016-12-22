@@ -1,0 +1,1273 @@
+{
+  "songs": [
+    {
+      "name": "America The Beautiful",
+      "difficulty": "Medium",
+      "time": "3:38",
+      "completed": false,
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/america-the-beautiful/america-the-beautiful-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/america-the-beautiful/america-the-beautiful-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/america-the-beautiful/america-the-beautiful-piano-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/america-the-beautiful/america-the-beautiful-piano-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Be Our Guest",
+      "difficulty": "Easy",
+      "time": "1:34",
+      "completed": false,
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/be-our-guest/be-our-guest-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/be-our-guest/be-our-guest-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/be-our-guest/be-our-guest-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/be-our-guest/be-our-guest-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Beach Boys",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "4:37",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/beach-boys/beach-boys-medley-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/beach-boys/beach-boys-medley-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/beach-boys/beach-boys-medley-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/beach-boys/beach-boys-medley-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Beer Barrel Polka",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "3:24",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/beer-barrel-polka/beer-barrel-polka-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/beer-barrel-polka/beer-barrel-polka-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/beer-barrel-polka/beer-barrel-polka-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/beer-barrel-polka/beer-barrel-polka-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "California Dreaming",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "2:14",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/california-dreaming/california-dreaming-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/california-dreaming/california-dreaming-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/california-dreaming/california-dreaming-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/california-dreaming/california-dreaming-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Can't Help Falling In Love",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/cant-help-falling-in-love/cant-help-falling-in-love-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/cant-help-falling-in-love/cant-help-falling-in-love-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/cant-help-falling-in-love/cant-help-falling-in-love-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/cant-help-falling-in-love/cant-help-falling-in-love-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Circle of Life",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/circle-of-life/circle-of-life-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/circle-of-life/circle-of-life-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/circle-of-life/circle-of-life-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/circle-of-life/circle-of-life-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dixieland Medley",
+      "difficulty": "Hard",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/dixieland-medley/dixieland-medley-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/dixieland-medley/dixieland-medley-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/dixieland-medley/dixieland-medley-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/bass/dixieland-medley/dixieland-medley-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/dixieland-medley/dixieland-medley-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/dixieland-medley/dixieland-medley-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/second-tenor/dixieland-medley/dixieland-medley-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/dixieland-medley/dixieland-medley-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/dixieland-medley/dixieland-medley-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/first-tenor/dixieland-medley/dixieland-medley-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/dixieland-medley/dixieland-medley-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/dixieland-medley/dixieland-medley-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Don't Stop",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/dont-stop/dont-stop-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/dont-stop/dont-stop-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/dont-stop/dont-stop-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/dont-stop/dont-stop-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Duke Ellington Medley",
+      "difficulty": "Hard",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/duke-ellington/duke-ellington-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/duke-ellington/duke-ellington-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/duke-ellington/duke-ellington-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/bass/duke-ellington/duke-ellington-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/duke-ellington/duke-ellington-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/duke-ellington/duke-ellington-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/second-tenor/duke-ellington/duke-ellington-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/duke-ellington/duke-ellington-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/duke-ellington/duke-ellington-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/first-tenor/duke-ellington/duke-ellington-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/duke-ellington/duke-ellington-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/duke-ellington/duke-ellington-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Edelweiss",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/edelweiss/edelweiss-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/edelweiss/edelweiss-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/edelweiss/edelweiss-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/bass/edelweiss/edelweiss-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/edelweiss/edelweiss-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/edelweiss/edelweiss-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/second-tenor/edelweiss/edelweiss-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/edelweiss/edelweiss-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/edelweiss/edelweiss-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/first-tenor/edelweiss/edelweiss-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/edelweiss/edelweiss-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/edelweiss/edelweiss-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ghost Riders",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/ghost-riders/ghost-riders-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/ghost-riders/ghost-riders-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/ghost-riders/ghost-riders-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/bass/ghost-riders/ghost-riders-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/ghost-riders/ghost-riders-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/ghost-riders/ghost-riders-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/second-tenor/ghost-riders/ghost-riders-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/ghost-riders/ghost-riders-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/ghost-riders/ghost-riders-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/first-tenor/ghost-riders/ghost-riders-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/ghost-riders/ghost-riders-piano-words.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/ghost-riders/ghost-riders-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "God Bless America",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/god-bless-america/god-bless-america-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/god-bless-america/god-bless-america-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/god-bless-america/god-bless-america-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/god-bless-america/god-bless-america-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "God Bless The USA",
+      "difficulty": "Hard",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/god-bless-the-usa/god-bless-the-usa-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/god-bless-the-usa/god-bless-the-usa-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/god-bless-the-usa/god-bless-the-usa-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/god-bless-the-usa/god-bless-the-usa-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Home On The Range",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/home-on-the-range/home-on-the-range-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/home-on-the-range/home-on-the-range-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/home-on-the-range/home-on-the-range-piano-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/home-on-the-range/home-on-the-range-piano-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "I'll Be There",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/ill-be-there/ill-be-there-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/ill-be-there/ill-be-there-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/ill-be-there/ill-be-there-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/ill-be-there/ill-be-there-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "In The Summertime",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/in-the-summertime/in-the-summertime-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/in-the-summertime/in-the-summertime-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/in-the-summertime/in-the-summertime-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/in-the-summertime/in-the-summertime-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Marches",
+      "difficulty": "Hard",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/marches/marches-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/marches/marches-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/marches/marches-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/marches/marches-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Proud Mary",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/proud-mary/proud-mary-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/proud-mary/proud-mary-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/proud-mary/proud-mary-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/proud-mary/proud-mary-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rags Medley",
+      "difficulty": "Hard",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/rags-medley/rags-medley-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/rags-medley/rags-medley-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/rags-medley/rags-medley-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/rags-medley/rags-medley-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Route 66",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/route-66/route-66-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/route-66/route-66-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/route-66/route-66-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/route-66/route-66-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ave Maria",
+      "difficulty": "Hard",
+      "completed": false,
+      "time": "1:34",
+      "sacred": true,
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "diction": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/ave-maria/ave-maria-diction.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/ave-maria/ave-maria-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "diction": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/ave-maria/ave-maria-diction.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/sacred-religious/ave-maria/ave-maria-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "diction": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/ave-maria/ave-maria-diction.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/sacred-religious/ave-maria/ave-maria-piano-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "diction": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/ave-maria/ave-maria-diction.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/sacred-religious/ave-maria/ave-maria-piano-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "God of Our Father",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "sacred": true,
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/god-of-our-fathers/god-of-our-fathers-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/god-of-our-fathers/god-of-our-fathers-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/god-of-our-fathers/god-of-our-fathers-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/sacred-religious/god-of-our-fathers/god-of-our-fathers-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/god-of-our-fathers/god-of-our-fathers-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/sacred-religious/god-of-our-fathers/god-of-our-fathers-piano-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/god-of-our-fathers/god-of-our-fathers-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/sacred-religious/god-of-our-fathers/god-of-our-fathers-piano-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "How Great Thou Art",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "sacred": true,
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/how-great-thou-art/how-great-thou-art-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/how-great-thou-art/how-great-thou-art-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/how-great-thou-art/how-great-thou-art-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/sacred-religious/how-great-thou-art/how-great-thou-art-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/how-great-thou-art/how-great-thou-art-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/sacred-religious/how-great-thou-art/how-great-thou-art-piano-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/how-great-thou-art/how-great-thou-art-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/sacred-religious/how-great-thou-art/how-great-thou-art-piano-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Laudate Dominum",
+      "difficulty": "Hard",
+      "completed": false,
+      "time": "1:34",
+      "sacred": true,
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "diction": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/laudate-dominum/laudate-dominum-diction.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "diction": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/laudate-dominum/laudate-dominum-diction.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "diction": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/laudate-dominum/laudate-dominum-diction.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "diction": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/laudate-dominum/laudate-dominum-diction.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lovely Appear",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "1:34",
+      "sacred": true,
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/lovely-appear/lovely-appear-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/lovely-appear/lovely-appear-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/lovely-appear/lovely-appear-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/sacred-religious/lovely-appear/lovely-appear-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/lovely-appear/lovely-appear-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/sacred-religious/lovely-appear/lovely-appear-piano-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/lovely-appear/lovely-appear-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/sacred-religious/lovely-appear/lovely-appear-piano-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Panis Angelicus",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "sacred": true,
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/panis-angelicus/panis-angelicus-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/sacred-religious/panis-angelicus/panis-angelicus-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/sacred-religious/panis-angelicus/panis-angelicus-piano-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/sacred-religious/panis-angelicus/panis-angelicus-piano-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "The Lord's Prayer",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "sacred": true,
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/the-lords-prayer/the-lords-prayer-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/the-lords-prayer/the-lords-prayer-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/the-lords-prayer/the-lords-prayer-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/sacred-religious/the-lords-prayer/the-lords-prayer-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/the-lords-prayer/the-lords-prayer-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/sacred-religious/the-lords-prayer/the-lords-prayer-piano-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/sacred-religious/the-lords-prayer/the-lords-prayer-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/sacred-religious/the-lords-prayer/the-lords-prayer-piano-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Salute To The Armed Forces",
+      "difficulty": "Hard",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/salute-to-the-armed-forces/salute-to-the-armed-forces-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/proud-mary/salute-to-the-armed-forces/salute-to-the-armed-forces-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/salute-to-the-armed-forces/salute-to-the-armed-forces-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/salute-to-the-armed-forces/salute-to-the-armed-forces-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Saturday In The Park",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/saturday-in-the-park/saturday-in-the-park-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/saturday-in-the-park/saturday-in-the-park-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/saturday-in-the-park/saturday-in-the-park-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/saturday-in-the-park/saturday-in-the-park-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Spirituals Medley",
+      "difficulty": "Hard",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/spirituals-medley-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/proud-mary/spirituals-medley-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/spirituals-medley-piano-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/spirituals-medley-piano-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Star Spangled Banner",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/star-spangeld-banner/star-spangeld-banner-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/baritone/star-spangeld-banner/star-spangeld-banner-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/star-spangeld-banner/star-spangeld-banner-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/bass/star-spangeld-banner/star-spangeld-banner-piano-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/star-spangeld-banner/star-spangeld-banner-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/second-tenor/star-spangeld-banner/star-spangeld-banner-piano-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/star-spangeld-banner/star-spangeld-banner-piano-solfa.mp3",
+            "pianoWords": "http://www.taabc.org/check-off-songs/first-tenor/star-spangeld-banner/star-spangeld-banner-piano-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "This is My Country",
+      "difficulty": "Easy",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/this-is-my-country/this-is-my-country-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/this-is-my-country/this-is-my-country-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/this-is-my-country/this-is-my-country-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/this-is-my-country/this-is-my-country-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "West Side Story",
+      "difficulty": "Hard",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/west-side-story/west-side-story-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/west-side-story/west-side-story-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/west-side-story/west-side-story-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/west-side-story/west-side-story-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "What A Wonderful World",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/what-a-wonderful-world/what-a-wonderful-world-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/what-a-wonderful-world/what-a-wonderful-world-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/what-a-wonderful-world/what-a-wonderful-world-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/what-a-wonderful-world/what-a-wonderful-world-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "White Christmas",
+      "difficulty": "Medium",
+      "completed": false,
+      "time": "1:34",
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/white-christmas/white-christmas-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/white-christmas/white-christmas-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/white-christmas/white-christmas-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/white-christmas/white-christmas-track-words.mp3"
+          }
+        }
+      ]
+    },
+    {
+      "name": "You'll Never Walk Alone",
+      "difficulty": "Medium",
+      "time": "1:34",
+      "completed": false,
+      "parts": [
+        {
+          "name": "Baritone",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/youll-never-walk-alone/youll-never-walk-alone-piano-solfa.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/baritone/youll-never-walk-alone/youll-never-walk-alone-track-words.mp3"
+          }
+        },
+        {
+          "name": "Bass",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/youll-never-walk-alone/youll-never-walk-alone-piano-solfa.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/bass/youll-never-walk-alone/youll-never-walk-alone-track-words.mp3"
+          }
+        },
+        {
+          "name": "Second Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/youll-never-walk-alone/youll-never-walk-alone-piano-solfa.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/second-tenor/youll-never-walk-alone/youll-never-walk-alone-track-words.mp3"
+          }
+        },
+        {
+          "name": "First Tenor",
+          "urls": {
+            "pianoSolfa": "http://www.taabc.org/check-off-songs/baritone/youll-never-walk-alone/youll-never-walk-alone-piano-solfa.mp3",
+            "trackWords": "http://www.taabc.org/check-off-songs/first-tenor/youll-never-walk-alone/youll-never-walk-alone-track-words.mp3"
+          }
+        }
+      ]
+    }
+  ],
+
+  "soloSongs": [
+    {
+      "name": "O Holy Night"
+    }
+  ],
+
+  "users": [
+    {
+      "uid": "yHgCbUEqKoMZ1qCM2GowAoG0Esz2",
+      "firstName": "Garrett",
+      "lastName": "Sanderson",
+      "email": "garrett.sanderson@gmail.com",
+      "part": "Bass",
+      "startDate": "02-25-1993",
+      "partLeader": false
+    }
+  ]
+}
