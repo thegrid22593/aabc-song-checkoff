@@ -1,0 +1,115 @@
+@import '../../scss/partials/base';
+
+.song {
+  list-style: none;
+  padding-left: 0;
+
+  .song-body {
+    background: white;
+    border-radius: 0.4rem;
+    margin-top: 2rem;
+    display: block;
+    overflow: hidden;
+
+    .song-header {
+      background: $aabc-dark-blue;
+      padding: 0.5rem 1rem;
+      border-radius: 0.4rem 0.4rem 0 0;
+
+      .song-time {
+        font-weight: 900;
+        font-size: 1rem;
+        float: right;
+        color: white;
+      }
+
+      .song-difficulty {
+        color: white;
+      }
+    }
+
+    .song-content {
+      padding: 2rem;
+
+      .song-title {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .song-urls {
+        list-style: none;
+        float: left;
+        padding-left: 0;
+        padding-bottom: 2rem;
+
+        .part-songs {
+          padding: 0rem 0.6rem;
+          .song-part-name {
+            font-family: $aabc-pt-sans-narrow;
+            font-weight: 900;
+          }
+
+          li {
+            i {
+              margin-right: 0.3rem;
+            }
+
+            &:hover {
+              color: $aabc-red;
+              cursor: pointer;
+
+              i {
+                color: $aabc-red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.songs {
+  background: #eee;
+  padding: 3rem;
+
+  .songs-list {
+    background: white;
+    padding: 3rem;
+    table {
+      tbody.completed {
+        tr {
+          background: lighten($aabc-completed-green, 40%);
+          color: $aabc-completed-green;
+        }
+
+
+
+
+      }
+    }
+  }
+}
+
+
+
+.form-inline {
+  .form-control {
+    width: 100% !important;
+  }
+}
+
+.checked-off-btn {
+  position: absolute;
+  bottom: 20px;
+  background: $aabc-red;
+  width: 100%;
+  padding: 2rem;
+  border: none;
+  color: white;
+  @include aabc-transition(0.2s all ease-in-out);
+
+  &:hover {
+    background: darken($aabc-dark-blue, 10%);
+  }
+}

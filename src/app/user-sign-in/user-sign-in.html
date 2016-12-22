@@ -1,0 +1,43 @@
+<section class="main-bg" [ngStyle]="{'background-image': 'url('+ backgroundImage +')'}">
+
+    <section class="login-sign-up-forms">
+        <div class="dont-have-account" [ngClass]="{'active': logInIsActive}">
+            <div class="dont-have-account-content">
+                <h2 class="dont-have-account-title">Don't Have An Account?</h2>
+                <p>Create an account in order to view the music library of the All-American Boys Chorus</p>
+                <button (click)="signUpActivated()">Sign Up</button>
+            </div>
+        </div>
+        <div class="sign-up-form" [ngClass]="{'active': signUpIsActive}">
+            <h3>Sign Up</h3>
+            <form action="" class="sign-up" #createUserForm="ngForm">
+                <input type="email" name="signUpEmail" id="signUpEmail" [(ngModel)]="email" placeholder="email">
+                <input type="password" name="signUpPassword" id="signUpPassword" [(ngModel)]="password" placeholder="password">
+                <button type="submit" (click)="signUp(email, password)">Sign Up</button>
+            </form>
+        </div>
+        <div class="have-an-account" [ngClass]="{'active': signUpIsActive}">
+            <div class="have-an-account-content">
+                <h2 class="have-an-account-title">Have An Account?</h2>
+                <p>Sign into your account to start practicing your songs.</p>
+                <button (click)="logInActivated()">Sign In</button>
+            </div>
+        </div>
+        <div class="login-form" [ngClass]="{'active': logInIsActive}">
+            <h3>Login</h3>
+            <form action="" class="login">
+                <input type="email" name="loginEmail" id="loginEmail" placeholder="email" [(ngModel)]="signInEmail">
+                <input type="password" name="loginPassword" id="loginPassword" placeholder="password" [(ngModel)]="signInPassword">
+                <a href="#">Forgot Password?</a>
+                <button type="submit" (click)="login()">Sign In</button>
+            </form>
+        </div>
+
+        <div class="aabc-logo-crown">
+          <img [src]="logoIcon" alt="aabc-logo">
+        </div>
+    </section>
+</section>
+
+
+<a href="" (click)="logout()">Logout</a>

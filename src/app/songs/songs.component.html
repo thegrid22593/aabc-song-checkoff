@@ -1,0 +1,114 @@
+<div class="container-fluid">
+    <h3>Search</h3>
+    <form class="form-inline">
+        <input class="form-control" type="text" placeholder="Search Songs" name="searchStr" [(ngModel)]="searchString">
+    </form>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            <section class="song-filter">
+                <h4>Filter</h4>
+                <hr class="filter-hr">
+
+                <span class="filter-section-title">Difficulty</span>
+                <ul class="filter-option-list">
+                    <li>Easy</li>
+                    <li>Medium</li>
+                    <li>Hard</li>
+                </ul>
+
+                <span class="filter-section-title">Genre</span>
+                <ul class="filter-option-list">
+                    <li>Americana</li>
+                    <li>Sacred / Religious</li>
+                    <li>Jazz</li>
+                    <li>Pop</li>
+                </ul>
+
+                <span class="filter-option-title">Length</span>
+                <ul class="filter-option-list">
+                    <li>Short</li>
+                    <li>Medium</li>
+                    <li>Long</li>
+                </ul>
+            </section>
+        </div>
+        <div class="col-lg-10">
+            <section class="songs">
+                <div class="songs-list">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Difficulty</th>
+                            <th>Time</th>
+                        </tr>
+                        </thead>
+                        <tbody *ngFor="let song of activeUserSongs" [ngClass]="{'completed': song.completed}">
+                        <tr (click)="openSongDetails(song.name)">
+                            <td>{{song.name}}</td>
+                            <td>{{song.difficulty}}</td>
+                            <td>{{song.time}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+<!--<div class="block-grid-xs-1 block-grid-sm-3 block-grid-md-3 block-grid-lg-3">-->
+<!--<div *ngFor="let song of songs">-->
+<!--<ul class="song">-->
+<!--<li class="song-body">-->
+<!--<div class="song-header">-->
+<!--<span class="song-time">{{song.time}}</span>-->
+<!--<h5 class="song-difficulty">{{song.difficulty}}</h5>-->
+<!--</div>-->
+<!--<div class="song-content">-->
+<!--<h6 class="song-title">{{song.name}}</h6>-->
+<!--<ul *ngFor="let part of song.parts" class="song-urls">-->
+<!--<div class="part-songs">-->
+<!--<span class="song-part-name">{{part.name}}</span>-->
+<!--<li (click)="playSong(part.urls.pianoSolfa)" *ngIf="part.urls.pianoSolfa"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Piano Solfa</li>-->
+<!--<li (click)="playSong(part.urls.pianoWords) "*ngIf="part.urls.pianoWords"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Piano Words</li>-->
+<!--<li (click)="playSong(part.urls.trackWords) "*ngIf="part.urls.trackWords"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Track Words</li>-->
+<!--</div>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+
+<section class="song-detail-panel" [ngClass]="{'active': !detailPanelCollapsed}">
+    <div class="crop-height">
+        <img [src]="detailPanelImg" alt="The All-American Boys Chorus">
+    </div>
+    <div class="song-details" *ngIf="activeSongDetail">
+        <h4 class="song-detail-name">{{activeSongDetail.name}}</h4>
+        <span class="song-detail-difficulty">Difficulty: {{activeSongDetail.difficulty}}</span>
+        <hr>
+        <ul *ngFor="let part of activeSongDetail.parts">
+            <div class="part-name">{{part.name}}</div>
+            <li (click)="playSong(part.urls.pianoSolfa, activeSongDetail, 'Piano Solfa')" *ngIf="part.urls.pianoSolfa"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Piano Solfa</li>
+            <li (click)="playSong(part.urls.pianoWords, activeSongDetail, 'Piano Words') "*ngIf="part.urls.pianoWords"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Piano Words</li>
+            <li (click)="playSong(part.urls.trackWords, activeSongDetail, 'Track Words') "*ngIf="part.urls.trackWords"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Track Words</li>
+        </ul>
+
+    </div>
+    <button class="checked-off-btn" (click)="songCompleted(activeSongDetail.name)">Checked Off</button>
+</section>
+
+<section class="audio-player">
+    <ul class="current-song" *ngIf="currentSong">
+        <li><span>Current Song:</span> {{currentSong.name}} | {{currentSongType}}</li>
+    </ul>
+    <audio src="{{activeSongURL}}" autoplay controls="controls">
+        Your browser does not support the <code>audio</code> element.
+    </audio>
+</section>

@@ -1,0 +1,25 @@
+<nav class="main-nav">
+    <a class="nav-branding" href="#">Music Library</a>
+    <ul class="nav-links" *ngIf="activeUser">
+        <li>
+            <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li>
+            <a routerLink="/blue-shirt-songs" routerLinkActive="active">Blue Shirt Songs</a>
+        </li>
+        <li>
+            <a routerLink="/solo-songs" routerLinkActive="active">Solo Songs</a>
+        </li>
+        <li>
+            <a routerLink="/white-shirt-songs" routerLinkActive="active">White Shirt Songs</a>
+        </li>
+        <li>
+            <a href="#" (click)="logout()">Logout</a>
+        </li>
+    </ul>
+    <ul class="user-info" style="float: right;">
+        <li><i class="fa fa-user-circle-o" style="color: white;" aria-hidden="true"></i></li>
+        <li>Hello {{displayName}}!</li>
+        <a routerLink="/user-settings"><i class="fa fa-cog" style="color: white;" aria-hidden="true"></i></a>
+    </ul>
+</nav>
