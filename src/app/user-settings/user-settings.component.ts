@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter OnInit} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {UserService} from '../services/user.service';
 import { AngularFire } from 'angularfire2';
 import {Router, ActivatedRoute} from '@angular/router';
@@ -9,7 +9,7 @@ import * as firebase from 'firebase';
   templateUrl: './user-settings.component.html',
   styleUrls: ['./user-settings.component.scss']
 })
-export class UserSettingsComponent implements OnInit {
+export class UserSettingsComponent {
 
   public user: any;
   public userName: string;
