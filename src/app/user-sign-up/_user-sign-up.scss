@@ -1,0 +1,56 @@
+.user-sign-up-more-info-form {
+  @include center-align;
+  width: 25%;
+
+  h2 {
+    color: $aabc-gold;
+    border-bottom: 1px solid $aabc-light-grey;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+  }
+
+  form {
+    label {
+      font-family: 'PT Sans Narrow', sans-serif;
+      font-weight: 900;
+      color: $aabc-cool-grey;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    input {
+      width: 100%;
+      @include aabc-transition(0.2s all ease-in-out);
+      margin-bottom: 2rem;
+      padding: 0.5rem 0.5rem;
+      border: 1px solid $aabc-light-grey;
+      &:focus {
+        outline: none;
+        border: 1px solid $aabc-red;
+      }
+    }
+
+    .singing-part-label {
+      display: block;
+    }
+
+    input[type="radio"] {
+      width: 5%;
+    }
+
+    button {
+      width: 30%;
+      max-width: 300px;
+      padding: 1rem 1.5rem;
+      background: $aabc-red;
+      border-radius: 0.5rem;
+      border: none;
+      color: $aabc-white;
+      font-size: 1rem;
+      @include aabc-transition(0.2s all ease-in-out);
+      &:hover {
+        background: darken($aabc-red, 5%);
+      }
+    }
+  }
+}

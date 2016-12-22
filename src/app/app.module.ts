@@ -11,6 +11,10 @@ import {UserAuthService} from './services/userAuth.service';
 
 import { AppComponent } from './app.component';
 import {UserSignInComponent} from './user-sign-in/user-sign-in.component';
+import {UserDashboardComponent} from './user-dashboard/user-dashboard.component';
+import {SongsComponent} from './songs/songs.component';
+import {SidebarNavComponent} from './shared/sidebar-nav/sidebar-nav.component';
+import {NavBarComponent} from './shared/navbar/navbar.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAYThpdcu3zb4ll_q6BJkpaWYS8XTVVz4Y",
@@ -33,17 +37,17 @@ const routes: Routes = [
   {
     path: 'sign-in',
     component: UserSignInComponent
+  },
+  {
+    path: 'dashboard',
+    component: UserDashboardComponent,
+    children: [
+      {
+        path: 'blue-shirt-songs',
+        component: SongsComponent
+      }
+    ]
   }
-//   {
-//     path: 'dashboard',
-//     component: UserDashboardComponent,
-//     children: [
-//       {
-//         path: 'blue-shirt-songs',
-//         component: SongsComponent
-//       }
-//     ]
-//   },
 //   {
 //     path: 'white-shirt-songs',
 //     component: WhiteShirtSongsComponent
@@ -73,7 +77,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    UserSignInComponent
+    UserSignInComponent,
+    UserDashboardComponent,
+    SongsComponent,
+    SidebarNavComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

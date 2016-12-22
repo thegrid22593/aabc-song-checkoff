@@ -1,0 +1,32 @@
+.song-filter {
+  margin-top: 2rem;
+
+  h4 {
+    font-family: $aabc-pt-sans-narrow;
+    font-size: 1.3rem;
+    color: $aabc-cool-grey;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+  }
+
+  span.filter-section-title {
+    padding-top: 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: $aabc-pt-sans-narrow;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: $aabc-cool-grey;
+  }
+
+  ul.filter-option-list {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      color: $aabc-cool-grey;
+      padding: 0.5rem 0;
+    }
+  }
+}
