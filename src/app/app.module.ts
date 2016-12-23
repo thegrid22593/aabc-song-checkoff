@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import {AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { AppRoutingModule } from './app-routing.module';
 
 import {SongService} from './services/songs.service';
 import {UserService} from './services/user.service';
@@ -21,52 +22,6 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { WhiteShirtSongsComponent } from './white-shirt-songs/white-shirt-songs.component';
-
-
-const routes: Routes = [
-  {
-    path: '',
-    component: AppComponent
-  },
-  {
-    path: 'sign-in',
-    component: UserSignInComponent
-  },
-  {
-    path: 'dashboard',
-    component: UserDashboardComponent,
-    children: [
-      {
-        path: 'blue-shirt-songs',
-        component: SongsComponent
-      }
-    ]
-  },
-  {
-    path: 'white-shirt-songs',
-    component: WhiteShirtSongsComponent
-  },
-  {
-    path: 'blue-shirt-songs',
-    component: SongsComponent
-  },
-  {
-    path: 'solo-songs',
-    component: SoloSongsComponent
-  },
-  {
-    path: 'user-settings',
-    component: UserSettingsComponent
-  },
-  {
-    path: 'user-sign-up',
-    component: UserSignUpComponent
-  },
-  {
-    path: 'song',
-    component: SongDetailComponent
-  }
-];
 
 
 const firebaseConfig = {
@@ -102,7 +57,7 @@ const firebaseAuthConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes),
+    AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
   ],
   providers: [

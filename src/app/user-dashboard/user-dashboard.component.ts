@@ -1,5 +1,4 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
-
 import { AngularFire, FirebaseObjectObservable} from 'angularfire2';
 import {Router, ActivatedRoute} from '@angular/router';
 import {UserService} from "../services/user.service";
@@ -45,7 +44,7 @@ export class UserDashboardComponent implements OnInit {
     ngOnInit() {
         this.af.auth.subscribe(user => {
             if(!user) {
-                alert('please log in or sign up!');
+                this._router.navigate[('sign-in')];
             } else {
                 this.userName = user.auth.displayName;
                 this.userPic = user.auth.photoURL;

@@ -8,7 +8,6 @@
       <h5>Details</h5>
       <h2 class="current-user-name">{{currentUserName}}</h2>
       <strong class="current-user-part">{{currentUserPart}}</strong>
-      <!-- <em>{{currentUserStartDate}}</em> -->
     </div>
     <div class="member-songs-completed">
       <h5>Songs Completed</h5>
@@ -29,36 +28,36 @@
     <h3>Basses</h3>
     <div class="part-container">
         <ul *ngFor="let bassMember of bassPart">
-            <li style="display: inline-block;"><img src="{{bassMember.profilePicURL}}" alt=""></li>
-            <li style="display: inline-block;">{{bassMember.firstName}} {{bassMember.lastName}}</li>
-            <li style="display: inline-block;" *ngIf="bassMember.percentage">{{bassMember.percentage}}%</li>
+            <li><img src="{{bassMember.profilePicURL}}" alt=""></li>
+            <li>{{bassMember.firstName}} {{bassMember.lastName}}</li>
+            <li *ngIf="bassMember.percentage">{{bassMember.percentage}}%</li>
         </ul>
     </div>
 
     <div class="part-container">
       <h3>First Tenor</h3>
         <ul *ngFor="let firsTenorMember of firstTenorPart">
-            <li style="display: inline-block;"><img src="{{firsTenorMember.profilePicURL}}" alt=""></li>
-            <li style="display: inline-block;">{{firsTenorMember.firstName}} {{firsTenorMember.lastName}}</li>
-            <li style="display: inline-block;" *ngIf="firsTenorMember.percentage">{{firsTenorMember.percentage}}%</li>
+            <li><img src="{{firsTenorMember.profilePicURL}}" alt=""></li>
+            <li>{{firsTenorMember.firstName}} {{firsTenorMember.lastName}}</li>
+            <li *ngIf="firsTenorMember.percentage">{{firsTenorMember.percentage}}%</li>
         </ul>
     </div>
 
     <div class="part-container">
       <h3>Second Tenor</h3>
         <ul *ngFor="let secondTenorMember of secondTenorPart">
-            <li style="display: inline-block;"><img src="{{secondTenorMember.profilePicURL}}" alt=""></li>
-            <li style="display: inline-block;">{{secondTenorMember.firstName}} {{secondTenorMember.lastName}}</li>
-            <li style="display: inline-block;" *ngIf="secondTenorMember.percentage">{{secondTenorMember.percentage}}%</li>
+            <li><img src="{{secondTenorMember.profilePicURL}}" alt=""></li>
+            <li>{{secondTenorMember.firstName}} {{secondTenorMember.lastName}}</li>
+            <li *ngIf="secondTenorMember.percentage">{{secondTenorMember.percentage}}%</li>
         </ul>
     </div>
 
     <div class="part-container">
       <h3>Baritone</h3>
         <ul *ngFor="let baritoneMember of baritonePart">
-            <li style="display: inline-block;"><img src="{{baritoneMember.profilePicURL}}" alt=""></li>
-            <li style="display: inline-block;">{{baritoneMember.firstName}} {{baritoneMember.lastName}}</li>
-            <li style="display: inline-block;" *ngIf="baritoneMember.percentage">{{baritoneMember.percentage}}%</li>
+            <li><img src="{{baritoneMember.profilePicURL}}" alt=""></li>
+            <li>{{baritoneMember.firstName}} {{baritoneMember.lastName}}</li>
+            <li *ngIf="baritoneMember.percentage">{{baritoneMember.percentage}}%</li>
         </ul>
     </div>
   </div>

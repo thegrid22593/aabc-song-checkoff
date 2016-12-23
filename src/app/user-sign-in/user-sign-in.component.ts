@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
+import { Validators } from '@angular/forms';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import {UserService} from "../services/user.service";
 import {SongService} from "../services/songs.service";

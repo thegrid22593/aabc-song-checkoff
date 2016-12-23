@@ -29,16 +29,6 @@ export class UserSettingsComponent {
   public newPhotoURL;
 
   constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
-    // Set Firebase Config
-    //   const firebaseConfig = {
-    //     apiKey: "AIzaSyAYThpdcu3zb4ll_q6BJkpaWYS8XTVVz4Y",
-    //     authDomain: "aabc-checkoff.firebaseapp.com",
-    //     databaseURL: "https://aabc-checkoff.firebaseio.com",
-    //     storageBucket: "aabc-checkoff.appspot.com",
-    //     messagingSenderId: "920421563150"
-    //   }
-    //   // Initiazlize Firebase
-    //   firebase.initializeApp(firebaseConfig);
     // Set Firebase Storage Reference
     this.storage = firebase.storage().ref();
 

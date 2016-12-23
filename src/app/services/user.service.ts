@@ -1,13 +1,15 @@
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
-import 'rxjs/add/operator/map';
-import * as _ from 'lodash';
 import {Router, ActivatedRoute} from '@angular/router';
 import {AngularFire, FirebaseListObservable } from 'angularfire2';
+import * as firebase from 'firebase';
+import * as _ from 'lodash';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService {
+
     constructor(private _http: Http, private _af: AngularFire, private _router: Router) {
 
     }
@@ -39,26 +41,23 @@ export class UserService {
             console.log('updated user');
         })
     }
+    
+    addUserProfilePic() {
+
+    }
 
     getCurrentUser() {
         this._af.database.list('https://aabc-checkoff.firebaseio.com/users/EWMIQ5yKlcgj3vxL6WZxu0Uuq5o1');
     }
 
-    getSongByName(songName:string) {
-        return this._http.get('https://aabc-checkoff.firebaseio.com/users/.json')
-            .map((response: Response) => _.find(response.json().songs, {'name': songName}))
-            .toPromise()
-            .catch(this.handleError);
-    }
-
-    fetchData() {
-        console.log('running');
-        return this._http.get('https://aabc-checkoff.firebaseio.com/users/.json').map(
-            (res) => res.json()
-        ).subscribe(
-            (data) => console.log(data)
-        );
-    }
+    // fetchData() {
+    //     console.log('running');
+    //     return this._http.get('https://aabc-checkoff.firebaseio.com/users/.json').map(
+    //         (res) => res.json()
+    //     ).subscribe(
+    //         (data) => console.log(data)
+    //     );
+    // }
 
     private handleError(error: Response) {
         console.error(error);

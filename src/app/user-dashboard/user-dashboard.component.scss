@@ -72,4 +72,7 @@ section.dashboard {
 .part-container {
   width: 50%;
   float: left;
+  li {
+    display: inline-block;
+  }
 }
