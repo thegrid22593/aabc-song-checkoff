@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import {AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { AppRoutingModule } from './app-routing.module';
+import {AngularFireConfigModule} from './app-angularFire.module';
 
 import {SongService} from './services/songs.service';
 import {UserService} from './services/user.service';
@@ -22,20 +23,6 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { WhiteShirtSongsComponent } from './white-shirt-songs/white-shirt-songs.component';
-
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAYThpdcu3zb4ll_q6BJkpaWYS8XTVVz4Y",
-  authDomain: "aabc-checkoff.firebaseapp.com",
-  databaseURL: "https://aabc-checkoff.firebaseio.com",
-  storageBucket: "aabc-checkoff.appspot.com",
-  messagingSenderId: "920421563150"
-}
-
-const firebaseAuthConfig = {
-  provider: AuthProviders.Password,
-  method: AuthMethods.Password
-}
 
 
 @NgModule({
@@ -58,7 +45,7 @@ const firebaseAuthConfig = {
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
+    AngularFireConfigModule
   ],
   providers: [
     SongService,
