@@ -46,26 +46,13 @@ export class SongsComponent implements OnInit {
                   })
               }
           })
-          // this._songsService.getAllSongs().then(result => {
-          //     this.songs = result;
-          //     // console.log('Songs: ', this.songs);
-          // });
       }
 
       playSong(songURL:string, activeSong:any, songType:string) {
-          // console.log('clicked song:', songURL);
           this.activeSongURL = songURL;
           this.currentSong = activeSong;
           this.currentSongType = songType;
       }
-
-      // searchSongs(str:string) {
-      //     console.log(str);
-      //     this._songsService.searchSongs(str).then(result => {
-      //         this.songs = result;
-      //     });
-      //     console.log(this.songs);
-      // }
 
       openSongDetails(name:string) {
 
@@ -91,11 +78,7 @@ export class SongsComponent implements OnInit {
               }
           }
           this.totalSongs = this.activeUserSongs.length;
-          // console.log('total', this.totalSongs);
-          // console.log('completed', completedSongs);
           this.songPercentage = Math.floor(completedSongs / this.totalSongs * 100);
-          // console.log('activeUserSongs:', this.activeUserSongs);
-          // console.log('uid', this.activeUser.uid);
           let updatedUser = {
               songs: this.activeUserSongs,
               lastCompletedSong: name,

@@ -6,7 +6,6 @@
             <input type="text" placeholder="Search Songs" name="searchStr" [(ngModel)]="searchString">
         </form>
     </section>
-
         <!-- <div class="col-lg-2">
             <section class="song-filter">
                 <h4>Filter</h4>
@@ -58,33 +57,9 @@
             </section>
         </div>
 
-
-<!--<div class="block-grid-xs-1 block-grid-sm-3 block-grid-md-3 block-grid-lg-3">-->
-<!--<div *ngFor="let song of songs">-->
-<!--<ul class="song">-->
-<!--<li class="song-body">-->
-<!--<div class="song-header">-->
-<!--<span class="song-time">{{song.time}}</span>-->
-<!--<h5 class="song-difficulty">{{song.difficulty}}</h5>-->
-<!--</div>-->
-<!--<div class="song-content">-->
-<!--<h6 class="song-title">{{song.name}}</h6>-->
-<!--<ul *ngFor="let part of song.parts" class="song-urls">-->
-<!--<div class="part-songs">-->
-<!--<span class="song-part-name">{{part.name}}</span>-->
-<!--<li (click)="playSong(part.urls.pianoSolfa)" *ngIf="part.urls.pianoSolfa"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Piano Solfa</li>-->
-<!--<li (click)="playSong(part.urls.pianoWords) "*ngIf="part.urls.pianoWords"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Piano Words</li>-->
-<!--<li (click)="playSong(part.urls.trackWords) "*ngIf="part.urls.trackWords"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Track Words</li>-->
-<!--</div>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-
 <song-detail [activeSong]="activeSongDetail" [detailPanelCollapsed]="detailPanelCollapsed"></song-detail>
 
+<!-- TODO: Make Audio Player Its Own Component and pass data to it -->
 <section class="audio-player">
     <ul class="current-song" *ngIf="currentSong">
         <li><span>Current Song:</span> {{currentSong.name}} | {{currentSongType}}</li>
