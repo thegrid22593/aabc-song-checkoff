@@ -1,3 +1,18 @@
-<p>
-  song-detail works!
-</p>
+<section class="song-detail-panel" [ngClass]="{'active': !detailPanelCollapsed}">
+    <div class="crop-height">
+        <img [src]="detailPanelImg" alt="The All-American Boys Chorus">
+    </div>
+    <div class="song-details" *ngIf="activeSong">
+        <h4 class="song-detail-name">{{activeSong.name}}</h4>
+        <span class="song-detail-difficulty">Difficulty: {{activeSong.difficulty}}</span>
+        <hr>
+        <ul *ngFor="let part of activeSong.parts">
+            <div class="part-name">{{part.name}}</div>
+            <li (click)="playSong(part.urls.pianoSolfa, activeSong, 'Piano Solfa')" *ngIf="part.urls.pianoSolfa"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Piano Solfa</li>
+            <li (click)="playSong(part.urls.pianoWords, activeSong, 'Piano Words') "*ngIf="part.urls.pianoWords"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Piano Words</li>
+            <li (click)="playSong(part.urls.trackWords, activeSong, 'Track Words') "*ngIf="part.urls.trackWords"><i class="fa fa-play-circle-o" aria-hidden="true"></i>Track Words</li>
+        </ul>
+
+    </div>
+    <button class="checked-off-btn" (click)="songCompleted(activeSong.name)">Checked Off</button>
+</section>

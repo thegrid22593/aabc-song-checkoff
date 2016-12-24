@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Observable} from 'rxjs';
 import {SongService} from '../services/songs.service';
 import {Router, ActivatedRoute} from '@angular/router';
@@ -13,24 +13,23 @@ import * as _ from 'lodash';
 })
 export class SongsComponent implements OnInit {
   public songs: any;
-      public activeSong: any;
-      public activeSongDetail: any;
-      public activeSongURL: any;
-      public searchStr: string;
-      public searchString: string;
-      public detailPanelImg: string;
-      public detailPanelCollapsed: boolean;
-      public currentSong: any;
-      public currentSongType: string;
-      public activeUser: any;
-      public activeUserSongs: any;
-      public totalSongs: any
-      public songPercentage: any;
+  public activeSong: any;
+  public activeSongURL: any;
+  public searchStr: string;
+  public searchString: string;
+  public detailPanelImg: string;
+  public detailPanelCollapsed: boolean;
+  public currentSong: any;
+  public currentSongType: string;
+  public activeUser: any;
+  public activeUserSongs: any;
+  public totalSongs: any
+  public songPercentage: any;
 
-      public songList: any;
+  public songList: any;
+  public activeSongDetail: any;
 
       constructor(private _songsService: SongService, private router: Router, private route: ActivatedRoute, private _af: AngularFire, private _userService: UserService) {
-          this.detailPanelImg = '../../images/detail-panel.jpg';
           this.detailPanelCollapsed = true;
       }
 
