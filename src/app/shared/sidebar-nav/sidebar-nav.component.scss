@@ -1,25 +1,29 @@
 @import '../../../scss/partials/base';
 
 .sidebar-nav {
-  background: $aabc-dark-blue;
+  background: #fbfbfb;
   height: 100vh;
+  border-right: 1px solid #ddd;
   padding: 0;
-  width: 10%;
+  width: 15%;
   float: left;
   margin-top: -16px;
   ul {
     list-style: none;
+    margin-top: 2rem;
     li {
       display: block;
+      margin-left: 30px;
+      padding-bottom: 1.5rem;
       a {
         font-family: 'PT Sans Narrow', sans-serif;
-        font-weight: 900;
+        font-weight: 100;
         color: $aabc-cool-grey;
         vertical-align: middle;
         @include aabc-transition(0.2s all ease-in-out);
         svg {
           fill: $aabc-cool-grey;
-          max-width: 30px;
+          max-width: 25px;
           vertical-align: middle;
           margin-right: 5px;
           @include aabc-transition(0.2s all ease-in-out);

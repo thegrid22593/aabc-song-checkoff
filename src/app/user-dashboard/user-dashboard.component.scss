@@ -5,56 +5,74 @@
   font-size: 1.5rem;
   color: #aaa;
   font-weight: 900;
+  margin-bottom: 0;
 }
 
 .current-user-part {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: 900;
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   color: #ccc;
 }
 
 section.dashboard {
-  width: 90%;
+  width: 85%;
   float: right;
   margin-top: -18px;
   // padding: 2rem 0 0 2rem;
   .dashboard-member-info {
-    background: lighten($aabc-light-grey, 10%);
-    padding: 7rem;
+    background: #fbfbfb;
+    border-bottom: 1px solid #ddd;
+    padding: 3rem;
     overflow: hidden;
+    margin-top: 2px;
     .member-name-and-photo {
-      width: 30%;
+      width: 35%;
       float: left;
       h2.current-user-name {
-        font-size: 1.3rem;
-        color: $aabc-cool-grey;
+        font-size: 2rem;
         font-weight: 900;
-        font-family: 'PT Sans Narrow', sans-serif;
+        color: #373a3c;
       }
       img {
         float: left;
-        margin-right: 15px;
-        max-width: 150px;
+        margin-right: 30px;
+        max-width: 125px;
         border-radius: 50%;
       }
     }
     .member-songs-completed {
       width: 20%;
       float: left;
+      p {
+        font-size: 2rem;
+        font-weight: 900;
+      }
     }
     .member-songs-percentage {
       width: 20%;
       float: left;
+      p {
+        font-size: 2rem;
+        font-weight: 900;
+      }
+    }
+
+    .member-last-completed-song {
+      p {
+        font-size: 2rem;
+        font-weight: 900;
+      }
     }
   }
 
   h5 {
     color: $aabc-light-grey;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-family: 'Crimson Text', serif;
     font-weight: 900;
+    padding-top: 1.3rem;
   }
 }
 
