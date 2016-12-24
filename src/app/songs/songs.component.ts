@@ -38,7 +38,6 @@ export class SongsComponent implements OnInit {
           this._af.auth.subscribe(user => {
               if(user) {
                   let activeUserUID = user.uid;
-                  // console.log('subscribed user id:', activeUserUID);
                   this._userService.getUserByUID(activeUserUID).then(result => {
                       console.log(result);
                       this.activeUser = result;
@@ -86,6 +85,6 @@ export class SongsComponent implements OnInit {
               completedSongs: completedSongs
           }
 
-          this._userService.updateUser(this.activeUser.uid, updatedUser)
+          this._userService.updateUser(this.activeUser.uid, updatedUser);
       }
   }

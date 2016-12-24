@@ -59,7 +59,7 @@
 
 <song-detail [activeSong]="activeSongDetail" [detailPanelCollapsed]="detailPanelCollapsed"></song-detail>
 
-<!-- TODO: Make Audio Player Its Own Component and pass data to it -->
+<!-- TODO: Make Audio Player a child component of the detail panel and pass data to it on click -->
 <section class="audio-player">
     <ul class="current-song" *ngIf="currentSong">
         <li><span>Current Song:</span> {{currentSong.name}} | {{currentSongType}}</li>
