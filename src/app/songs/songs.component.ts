@@ -59,6 +59,13 @@ export class SongsComponent implements OnInit {
           this.currentSongType = songType;
       }
 
+      filterByDifficulty(difficulty) {
+        this._songsService.filterSongByDifficulty(difficulty, this.activeUserUID).then(result => {
+          console.log(result);
+          this.activeUserSongs = result;
+        });
+      }
+
       search(term: string): void {
         // this.searchTerms.next(term);
         // console.log(term);

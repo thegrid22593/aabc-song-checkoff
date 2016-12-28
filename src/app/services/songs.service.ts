@@ -38,6 +38,14 @@ export class SongService {
             .map(( response: Response ) => response.json().data);
     }
 
+    filterSongByDifficulty(difficulty: string, userId: string) {
+      return this._http
+          .get('https://aabc-checkoff.firebaseio.com/users/' + userId + '/songs/')
+          .map(( response: Response ) => _.orderBy(response.json(), {'difficulty': difficulty}))
+          .toPromise()
+          .catch(this.handleError);
+    }
+
     fetchData() {
         console.log('running');
         return this._http.get('https://aabc-checkoff.firebaseio.com/.json').map(
