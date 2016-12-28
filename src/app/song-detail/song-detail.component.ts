@@ -15,6 +15,7 @@ export class SongDetailComponent implements OnChanges {
   public detailPanelImg: string = '../../images/detail-panel.jpg';
 
   constructor() {
+    
   }
 
   ngOnInit() {

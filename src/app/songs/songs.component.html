@@ -3,7 +3,7 @@
     <section class="search-bar">
         <h3>Search</h3>
         <form class="search-bar-input">
-            <input type="text" placeholder="Search Songs" name="searchStr" [(ngModel)]="searchString">
+            <input #searchBox id="search-box" (keyup)="search(searchBox.value)">
         </form>
     </section>
         <!-- <div class="col-lg-2">
