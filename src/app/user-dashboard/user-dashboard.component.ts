@@ -99,8 +99,6 @@ export class UserDashboardComponent implements OnInit {
         this._userService.getUsersByPart('Bass').then(result => {
             this.bassPartPreOrdered = result;
             this.bassPart = _.orderBy(this.bassPartPreOrdered, ['percentage'], ['desc']);
-            console.log('bass ordered', this.bassPart);
-            // console.log('users singing part', result);
         });
 
         this._userService.getUsersByPart('First Tenor').then(result => {
