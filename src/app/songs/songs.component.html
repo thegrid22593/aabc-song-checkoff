@@ -2,9 +2,10 @@
 
     <section class="search-bar">
         <h3>Search</h3>
-        <form class="search-bar-input">
-            <input type="text" placeholder="Search Songs" name="searchStr" [(ngModel)]="searchString">
-        </form>
+        <!-- <form class="search-bar-input">
+            <input #searchBox id="search-box" (keyup)="search(searchBox.value)">
+        </form> -->
+        <input type="checkbox" (click)="filterByDifficulty(Hard)" value="Hard">
     </section>
         <!-- <div class="col-lg-2">
             <section class="song-filter">

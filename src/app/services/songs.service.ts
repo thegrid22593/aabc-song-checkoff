@@ -3,14 +3,24 @@ import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
+import {Song} from '../song';
 
 @Injectable()
 export class SongService {
-    constructor(private _http: Http) {}
+    constructor(private _http: Http) {
+
+    }
 
     getAllSongs() {
         return this._http.get('/fixtures/songs.json')
             .map((response: Response) => response.json().songs)
+            .toPromise()
+            .catch(this.handleError);
+    }
+
+    getSongByName(songName:string) {
+        return this._http.get('/fixtures/songs.json')
+            .map((response: Response) => _.find(response.json().songs, {'name': songName}))
             .toPromise()
             .catch(this.handleError);
     }
@@ -22,18 +32,18 @@ export class SongService {
             .catch(this.handleError);
     }
 
-    searchSongs(str:string) {
-        return this._http.get('/fixtures/songs.json')
-            .map((response: Response) => _.find(response.json().songs, {'name': str}))
-            .toPromise()
-            .catch(this.handleError);
+    searchSong(userId:string, term: string): Observable<Song[]> {
+        return this._http
+            .get('https://aabc-checkoff.firebaseio.com/users/' + userId + '/songs/?name=${term}')
+            .map(( response: Response ) => response.json().data);
     }
 
-    getSongByName(songName:string) {
-        return this._http.get('/fixtures/songs.json')
-            .map((response: Response) => _.find(response.json().songs, {'name': songName}))
-            .toPromise()
-            .catch(this.handleError);
+    filterSongByDifficulty(difficulty: string, userId: string) {
+      return this._http
+          .get('https://aabc-checkoff.firebaseio.com/users/' + userId + '/songs/')
+          .map(( response: Response ) => _.orderBy(response.json(), {'difficulty': difficulty}))
+          .toPromise()
+          .catch(this.handleError);
     }
 
     fetchData() {

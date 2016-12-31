@@ -4,12 +4,15 @@ import {SongService} from '../services/songs.service';
 import {AngularFire, FirebaseListObservable } from 'angularfire2';
 import {UserService} from "../services/user.service";
 import * as _ from 'lodash';
+import {Subject} from 'rxjs/Subject';
+import {Song} from '../song';
 
 @Component({
   selector: 'songs',
   templateUrl: './songs.component.html',
   styleUrls: ['./songs.component.scss']
 })
+
 export class SongsComponent implements OnInit {
   public songs: any;
   public activeSong: any;
@@ -25,7 +28,14 @@ export class SongsComponent implements OnInit {
   public songList: any;
   public activeSongDetail: any;
 
+<<<<<<< HEAD
       constructor(private _songsService: SongService, private _af: AngularFire, private _userService: UserService) {
+=======
+  public activeUserUID: string;
+  private searchTerms = new Subject<string>();
+
+      constructor(private _songsService: SongService, private router: Router, private route: ActivatedRoute, private _af: AngularFire, private _userService: UserService) {
+>>>>>>> 8d6e9ee8255f7d4f8f90b83e3245d3f27c37217c
           this.detailPanelCollapsed = true;
       }
 
@@ -33,20 +43,45 @@ export class SongsComponent implements OnInit {
           let activeUserUID;
           this._af.auth.subscribe(user => {
               if(user) {
-                  let activeUserUID = user.uid;
-                  this._userService.getUserByUID(activeUserUID).then(result => {
+                  this.activeUserUID = user.uid;
+                  this._userService.getUserByUID(this.activeUserUID).then(result => {
                       console.log(result);
                       this.activeUser = result;
                       this.activeUserSongs = this.activeUser.songs;
                   })
               }
-          })
+          });
       }
 
       playSong(songURL:string, activeSong:any, songType:string) {
           this.activeSongURL = songURL;
           this.currentSong = activeSong;
           this.currentSongType = songType;
+      }
+
+      filterByDifficulty(difficulty) {
+        this._songsService.filterSongByDifficulty(difficulty, this.activeUserUID).then(result => {
+          console.log(result);
+          this.activeUserSongs = result;
+        });
+      }
+
+      search(term: string): void {
+        // this.searchTerms.next(term);
+        // console.log(term);
+        // this.songs = this.searchTerms
+        //   .debounceTime(300)        // wait for 300ms pause in events
+        //   .distinctUntilChanged()   // ignore if next search term is same as previous
+        //   .switchMap(term => term   // switch to new observable each time
+        //     // return the http search observable
+        //     ? this._songsService.searchSong(term, this.activeUserUID)
+        //     // or the observable of empty heroes if no search term
+        //     : Observable.of<Song[]>([]))
+        //   .catch(error => {
+        //     // TODO: real error handling
+        //     console.log(error);
+        //     return Observable.of<Song[]>([]);
+        //   });
       }
 
       openSongDetails(name:string) {

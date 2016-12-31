@@ -2,6 +2,7 @@ import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 import { AngularFire, FirebaseObjectObservable} from 'angularfire2';
 import {Router, ActivatedRoute} from '@angular/router';
 import {UserService} from "../services/user.service";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'user-dashboard',
@@ -33,9 +34,13 @@ export class UserDashboardComponent implements OnInit {
 
     // Parts
     public bassPart;
+    public bassPartPreOrdered;
     public firstTenorPart;
+    public firstTenorPartPreOrdered;
     public secondTenorPart;
+    public secondTenorPartPreOrdered;
     public baritonePart;
+    public baritonePartPreOrdered;
 
     constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
 
@@ -92,27 +97,23 @@ export class UserDashboardComponent implements OnInit {
     getSingingParts() {
 
         this._userService.getUsersByPart('Bass').then(result => {
-            console.log(result);
-            this.bassPart = result;
-            console.log('users singing part', result);
+            this.bassPartPreOrdered = result;
+            this.bassPart = _.orderBy(this.bassPartPreOrdered, ['percentage'], ['desc']);
         });
 
         this._userService.getUsersByPart('First Tenor').then(result => {
-            console.log(result);
-            this.firstTenorPart = result;
-            console.log('users singing part', result);
+            this.firstTenorPartPreOrdered = result;
+            this.firstTenorPart = _.orderBy(this.firstTenorPartPreOrdered, ['percentage'], ['desc']);
         });
 
         this._userService.getUsersByPart('Second Tenor').then(result => {
-            console.log(result);
-            this.secondTenorPart = result;
-            console.log('users singing part', result);
+          this.secondTenorPartPreOrdered = result;
+            this.secondTenorPart = _.orderBy(this.secondTenorPartPreOrdered, ['percentage'], ['desc']);
         });
 
         this._userService.getUsersByPart('Baritone').then(result => {
-            console.log(result);
-            this.baritonePart = result;
-            console.log('users singing part', this.baritonePart);
+            this.baritonePartPreOrdered = result;
+            this.baritonePart = _.orderBy(this.baritonePartPreOrdered, ['percentage'], ['desc']);
         })
     }
 

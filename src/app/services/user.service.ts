@@ -41,7 +41,7 @@ export class UserService {
             console.log('updated user');
         })
     }
-    
+
     addUserProfilePic() {
 
     }
