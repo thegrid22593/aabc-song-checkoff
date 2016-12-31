@@ -57,7 +57,11 @@
             </section>
         </div>
 
-<song-detail [activeSong]="activeSongDetail" [detailPanelCollapsed]="detailPanelCollapsed"></song-detail>
+<song-detail
+[activeSong]="activeSongDetail"
+[detailPanelCollapsed]="detailPanelCollapsed"
+[activeUserSongs]="activeUserSongs"
+[activeUser]="activeUser"></song-detail>
 
 <!-- TODO: Make Audio Player a child component of the detail panel and pass data to it on click -->
 <section class="audio-player">

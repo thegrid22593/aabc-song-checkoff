@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Observable} from 'rxjs';
 import {SongService} from '../services/songs.service';
-import {Router, ActivatedRoute} from '@angular/router';
 import {AngularFire, FirebaseListObservable } from 'angularfire2';
 import {UserService} from "../services/user.service";
 import * as _ from 'lodash';
@@ -17,19 +16,16 @@ export class SongsComponent implements OnInit {
   public activeSongURL: any;
   public searchStr: string;
   public searchString: string;
-  public detailPanelImg: string;
   public detailPanelCollapsed: boolean;
   public currentSong: any;
   public currentSongType: string;
   public activeUser: any;
   public activeUserSongs: any;
-  public totalSongs: any
-  public songPercentage: any;
 
   public songList: any;
   public activeSongDetail: any;
 
-      constructor(private _songsService: SongService, private router: Router, private route: ActivatedRoute, private _af: AngularFire, private _userService: UserService) {
+      constructor(private _songsService: SongService, private _af: AngularFire, private _userService: UserService) {
           this.detailPanelCollapsed = true;
       }
 
@@ -64,27 +60,5 @@ export class SongsComponent implements OnInit {
               console.log(this.activeSongDetail);
           })
           console.log('clicked', name);
-      }
-
-      songCompleted(name:string) {
-          let completedSongs = 0;
-          for (let song of this.activeUserSongs) {
-              if (song.name == name) {
-                  song.completed = true;
-              }
-              if (song.completed === true) {
-                  completedSongs++;
-              }
-          }
-          this.totalSongs = this.activeUserSongs.length;
-          this.songPercentage = Math.floor(completedSongs / this.totalSongs * 100);
-          let updatedUser = {
-              songs: this.activeUserSongs,
-              lastCompletedSong: name,
-              percentage: this.songPercentage,
-              completedSongs: completedSongs
-          }
-
-          this._userService.updateUser(this.activeUser.uid, updatedUser);
       }
   }
