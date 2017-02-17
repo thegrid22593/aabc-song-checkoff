@@ -93,6 +93,10 @@ section.songs {
         tr {
           background: lighten($aabc-completed-green, 40%);
           color: $aabc-completed-green;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
