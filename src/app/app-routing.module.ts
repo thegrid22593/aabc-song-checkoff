@@ -34,7 +34,7 @@ const appRoutes: Routes = [
     component: WhiteShirtSongsComponent
   },
   {
-    path: 'blue-shirt-songs',
+    path: 'music-library',
     component: SongsComponent
   },
   {

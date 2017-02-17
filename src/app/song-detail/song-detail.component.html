@@ -1,4 +1,4 @@
-<section class="song-detail-panel" [ngClass]="{'active': !detailPanelCollapsed}">
+<section class="song-detail-panel" [ngClass]="{'active': detailPanelCollapsed}">
     <div class="crop-height">
         <img [src]="detailPanelImg" alt="The All-American Boys Chorus">
     </div>
@@ -14,5 +14,5 @@
         </ul>
 
     </div>
-    <button class="checked-off-btn" (click)="songCompleted(activeSong.name)">Checked Off</button>
+    <!-- <button class="checked-off-btn" (click)="songCompleted(activeSong.name)">Checked Off</button> -->
 </section>

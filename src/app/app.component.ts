@@ -17,14 +17,16 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.af.auth.subscribe(user => {
-      if(user) {
-        this._router.navigate(['dashboard']);
-        console.log(user);
-      } else {
-        this._router.navigate(['sign-in']);
-        console.log(user);
-      }
-    });
+
+    this._router.navigate(['music-library']);
+    // this.af.auth.subscribe(user => {
+    //   if(user) {
+    //     this._router.navigate(['dashboard']);
+    //     console.log(user);
+    //   } else {
+    //     this._router.navigate(['sign-in']);
+    //     console.log(user);
+    //   }
+    // });
   }
 }

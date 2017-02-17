@@ -14,17 +14,17 @@ export class NavbarComponent {
   public displayName: string;
 
   constructor(public af: AngularFire, private _router: Router) {
-    this.af.auth.subscribe(user => {
-
-      if(!user) {
-
-      } else {
-        this.activeUser = user;
-        this.displayName = user.auth.displayName;
-        console.log('active', this.activeUser);
-      }
-
-    })
+    // this.af.auth.subscribe(user => {
+    //
+    //   if(!user) {
+    //
+    //   } else {
+    //     this.activeUser = user;
+    //     this.displayName = user.auth.displayName;
+    //     console.log('active', this.activeUser);
+    //   }
+    //
+    // });
   }
 
   logout() {

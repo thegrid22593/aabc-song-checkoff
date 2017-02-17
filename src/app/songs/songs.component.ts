@@ -19,7 +19,7 @@ export class SongsComponent implements OnInit {
   public activeSongURL: any;
   public searchStr: string;
   public searchString: string;
-  public detailPanelCollapsed: boolean;
+  public detailPanelCollapsed: boolean = false;
   public currentSong: any;
   public currentSongType: string;
   public activeUser: any;
@@ -33,53 +33,59 @@ export class SongsComponent implements OnInit {
 
       ngOnInit() {
           let activeUserUID;
-          this._af.auth.subscribe(user => {
-              if(user) {
-                  this.activeUserUID = user.uid;
-                  this._userService.getUserByUID(this.activeUserUID).then(result => {
-                      console.log(result);
-                      this.activeUser = result;
-                      this.activeUserSongs = this.activeUser.songs;
-                  })
-              }
-          });
+          // this._af.auth.subscribe(user => {
+          //     if(user) {
+          //         this.activeUserUID = user.uid;
+          //         this._userService.getUserByUID(this.activeUserUID).then(result => {
+          //             console.log(result);
+          //             this.activeUser = result;
+          //             this.activeUserSongs = this.activeUser.songs;
+          //         })
+          //     }
+          // });
+
+          this._songsService.getAllSongs().then(result => {
+            this.activeUserSongs = result;
+          })
       }
 
-      playSong(songURL:string, activeSong:any, songType:string) {
-          this.activeSongURL = songURL;
-          this.currentSong = activeSong;
-          this.currentSongType = songType;
+      playSong(song) {
+        console.log(song);
+        console.log('working');
+          this.activeSongURL = song.url;
+          this.currentSong = song.activeSong;
+          this.currentSongType = song.type;
       }
 
-      filterByDifficulty(difficulty) {
-        this._songsService.filterSongByDifficulty(difficulty, this.activeUserUID).then(result => {
-          console.log(result);
-          this.activeUserSongs = result;
-        });
-      }
+      // filterByDifficulty(difficulty) {
+      //   this._songsService.filterSongByDifficulty(difficulty, this.activeUserUID).then(result => {
+      //     console.log(result);
+      //     this.activeUserSongs = result;
+      //   });
+      // }
 
-      search(term: string): void {
-        // this.searchTerms.next(term);
-        // console.log(term);
-        // this.songs = this.searchTerms
-        //   .debounceTime(300)        // wait for 300ms pause in events
-        //   .distinctUntilChanged()   // ignore if next search term is same as previous
-        //   .switchMap(term => term   // switch to new observable each time
-        //     // return the http search observable
-        //     ? this._songsService.searchSong(term, this.activeUserUID)
-        //     // or the observable of empty heroes if no search term
-        //     : Observable.of<Song[]>([]))
-        //   .catch(error => {
-        //     // TODO: real error handling
-        //     console.log(error);
-        //     return Observable.of<Song[]>([]);
-        //   });
-      }
+      // search(term: string): void {
+      //   this.searchTerms.next(term);
+      //   console.log(term);
+      //   this.songs = this.searchTerms
+      //     .debounceTime(300)        // wait for 300ms pause in events
+      //     .distinctUntilChanged()   // ignore if next search term is same as previous
+      //     .switchMap(term => term   // switch to new observable each time
+      //       // return the http search observable
+      //       ? this._songsService.searchSong(term, this.activeUserUID)
+      //       // or the observable of empty heroes if no search term
+      //       : Observable.of<Song[]>([]))
+      //     .catch(error => {
+      //       // TODO: real error handling
+      //       console.log(error);
+      //       return Observable.of<Song[]>([]);
+      //     });
+      // }
 
       openSongDetails(name:string) {
 
-          if(this.detailPanelCollapsed) {
-             this.detailPanelCollapsed = false;
+          if(!this.detailPanelCollapsed) {
+             this.detailPanelCollapsed = true;
           }
 
           this._songsService.getSongByName(name).then(result => {

@@ -1,12 +1,11 @@
-<sidebar-nav></sidebar-nav>
+<!-- <sidebar-nav></sidebar-nav> -->
 
-    <section class="search-bar">
-        <h3>Search</h3>
-        <!-- <form class="search-bar-input">
+    <!-- <section class="search-bar">
+        <form class="search-bar-input">
             <input #searchBox id="search-box" (keyup)="search(searchBox.value)">
-        </form> -->
+        </form>
         <input type="checkbox" (click)="filterByDifficulty(Hard)" value="Hard">
-    </section>
+    </section> -->
         <!-- <div class="col-lg-2">
             <section class="song-filter">
                 <h4>Filter</h4>
@@ -62,7 +61,8 @@
 [activeSong]="activeSongDetail"
 [detailPanelCollapsed]="detailPanelCollapsed"
 [activeUserSongs]="activeUserSongs"
-[activeUser]="activeUser"></song-detail>
+[activeUser]="activeUser"
+(songChange)="playSong($event)"></song-detail>
 
 <!-- TODO: Make Audio Player a child component of the detail panel and pass data to it on click -->
 <section class="audio-player">
