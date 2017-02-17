@@ -1,0 +1,100 @@
+<sidebar-nav></sidebar-nav>
+<router-outlet></router-outlet>
+<section class="dashboard">
+  <div class="dashboard-member-info">
+    <div class="member-name-and-photo">
+      <img class="user-profile-pic" [src]="userPic" alt="user profile pic">
+      <h5>Details</h5>
+      <h2 class="current-user-name">{{currentUserName}}</h2>
+      <strong class="current-user-part">{{currentUserPart}}</strong>
+    </div>
+    <div class="member-songs-completed">
+      <h5>Songs Completed</h5>
+      <p>{{this.completedSongs}} / {{songCount}}</p>
+    </div>
+
+    <div class="member-songs-percentage">
+      <h5>Percentage</h5>
+      <p>{{songPercentage}}%</p>
+    </div>
+
+    <div class="member-last-completed-song">
+      <h5>Last Completed Song:</h5>
+      <p>{{lastCompletedSong}}</p>
+    </div>
+  </div>
+  <div class="dashboard-member-part-info">
+    <div class="part-container">
+      <h3>Basses</h3>
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <th>Percentage</th>
+        </tr>
+        <tr *ngFor="let bassMember of bassPart">
+          <td><img src="{{bassMember.profilePicURL}}" alt="">{{bassMember.firstName}} {{bassMember.lastName}}</td>
+          <td *ngIf="bassMember.percentage > 0">{{bassMember.percentage}}%</td>
+          <td *ngIf="bassMember.percentage == 0">0%</td>
+        </tr>
+      </table>
+        <!-- <ul *ngFor="let bassMember of bassPart">
+            <li><img src="{{bassMember.profilePicURL}}" alt=""></li>
+            <li>{{bassMember.firstName}} {{bassMember.lastName}}</li>
+            <li *ngIf="bassMember.percentage">{{bassMember.percentage}}%</li>
+        </ul> -->
+    </div>
+
+    <div class="part-container">
+      <h3>First Tenor</h3>
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <th>Percentage</th>
+        </tr>
+        <tr *ngFor="let firstTenorMember of firstTenorPart">
+          <td><img src="{{firstTenorMember.profilePicURL}}" alt="">{{firstTenorMember.firstName}} {{firstTenorMember.lastName}}</td>
+          <td *ngIf="firstTenorMember.percentage > 0">{{firstTenorMember.percentage}}%</td>
+          <td *ngIf="firstTenorMember.percentage == 0">0%</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="part-container">
+      <h3>Second Tenor</h3>
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <th>Percentage</th>
+        </tr>
+        <tr *ngFor="let secondTenorMember of secondTenorPart">
+          <td><img src="{{secondTenorMember.profilePicURL}}" alt="">{{secondTenorMember.firstName}} {{secondTenorMember.lastName}}</td>
+          <td *ngIf="secondTenorMember.percentage > 0">{{secondTenorMember.percentage}}%</td>
+          <td *ngIf="secondTenorMember.percentage == 0">0%</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="part-container">
+      <h3>Baritone</h3>
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <th>Percentage</th>
+        </tr>
+        <tr *ngFor="let baritoneMember of baritonePart">
+          <td><img src="{{baritoneMember.profilePicURL}}" alt="">{{baritoneMember.firstName}} {{baritoneMember.lastName}}</td>
+          <td *ngIf="baritoneMember.percentage">{{baritoneMember.percentage}}%</td>
+          <td *ngIf="baritoneMember.percentage == 0">0%</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+<tbody *ngFor="let song of activeUserSongs" [ngClass]="{'completed': song.completed}">
+<tr (click)="openSongDetails(song.name)">
+  <td>{{song.name}}</td>
+  <td>{{song.difficulty}}</td>
+  <td>{{song.time}}</td>
+</tr>
+</tbody>
+</section>

@@ -7,7 +7,11 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+<<<<<<< HEAD
   styleUrls: ['./app.component.scss']
+=======
+  styleUrls: ['./app.component.css']
+>>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
 })
 
 export class AppComponent implements OnInit {

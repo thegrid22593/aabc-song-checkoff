@@ -18,7 +18,11 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
+<<<<<<< HEAD
         "styles.sass"
+=======
+        "styles.css"
+>>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
       ],
       "scripts": [
       ],

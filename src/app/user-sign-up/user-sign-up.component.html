@@ -1,0 +1,16 @@
+  <div class="user-sign-up-more-info-form">
+    <h2>Please Fill In More Information About Yourself.</h2>
+
+    <form action="">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" [(ngModel)]="firstName" name="first-name">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" [(ngModel)]="lastName" name="last-name">
+        <label class="singing-part-label">Singing Part</label>
+        <input type="radio" [(ngModel)]="singingPart" name="user-singing-part" value="First Tenor"><span>First Tenor</span>
+        <input type="radio" [(ngModel)]="singingPart" name="user-singing-part" value="Second Tenor"><span>Second Tenor</span>
+        <input type="radio" [(ngModel)]="singingPart" name="user-singing-part" value="Baritone"><span>Baritone</span>
+        <input type="radio" [(ngModel)]="singingPart" name="user-singing-part" value="Bass"><span>Bass</span>
+        <button type="button" (click)="updateUserInfo(firstName, lastName, singingPart)">Save</button>
+    </form>
+</div>

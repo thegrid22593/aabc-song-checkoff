@@ -1,0 +1,28 @@
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 6;
+  margin-bottom: -8px;
+
+  .current-song {
+    background: $aabc-dark-blue;
+    list-style: none;
+    padding: 1rem;
+    margin-bottom: 0;
+
+    li {
+      color: $aabc-white;
+
+      span {
+        color: $aabc-gold;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  audio {
+    width: 100%;
+    background: black;
+  }
+}

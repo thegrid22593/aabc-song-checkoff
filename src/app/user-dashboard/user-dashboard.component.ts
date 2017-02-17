@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 import { AngularFire, FirebaseObjectObservable} from 'angularfire2';
@@ -10,6 +11,20 @@ import {UserService} from "../services/user.service";
 })
 
 export class UserDashboardComponent {
+=======
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
+import { AngularFire, FirebaseObjectObservable} from 'angularfire2';
+import {Router, ActivatedRoute} from '@angular/router';
+import {UserService} from "../services/user.service";
+import * as _ from 'lodash';
+
+@Component({
+  selector: 'user-dashboard',
+  templateUrl: './user-dashboard.component.html',
+  styleUrls: ['./user-dashboard.component.scss']
+})
+export class UserDashboardComponent implements OnInit {
+>>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
 
     public user: any;
     public userName: string;
@@ -34,9 +49,19 @@ export class UserDashboardComponent {
 
     // Parts
     public bassPart;
+<<<<<<< HEAD
     public firstTenorPart;
     public secondTenorPart;
     public baritonePart;
+=======
+    public bassPartPreOrdered;
+    public firstTenorPart;
+    public firstTenorPartPreOrdered;
+    public secondTenorPart;
+    public secondTenorPartPreOrdered;
+    public baritonePart;
+    public baritonePartPreOrdered;
+>>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
 
     constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
 
@@ -45,7 +70,11 @@ export class UserDashboardComponent {
     ngOnInit() {
         this.af.auth.subscribe(user => {
             if(!user) {
+<<<<<<< HEAD
                 alert('please log in or sign up!');
+=======
+                this._router.navigate[('sign-in')];
+>>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
             } else {
                 this.userName = user.auth.displayName;
                 this.userPic = user.auth.photoURL;
@@ -91,6 +120,7 @@ export class UserDashboardComponent {
     }
 
     getSingingParts() {
+<<<<<<< HEAD
       
         this._userService.getUsersByPart('Bass').then(result => {
             console.log(result);
@@ -114,6 +144,27 @@ export class UserDashboardComponent {
             console.log(result);
             this.baritonePart = result;
             console.log('users singing part', this.baritonePart);
+=======
+
+        this._userService.getUsersByPart('Bass').then(result => {
+            this.bassPartPreOrdered = result;
+            this.bassPart = _.orderBy(this.bassPartPreOrdered, ['percentage'], ['desc']);
+        });
+
+        this._userService.getUsersByPart('First Tenor').then(result => {
+            this.firstTenorPartPreOrdered = result;
+            this.firstTenorPart = _.orderBy(this.firstTenorPartPreOrdered, ['percentage'], ['desc']);
+        });
+
+        this._userService.getUsersByPart('Second Tenor').then(result => {
+          this.secondTenorPartPreOrdered = result;
+            this.secondTenorPart = _.orderBy(this.secondTenorPartPreOrdered, ['percentage'], ['desc']);
+        });
+
+        this._userService.getUsersByPart('Baritone').then(result => {
+            this.baritonePartPreOrdered = result;
+            this.baritonePart = _.orderBy(this.baritonePartPreOrdered, ['percentage'], ['desc']);
+>>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
         })
     }
 
