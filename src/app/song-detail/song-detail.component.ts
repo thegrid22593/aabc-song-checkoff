@@ -22,19 +22,14 @@ export class SongDetailComponent implements OnChanges {
 
   public detailPanelImg: string = '../../images/detail-panel.jpg';
 
-<<<<<<< HEAD
-  constructor(private _songsService: SongService, private _userService: UserService) {
-=======
-  constructor() {
-    
->>>>>>> 8d6e9ee8255f7d4f8f90b83e3245d3f27c37217c
-  }
+  constructor(private _songsService: SongService, private _userService: UserService) { }
+
 
   ngOnInit() {
   }
 
   ngOnChanges() {
-    
+
   }
 
   songCompleted(name:string) {

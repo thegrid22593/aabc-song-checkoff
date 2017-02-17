@@ -27,17 +27,9 @@ export class SongsComponent implements OnInit {
 
   public songList: any;
   public activeSongDetail: any;
-
-<<<<<<< HEAD
-      constructor(private _songsService: SongService, private _af: AngularFire, private _userService: UserService) {
-=======
   public activeUserUID: string;
-  private searchTerms = new Subject<string>();
 
-      constructor(private _songsService: SongService, private router: Router, private route: ActivatedRoute, private _af: AngularFire, private _userService: UserService) {
->>>>>>> 8d6e9ee8255f7d4f8f90b83e3245d3f27c37217c
-          this.detailPanelCollapsed = true;
-      }
+  constructor(private _songsService: SongService, private _af: AngularFire, private _userService: UserService) { }
 
       ngOnInit() {
           let activeUserUID;
