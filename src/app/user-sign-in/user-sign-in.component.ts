@@ -1,25 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-<<<<<<< HEAD
-=======
 import { Validators } from '@angular/forms';
->>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import {UserService} from "../services/user.service";
 import {SongService} from "../services/songs.service";
 import 'rxjs/Rx';
 
-<<<<<<< HEAD
-
-@Component({
-    selector: 'user-sign-in',
-    template: require('./user-sign-in.html')
-=======
 @Component({
   selector: 'user-sign-in',
   templateUrl: './user-sign-in.html',
   styleUrls: ['./user-sign-in.component.scss']
->>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
 })
 
 export class UserSignInComponent implements OnInit {

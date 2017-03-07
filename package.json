@@ -21,17 +21,14 @@
     "@angular/platform-browser": "^2.3.1",
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
-<<<<<<< HEAD
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.0",
     "angularfire2": "^2.0.0-beta.6",
     "bootstrap": "^4.0.0-alpha.2",
     "bootstrap-block-grid": "^1.1.7",
     "core-js": "^2.4.1",
-=======
     "angularfire2": "^2.0.0-beta.6",
     "core-js": "^2.4.1",
     "jquery": "^3.1.1",
->>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
     "lodash": "^4.17.2",
     "rxjs": "^5.0.1",
     "ts-helpers": "^1.1.1",
@@ -40,10 +37,7 @@
   "devDependencies": {
     "@angular/compiler-cli": "^2.3.1",
     "@types/jasmine": "2.5.38",
-<<<<<<< HEAD
-=======
     "@types/jquery": "^2.0.34",
->>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
     "@types/lodash": "^4.14.44",
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.24",
@@ -58,11 +52,7 @@
     "protractor": "~4.0.13",
     "ts-node": "1.2.1",
     "tslint": "^4.0.2",
-<<<<<<< HEAD
     "typescript": "~2.0.3",
     "typings": "^1.0.4"
-=======
-    "typescript": "~2.0.3"
->>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
   }
 }

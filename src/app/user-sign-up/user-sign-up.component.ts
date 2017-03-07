@@ -5,20 +5,12 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import {UserService} from "../services/user.service";
 import {SongService} from "../services/songs.service";
 
-<<<<<<< HEAD
-
-@Component({
-    selector: 'user-sign-up',
-    template: require('./user-sign-up.html')
-})
-=======
 @Component({
   selector: 'user-sign-up',
   templateUrl: './user-sign-up.component.html',
   styleUrls: ['./user-sign-up.component.scss']
 })
 
->>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
 export class UserSignUpComponent implements OnInit {
     singingPart: string;
     firstName: string;

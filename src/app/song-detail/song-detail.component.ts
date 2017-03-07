@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-import {Component} from '@angular/core';
-import {SongService} from '../services/songs.service';
-import {Router, ActivatedRoute} from '@angular/router';
-import * as $ from 'jquery';
-
-@Component({
-    selector: 'song-detail',
-    template: require('./song-detail.html'),
-})
-
-export class SongDetailComponent {
-
-    constructor(private _songsService: SongService, private route: ActivatedRoute) {
-
-    }
-}
-=======
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import {SongService} from '../services/songs.service';
 import {UserService} from '../services/user.service';
@@ -73,4 +55,3 @@ export class SongDetailComponent implements OnChanges {
   }
 
 }
->>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613

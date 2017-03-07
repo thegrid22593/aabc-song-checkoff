@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
-<<<<<<< HEAD
 import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
 import {Router, ActivatedRoute} from '@angular/router';
@@ -9,17 +8,7 @@ import {AngularFire} from 'angularfire2';
 
 @Injectable()
 export class UserService {
-=======
-import {Router, ActivatedRoute} from '@angular/router';
-import {AngularFire, FirebaseListObservable } from 'angularfire2';
-import * as firebase from 'firebase';
-import * as _ from 'lodash';
-import 'rxjs/add/operator/map';
 
-@Injectable()
-export class UserService {
-
->>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
     constructor(private _http: Http, private _af: AngularFire, private _router: Router) {
 
     }
@@ -52,7 +41,6 @@ export class UserService {
         })
     }
 
-<<<<<<< HEAD
     getCurrentUser() {
         this._af.database.list('https://aabc-checkoff.firebaseio.com/users/EWMIQ5yKlcgj3vxL6WZxu0Uuq5o1');
     }
@@ -73,25 +61,6 @@ export class UserService {
         );
     }
 
-=======
-    addUserProfilePic() {
-
-    }
-
-    getCurrentUser() {
-        this._af.database.list('https://aabc-checkoff.firebaseio.com/users/EWMIQ5yKlcgj3vxL6WZxu0Uuq5o1');
-    }
-
-    // fetchData() {
-    //     console.log('running');
-    //     return this._http.get('https://aabc-checkoff.firebaseio.com/users/.json').map(
-    //         (res) => res.json()
-    //     ).subscribe(
-    //         (data) => console.log(data)
-    //     );
-    // }
-
->>>>>>> 00c402289e8e5261cfc12d5168c4590b698ca613
     private handleError(error: Response) {
         console.error(error);
         if(error.status == 404) {
