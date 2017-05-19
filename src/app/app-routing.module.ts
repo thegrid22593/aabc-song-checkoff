@@ -3,7 +3,7 @@ import { RouterModule, Routes }  from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import {NavbarComponent} from './shared/navbar/navbar.component';
+import { NavBarComponent } from './shared/navbar/navbar.component';
 import { UserSignInComponent } from './user-sign-in/user-sign-in.component';
 import { SidebarNavComponent } from './shared/sidebar-nav/sidebar-nav.component';
 import { SoloSongsComponent } from './solo-songs/solo-songs.component';
@@ -34,7 +34,7 @@ const appRoutes: Routes = [
     component: WhiteShirtSongsComponent
   },
   {
-    path: 'blue-shirt-songs',
+    path: 'songs',
     component: SongsComponent
   },
   {
