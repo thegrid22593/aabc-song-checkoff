@@ -20,10 +20,10 @@ export class AppComponent implements OnInit {
     this.af.auth.subscribe(user => {
       if(user) {
         this._router.navigate(['dashboard']);
-        console.log(user);
+        console.log('user', user);
       } else {
         this._router.navigate(['sign-in']);
-        console.log(user);
+        console.log('user', user);
       }
     });
   }

@@ -30,8 +30,8 @@ export class UserSignInComponent implements OnInit {
     signInPassword: string;
 
     constructor(private _songsService: SongService, private _router: Router, public af: AngularFire) {
-        this.backgroundImage = '../images/main-bg.jpg';
-        this.logoIcon = '../images/logo-icon.png';
+        this.backgroundImage = './assets/images/main-bg.jpg';
+        this.logoIcon = './assets/images/logo-icon.png';
     }
 
     ngOnInit() {
