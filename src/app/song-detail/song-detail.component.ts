@@ -20,7 +20,7 @@ export class SongDetailComponent implements OnChanges {
   public totalSongs: any
   public songPercentage: any;
 
-  public detailPanelImg: string = '../../images/detail-panel.jpg';
+  public detailPanelImg: string = './assets/images/detail-panel.jpg';
 
   constructor(private _songsService: SongService, private _userService: UserService) { }
 

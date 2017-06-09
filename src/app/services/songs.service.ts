@@ -11,28 +11,28 @@ export class SongService {
     }
 
     getAllSongs() {
-        return this._http.get('/fixtures/songs.json')
+        return this._http.get('./assets/fixtures/songs.json')
             .map((response: Response) => response.json().songs)
             .toPromise()
             .catch(this.handleError);
     }
 
     getAllSoloSongs() {
-        return this._http.get('/fixtures/songs.json')
+        return this._http.get('./assets/fixtures/songs.json')
             .map((response: Response) => _.filter(response.json().songs, {'solo': true}))
             .toPromise()
             .catch(this.handleError);
     }
 
     getSongByName(songName:string) {
-        return this._http.get('/fixtures/songs.json')
+        return this._http.get('./assets/fixtures/songs.json')
             .map((response: Response) => _.find(response.json().songs, {'name': songName}))
             .toPromise()
             .catch(this.handleError);
     }
 
     searchSongs(str:string) {
-        return this._http.get('/fixtures/songs.json')
+        return this._http.get('./assets/fixtures/songs.json')
             .map((response: Response) => _.find(response.json().songs, {'name': str}))
     }
 

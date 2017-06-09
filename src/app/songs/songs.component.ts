@@ -19,7 +19,7 @@ export class SongsComponent implements OnInit {
   public activeSongURL: any;
   public searchStr: string;
   public searchString: string;
-  public detailPanelCollapsed: boolean;
+  public detailPanelCollapsed: boolean = false;
   public currentSong: any;
   public currentSongType: string;
   public activeUser: any;
@@ -76,15 +76,16 @@ export class SongsComponent implements OnInit {
       }
 
       openSongDetails(name:string) {
-
-          if(this.detailPanelCollapsed) {
-             this.detailPanelCollapsed = false;
+          console.log(this.detailPanelCollapsed);
+          if(!this.detailPanelCollapsed) {
+             this.detailPanelCollapsed = true;
+             console.log(this.detailPanelCollapsed)
           }
 
           this._songsService.getSongByName(name).then(result => {
               this.activeSongDetail = result;
               console.log(this.activeSongDetail);
           })
-          console.log('clicked', name);
+          // console.log('clicked', name);
       }
   }
