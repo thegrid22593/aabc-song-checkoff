@@ -18,15 +18,13 @@ export class NavBarComponent {
     constructor(public af: AngularFire, private _router: Router) {
         this.af.auth.subscribe(user => {
 
-            if(!user) {
-
-            } else {
-                this.activeUser = user;
-                this.displayName = user.auth.displayName;
-                console.log('active', this.activeUser);
+            if(user) {
+              this.activeUser = user;
+              this.displayName = user.auth.displayName;
+              console.log('active', this.activeUser);
             }
 
-        })
+        });
     }
 
     logout() {
