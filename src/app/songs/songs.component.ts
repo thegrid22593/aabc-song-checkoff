@@ -20,7 +20,6 @@ export class SongsComponent implements OnInit {
   public searchStr: string;
   public searchString: string;
   public detailPanelCollapsed: boolean = false;
-  public currentSong: any;
   public currentSongType: string;
   public activeUser: any;
   public activeUserSongs: any;
@@ -44,35 +43,11 @@ export class SongsComponent implements OnInit {
           });
       }
 
-      playSong(songURL:string, activeSong:any, songType:string) {
-          this.activeSongURL = songURL;
-          this.currentSong = activeSong;
-          this.currentSongType = songType;
-      }
-
       filterByDifficulty(difficulty) {
         this._songsService.filterSongByDifficulty(difficulty, this.activeUserUID).then(result => {
           console.log(result);
           this.activeUserSongs = result;
         });
-      }
-
-      search(term: string): void {
-        // this.searchTerms.next(term);
-        // console.log(term);
-        // this.songs = this.searchTerms
-        //   .debounceTime(300)        // wait for 300ms pause in events
-        //   .distinctUntilChanged()   // ignore if next search term is same as previous
-        //   .switchMap(term => term   // switch to new observable each time
-        //     // return the http search observable
-        //     ? this._songsService.searchSong(term, this.activeUserUID)
-        //     // or the observable of empty heroes if no search term
-        //     : Observable.of<Song[]>([]))
-        //   .catch(error => {
-        //     // TODO: real error handling
-        //     console.log(error);
-        //     return Observable.of<Song[]>([]);
-        //   });
       }
 
       openSongDetails(name:string) {
@@ -86,6 +61,5 @@ export class SongsComponent implements OnInit {
               this.activeSongDetail = result;
               console.log(this.activeSongDetail);
           })
-          // console.log('clicked', name);
       }
   }

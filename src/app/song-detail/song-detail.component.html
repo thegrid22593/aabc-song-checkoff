@@ -16,3 +16,12 @@
     </div>
     <button class="checked-off-btn" (click)="songCompleted(activeSong.name)">Checked Off</button>
 </section>
+
+<section class="audio-player">
+    <ul class="current-song" *ngIf="currentSong">
+        <li><span>Current Song:</span> {{currentSong.name}} | {{currentSongType}}</li>
+    </ul>
+    <audio src="{{activeSongURL}}" autoplay controls="controls">
+        Your browser does not support the <code>audio</code> element.
+    </audio>
+</section>

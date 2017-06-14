@@ -54,7 +54,6 @@ export class UserSignInComponent implements OnInit {
     }
 
     logout() {
-      console.log('logout');
       this.af.auth.logout();
 
       if(!this.af.auth.subscribe(auth => console.log(auth))) {

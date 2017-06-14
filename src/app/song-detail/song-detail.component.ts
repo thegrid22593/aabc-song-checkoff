@@ -19,6 +19,8 @@ export class SongDetailComponent implements OnChanges {
 
   public totalSongs: any
   public songPercentage: any;
+  public activeSongURL: string;
+  public currentSong = false;
 
   public detailPanelImg: string = './assets/images/detail-panel.jpg';
 
@@ -26,7 +28,7 @@ export class SongDetailComponent implements OnChanges {
 
 
   ngOnInit() {
-    
+    console.log(this.currentSong);
   }
 
   ngOnChanges() {
@@ -53,6 +55,13 @@ export class SongDetailComponent implements OnChanges {
       }
 
       this._userService.updateUser(this.activeUser.uid, updatedUser);
+  }
+
+  playSong(songURL:string, activeSong:any, songType:string) {
+      console.log('played');
+      this.activeSongURL = songURL;
+      this.currentSong = activeSong;
+      let currentSongType = songType;
   }
 
 }

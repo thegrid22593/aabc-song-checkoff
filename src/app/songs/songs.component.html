@@ -62,14 +62,7 @@
 [activeSong]="activeSongDetail"
 [detailPanelCollapsed]="detailPanelCollapsed"
 [activeUserSongs]="activeUserSongs"
-[activeUser]="activeUser"></song-detail>
+[activeUser]="activeUser">
+</song-detail>
 
 <!-- TODO: Make Audio Player a child component of the detail panel and pass data to it on click -->
-<section class="audio-player">
-    <ul class="current-song" *ngIf="currentSong">
-        <li><span>Current Song:</span> {{currentSong.name}} | {{currentSongType}}</li>
-    </ul>
-    <audio src="{{activeSongURL}}" autoplay controls="controls">
-        Your browser does not support the <code>audio</code> element.
-    </audio>
-</section>
