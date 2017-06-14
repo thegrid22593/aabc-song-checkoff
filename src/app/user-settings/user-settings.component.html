@@ -6,3 +6,12 @@
         <button type="button" (click)="updateDisplayName(newDisplayName)">Update</button>
     </form>
 </div>
+
+<div>
+  <form action="">
+    <input type="text" [(ngModel)]="userName" name="userName">
+    <input type="text" [(ngModel)]="currentUserStartDate" name="currentUserStartDate">
+    <input type="text" [(ngModel)]="currentUserPart" name="currentUserPart">
+    <button type="button" (click)="saveSettings()">Save Settings</button>
+  </form>
+</div>

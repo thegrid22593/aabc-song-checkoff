@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 import {UserService} from '../services/user.service';
 import { AngularFire } from 'angularfire2';
 import {Router, ActivatedRoute} from '@angular/router';
@@ -10,7 +10,7 @@ import * as firebase from 'firebase';
       styleUrls: ['./user-settings.component.scss']
 })
 
-export class UserSettingsComponent {
+export class UserSettingsComponent implements OnInit {
 
     public user: any;
     public userName: string;
@@ -28,32 +28,37 @@ export class UserSettingsComponent {
     // Edit User
     newDisplayName: string;
     public newPhotoURL;
+    public currentUserName: string;
+    public currentUserPart: string;
+    public currentUserStartDate: string;
 
     constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
-      // Set Firebase Config
-    //   const firebaseConfig = {
-    //     apiKey: "AIzaSyAYThpdcu3zb4ll_q6BJkpaWYS8XTVVz4Y",
-    //     authDomain: "aabc-checkoff.firebaseapp.com",
-    //     databaseURL: "https://aabc-checkoff.firebaseio.com",
-    //     storageBucket: "aabc-checkoff.appspot.com",
-    //     messagingSenderId: "920421563150"
-    //   }
-    //   // Initiazlize Firebase
-    //   firebase.initializeApp(firebaseConfig);
       // Set Firebase Storage Reference
       this.storage = firebase.storage().ref();
+    }
 
-      // Grab Current User
-        this.af.auth.subscribe(user => {
-            console.log('Current User:', user);
-            if(!user) {
-                alert('please log in or sign up!');
-            } else {
-                this.userName = user.auth.displayName;
-                this.userID = user.uid;
-            }
-        })
+    ngOnInit() {
+        // Grab Current User
+          this.af.auth.subscribe(user => {
+              if(!user) {
 
+                  alert('please log in or sign up!');
+              } else {
+                  console.log('settings user', user);
+                  this.userName = user.auth.displayName;
+                  this.userID = user.uid;
+
+                  this._userService.getUserByUID(this.userID).then(result => {
+                      this.currentUser = result;
+                      // this.currentUserSongs = this.currentUser.songs;
+                      this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
+                      this.currentUserPart = this.currentUser.singingPart;
+                      // this.lastCompletedSong = this.currentUser.lastCompletedSong;
+                      // TODO: Format this date...
+                      this.currentUserStartDate = this.currentUser.startDate;
+                  });
+              }
+          });
 
     }
 
