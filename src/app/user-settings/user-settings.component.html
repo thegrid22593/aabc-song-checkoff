@@ -9,7 +9,8 @@
 
 <div>
   <form action="">
-    <input type="text" [(ngModel)]="userName" name="userName">
+    <input type="text" [(ngModel)]="currentUserFirstName" name="currentUserFirstName">
+    <input type="text" [(ngModel)]="currentUserLastName" name="currentUserLastName">
     <input type="text" [(ngModel)]="currentUserStartDate" name="currentUserStartDate">
     <input type="text" [(ngModel)]="currentUserPart" name="currentUserPart">
     <button type="button" (click)="saveSettings()">Save Settings</button>
