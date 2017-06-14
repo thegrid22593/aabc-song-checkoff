@@ -58,6 +58,7 @@ export class UserSignUpComponent implements OnInit {
             }
 
             this._userService.addUser(newUser.uid, newUser);
+            this._router.navigate(['dashboard']);
         });
     }
 }

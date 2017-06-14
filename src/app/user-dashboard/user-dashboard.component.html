@@ -26,7 +26,8 @@
   <div class="dashboard-member-part-info">
     <div class="part-container">
       <h3>Basses</h3>
-      <table class="table">
+      <div class="part-loading"  *ngIf="!bassPart"></div>
+      <table class="table" *ngIf="bassPart">
         <tr>
           <th>Name</th>
           <th>Percentage</th>
@@ -37,16 +38,13 @@
           <td *ngIf="bassMember.percentage == 0">0%</td>
         </tr>
       </table>
-        <!-- <ul *ngFor="let bassMember of bassPart">
-            <li><img src="{{bassMember.profilePicURL}}" alt=""></li>
-            <li>{{bassMember.firstName}} {{bassMember.lastName}}</li>
-            <li *ngIf="bassMember.percentage">{{bassMember.percentage}}%</li>
-        </ul> -->
     </div>
+
 
     <div class="part-container">
       <h3>First Tenor</h3>
-      <table class="table">
+      <div class="part-loading" *ngIf="!firstTenorPart"></div>
+      <table class="table" *ngIf="firstTenorPart">
         <tr>
           <th>Name</th>
           <th>Percentage</th>
@@ -61,7 +59,8 @@
 
     <div class="part-container">
       <h3>Second Tenor</h3>
-      <table class="table">
+      <div class="part-loading" *ngIf="!secondTenorPart"></div>
+      <table class="table" *ngIf="secondTenorPart">
         <tr>
           <th>Name</th>
           <th>Percentage</th>
@@ -76,7 +75,8 @@
 
     <div class="part-container">
       <h3>Baritone</h3>
-      <table class="table">
+      <div class="part-loading" *ngIf="!baritonePart"></div>
+      <table class="table" *ngIf="baritonePart">
         <tr>
           <th>Name</th>
           <th>Percentage</th>

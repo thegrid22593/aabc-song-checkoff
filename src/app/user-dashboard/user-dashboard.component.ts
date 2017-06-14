@@ -98,25 +98,25 @@ export class UserDashboardComponent implements OnInit {
     getSingingParts() {
 
         this._userService.getUsersByPart('Bass').then(result => {
-            console.log(result);
+            console.log('bass', result);
             this.bassPart = result;
             console.log('users singing part', result);
         });
 
         this._userService.getUsersByPart('First Tenor').then(result => {
-            console.log(result);
+            console.log('first tenor', result);
             this.firstTenorPart = result;
             console.log('users singing part', result);
         });
 
         this._userService.getUsersByPart('Second Tenor').then(result => {
-            console.log(result);
+            console.log('second tenors', result);
             this.secondTenorPart = result;
             console.log('users singing part', result);
         });
 
         this._userService.getUsersByPart('Baritone').then(result => {
-            console.log(result);
+            console.log('baritones', result);
             this.baritonePart = result;
             console.log('users singing part', this.baritonePart);
     });
