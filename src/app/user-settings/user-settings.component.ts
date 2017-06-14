@@ -47,7 +47,6 @@ export class UserSettingsComponent implements OnInit {
                   alert('please log in or sign up!');
               } else {
                   console.log('settings user', user);
-                  this.userName = user.auth.displayName;
                   this.userID = user.uid;
 
                   this._userService.getUserByUID(this.userID).then(result => {

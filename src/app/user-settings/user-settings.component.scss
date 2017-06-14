@@ -1,0 +1,23 @@
+@import '../../scss/partials/base';
+
+form.user-settings {
+  label {
+    display: block;
+  }
+  input {
+    width: 100%;
+  }
+
+  button {
+    background: $aabc-red;
+    width: 20%;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    color: $aabc-white;
+    @include aabc-transition(0.2s all ease-in-out);
+    &:hover {
+      background: darken($aabc-red, 10%);
+      cursor: pointer;
+    }
+  }
+}
