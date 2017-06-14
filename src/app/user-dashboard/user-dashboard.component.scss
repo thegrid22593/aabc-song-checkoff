@@ -85,15 +85,12 @@ section.dashboard {
       font-size: 1.2rem;
       color: $aabc-cold-grey;
       padding-bottom: 1rem;
-      border-bottom: 1px solid lighten($aabc-cool-grey, 50%);
       margin-bottom: 1rem;
     }
 
     table {
       tr {
-        border-top: 1px solid lighten($aabc-cool-grey, 50%);
         td {
-          // padding: 0.5rem;
           img {
             border-radius: 50%;
             max-width: 40px;

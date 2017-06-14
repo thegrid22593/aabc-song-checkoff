@@ -3,7 +3,7 @@
 <section class="dashboard">
   <div class="dashboard-member-info">
     <div class="member-name-and-photo">
-      <img class="user-profile-pic" [src]="userPic" alt="user profile pic">
+      <img class="user-profile-pic" *ngIf="userPic" [src]="userPic" alt="user profile pic">
       <h5>Details</h5>
       <h2 class="current-user-name">{{currentUserName}}</h2>
       <strong class="current-user-part">{{currentUserPart}}</strong>
@@ -32,7 +32,7 @@
           <th>Percentage</th>
         </tr>
         <tr *ngFor="let bassMember of bassPart">
-          <td><img src="{{bassMember.profilePicURL}}" alt="">{{bassMember.firstName}} {{bassMember.lastName}}</td>
+          <td><img *ngIf="bassMember.profilePicURL" src="{{bassMember.profilePicURL}}" alt="">{{bassMember.firstName}} {{bassMember.lastName}}</td>
           <td *ngIf="bassMember.percentage > 0">{{bassMember.percentage}}%</td>
           <td *ngIf="bassMember.percentage == 0">0%</td>
         </tr>
@@ -52,7 +52,7 @@
           <th>Percentage</th>
         </tr>
         <tr *ngFor="let firstTenorMember of firstTenorPart">
-          <td><img src="{{firstTenorMember.profilePicURL}}" alt="">{{firstTenorMember.firstName}} {{firstTenorMember.lastName}}</td>
+          <td><img *ngIf="firstTenorMember.profilePicURL" src="{{firstTenorMember.profilePicURL}}" alt="">{{firstTenorMember.firstName}} {{firstTenorMember.lastName}}</td>
           <td *ngIf="firstTenorMember.percentage > 0">{{firstTenorMember.percentage}}%</td>
           <td *ngIf="firstTenorMember.percentage == 0">0%</td>
         </tr>
@@ -67,7 +67,7 @@
           <th>Percentage</th>
         </tr>
         <tr *ngFor="let secondTenorMember of secondTenorPart">
-          <td><img src="{{secondTenorMember.profilePicURL}}" alt="">{{secondTenorMember.firstName}} {{secondTenorMember.lastName}}</td>
+          <td><img *ngIf="secondTenorMember.profilePicURL" src="{{secondTenorMember.profilePicURL}}" alt="">{{secondTenorMember.firstName}} {{secondTenorMember.lastName}}</td>
           <td *ngIf="secondTenorMember.percentage > 0">{{secondTenorMember.percentage}}%</td>
           <td *ngIf="secondTenorMember.percentage == 0">0%</td>
         </tr>
@@ -82,7 +82,7 @@
           <th>Percentage</th>
         </tr>
         <tr *ngFor="let baritoneMember of baritonePart">
-          <td><img src="{{baritoneMember.profilePicURL}}" alt="">{{baritoneMember.firstName}} {{baritoneMember.lastName}}</td>
+          <td><img *ngIf="baritoneMember.profilePicURL" src="{{baritoneMember.profilePicURL}}" alt="">{{baritoneMember.firstName}} {{baritoneMember.lastName}}</td>
           <td *ngIf="baritoneMember.percentage">{{baritoneMember.percentage}}%</td>
           <td *ngIf="baritoneMember.percentage == 0">0%</td>
         </tr>

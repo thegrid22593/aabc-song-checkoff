@@ -31,6 +31,7 @@ export class UserDashboardComponent implements OnInit {
     public songPercentage;
     public usersSingingPart: any;
     public userPic: string;
+    public defaultUserPic: string = '../assets/images/user.png';
 
     // Parts
     public bassPart;
@@ -119,7 +120,7 @@ export class UserDashboardComponent implements OnInit {
             this.baritonePart = result;
             console.log('users singing part', this.baritonePart);
     });
-    
+
   }
 
 }
