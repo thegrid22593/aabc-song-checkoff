@@ -62,4 +62,9 @@ export class SongsComponent implements OnInit {
               console.log(this.activeSongDetail);
           })
       }
+
+      detailPanelUpdate(event) {
+        console.log('event', event);
+        this.detailPanelCollapsed = event.detailPanel;
+      }
   }

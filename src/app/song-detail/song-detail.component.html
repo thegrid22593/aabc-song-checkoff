@@ -1,6 +1,7 @@
 <section class="song-detail-panel" [ngClass]="{'active': detailPanelCollapsed}">
     <div class="crop-height">
         <img [src]="detailPanelImg" alt="The All-American Boys Chorus">
+        <i class="fa fa-close" aria-hidden="true" (click)="closePanel()"></i>
     </div>
     <div class="song-details" *ngIf="activeSong">
         <h4 class="song-detail-name">{{activeSong.name}}</h4>

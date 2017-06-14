@@ -25,6 +25,20 @@
       width: auto\9; /* ie8+9 */
       -ms-interpolation-mode: bicubic;
     }
+
+    i {
+      position: absolute;
+      top: 0;
+      z-index: 1000;
+      left: 7px;
+      font-size: 21px;
+      color: white;
+      @include aabc-transition(0.2s all ease-in-out);
+      &:hover {
+        color: darken($aabc-white, 10%);
+        cursor: pointer;
+      }
+    }
   }
 
   .song-details {

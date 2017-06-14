@@ -68,7 +68,8 @@
 [activeSong]="activeSongDetail"
 [detailPanelCollapsed]="detailPanelCollapsed"
 [activeUserSongs]="activeUserSongs"
-[activeUser]="activeUser">
+[activeUser]="activeUser"
+(detailPanel)="detailPanelUpdate($event)">
 </song-detail>
 
 <!-- TODO: Make Audio Player a child component of the detail panel and pass data to it on click -->

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import {SongService} from '../services/songs.service';
 import {UserService} from '../services/user.service';
 
@@ -16,6 +16,9 @@ export class SongDetailComponent implements OnChanges {
   @Input() detailPanelCollapsed;
   @Input() activeUserSongs;
   @Input() activeUser;
+
+  // To Song Component
+  @Output() detailPanel: EventEmitter<any> = new EventEmitter();
 
   public totalSongs: any
   public songPercentage: any;
@@ -62,6 +65,13 @@ export class SongDetailComponent implements OnChanges {
       this.activeSongURL = songURL;
       this.currentSong = activeSong;
       let currentSongType = songType;
+  }
+
+  closePanel() {
+    if(this.detailPanelCollapsed) {
+      this.detailPanelCollapsed = false;
+      this.detailPanel.emit({detailPanel: this.detailPanelCollapsed});
+    }
   }
 
 }
