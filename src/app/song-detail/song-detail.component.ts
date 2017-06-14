@@ -26,6 +26,7 @@ export class SongDetailComponent implements OnChanges {
 
 
   ngOnInit() {
+    
   }
 
   ngOnChanges() {
