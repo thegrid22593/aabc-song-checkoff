@@ -23,6 +23,7 @@
       <p>{{lastCompletedSong}}</p>
     </div>
   </div>
+
   <div class="dashboard-member-part-info">
     <div class="part-container">
       <h3>Basses</h3>
@@ -39,7 +40,6 @@
         </tr>
       </table>
     </div>
-
 
     <div class="part-container">
       <h3>First Tenor</h3>
@@ -90,11 +90,11 @@
     </div>
   </div>
 
-<tbody *ngFor="let song of activeUserSongs" [ngClass]="{'completed': song.completed}">
-<tr (click)="openSongDetails(song.name)">
-  <td>{{song.name}}</td>
-  <td>{{song.difficulty}}</td>
-  <td>{{song.time}}</td>
-</tr>
-</tbody>
+  <tbody *ngFor="let song of activeUserSongs" [ngClass]="{'completed': song.completed}">
+    <tr (click)="openSongDetails(song.name)">
+      <td>{{song.name}}</td>
+      <td>{{song.difficulty}}</td>
+      <td>{{song.time}}</td>
+    </tr>
+  </tbody>
 </section>
