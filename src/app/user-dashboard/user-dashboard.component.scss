@@ -91,9 +91,9 @@ $pulse-duration: 750ms;
 
 .dashboard-member-part-info {
   .part-container {
-    width: 50%;
-    float: left;
-    padding: 2rem;
+    width: calc(50% - 10px);
+    display: inline-block;
+    padding: 1rem 2rem;
     .part-loading {
         border-radius: 50%;
         width: $base-line-height;
