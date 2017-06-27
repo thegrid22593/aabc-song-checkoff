@@ -54,40 +54,30 @@ export class UserDashboardComponent implements OnInit {
       } else {
         this.userName = user.auth.displayName;
         this.userPic = user.auth.photoURL;
-        if( !localStorage.getItem('currentUser') ) {
-          this._userService.getUserByUID(user.uid).then(result => {
-            this.currentUser = result;
-            localStorage.setItem('currentUser', JSON.stringify( this.currentUser ));
-            this.assignUserData();
-          });
-        } else {
-          this.currentUser = JSON.parse( localStorage.getItem('currentUser') );
-          this.assignUserData();
-        }
+        this._userService.getUserByUID(user.uid).then(result => {
+          this.currentUser = result;
+          localStorage.setItem('currentUser', this.currentUser);
+          this.currentUserSongs = this.currentUser.songs;
+          this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
+          this.currentUserPart = this.currentUser.singingPart;
+          this.lastCompletedSong = this.currentUser.lastCompletedSong;
+          this.currentUserStartDate = this.currentUser.startDate;
+          console.log('currentUser', this.currentUser);
 
+          for(let song of this.currentUserSongs) {
+            if(song.completed == true) {
+              this.completedSongs++;
+            } else {
+              this.unCompletedSongs++;
+            }
+          }
+
+          this.songCount = this.currentUserSongs.length;
+          this.getSingingParts();
+          this.getSongPercentage(this.completedSongs, this.currentUserSongs);
+        });
       }
     });
-  }
-
-  assignUserData() {
-    this.currentUserSongs = this.currentUser.songs;
-    this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
-    this.currentUserPart = this.currentUser.singingPart;
-    this.lastCompletedSong = this.currentUser.lastCompletedSong;
-    this.currentUserStartDate = this.currentUser.startDate;
-    console.log('currentUser', this.currentUser);
-
-    for(let song of this.currentUserSongs) {
-      if(song.completed == true) {
-        this.completedSongs++;
-      } else {
-        this.unCompletedSongs++;
-      }
-    }
-
-    this.songCount = this.currentUserSongs.length;
-    this.getSingingParts();
-    this.getSongPercentage(this.completedSongs, this.currentUserSongs);
   }
 
   getSongPercentage(completedSongs, currentUserSongs) {
