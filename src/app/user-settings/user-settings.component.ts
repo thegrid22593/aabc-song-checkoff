@@ -24,6 +24,7 @@ export class UserSettingsComponent implements OnInit {
     public path;
     public storageref;
     public storage;
+    public uploadProgress;
 
     // Edit User
     newDisplayName: string;
@@ -74,8 +75,10 @@ export class UserSettingsComponent implements OnInit {
       let uploadTask = this.storageref.put(files);
 
       uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, function(snapshot) {
-        let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done!');
+          console.log(snapshot.bytesTransferred);
+          console.log(snapshot.totalBytes);
+        this.uploadProgress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + this.uploadProgress + '% done!');
         switch(snapshot.state) {
           case firebase.storage.TaskState.PAUSED:
           console.log('upload is paused');

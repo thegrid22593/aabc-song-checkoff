@@ -5,6 +5,7 @@
     <form action="">
         <input type="text" name="name" [(ngModel)]="newDisplayName">
         <input type="file" id="filebutton" value="upload" #filebtn (change)="filebuttoni($event)">
+        <div *ngIf="uploadProgress">{{uploadProgress}}</div>
         <button type="button" (click)="updateDisplayName(newDisplayName)">Update</button>
     </form>
 </div>

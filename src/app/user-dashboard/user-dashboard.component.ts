@@ -11,115 +11,140 @@ import * as _ from 'lodash';
 })
 export class UserDashboardComponent implements OnInit {
 
-    public user: any;
-    public userName: string;
+  public user: any;
+  public userName: string;
 
-    displayName: string;
-    photoURL: string;
+  displayName: string;
+  photoURL: string;
 
-    public song;
+  public song;
 
-    public currentUser: any;
-    public currentUserPart: any;
-    public lastCompletedSong: any;
-    public currentUserStartDate: any;
-    public currentUserName: any;
-    public currentUserSongs: any;
-    public songCount: any;
-    public completedSongs = 0;
-    public unCompletedSongs = 0;
-    public songPercentage;
-    public usersSingingPart: any;
-    public userPic: string;
-    public defaultUserPic: string = '../assets/images/user.png';
+  public currentUser: any;
+  public currentUserPart: any;
+  public lastCompletedSong: any;
+  public currentUserStartDate: any;
+  public currentUserName: any;
+  public currentUserSongs: any;
+  public songCount: any;
+  public completedSongs = 0;
+  public unCompletedSongs = 0;
+  public songPercentage;
+  public usersSingingPart: any;
+  public userPic: string;
+  public defaultUserPic: string = '../assets/images/user.png';
 
-    // Parts
-    public bassPart;
-    public bassPartPreOrdered;
-    public firstTenorPart;
-    public firstTenorPartPreOrdered;
-    public secondTenorPart;
-    public secondTenorPartPreOrdered;
-    public baritonePart;
-    public baritonePartPreOrdered;
+  // Parts
+  public bassPart;
+  public bassPartPreOrdered;
+  public firstTenorPart;
+  public firstTenorPartPreOrdered;
+  public secondTenorPart;
+  public secondTenorPartPreOrdered;
+  public baritonePart;
+  public baritonePartPreOrdered;
 
-    constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
+  constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
 
-    }
+  }
 
-    ngOnInit() {
-        this.af.auth.subscribe(user => {
-            if(!user) {
-                this._router.navigate[('sign-in')];
-            } else {
-                this.userName = user.auth.displayName;
-                this.userPic = user.auth.photoURL;
-                this._userService.getUserByUID(user.uid).then(result => {
-                    this.currentUser = result;
-                    this.currentUserSongs = this.currentUser.songs;
-                    this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
-                    this.currentUserPart = this.currentUser.singingPart;
-                    this.lastCompletedSong = this.currentUser.lastCompletedSong;
-                    this.currentUserStartDate = this.currentUser.startDate;
-                    console.log('currentUser', this.currentUser);
-
-                    for(let song of this.currentUserSongs) {
-                        if(song.completed == true) {
-                            this.completedSongs++;
-                        } else {
-                            this.unCompletedSongs++;
-                        }
-                    }
-
-                    this.songCount = this.currentUserSongs.length;
-                    this.getSingingParts();
-                    this.getSongPercentage(this.completedSongs, this.currentUserSongs);
-                });
-            }
-        });
-    }
-
-    getSongPercentage(completedSongs, currentUserSongs) {
-        let totalSongs = currentUserSongs.length
-        this.songPercentage = Math.floor(completedSongs / totalSongs * 100);
-        this.updateUserPercentage(this.songPercentage);
-    }
-
-    updateUserPercentage(songPercentage) {
-        if(this.currentUser.percentage !== songPercentage) {
-            let updatedUser = {
-                percentage: this.songPercentage,
-                completedSongs: this.completedSongs
-            }
-            this._userService.updateUser(this.currentUser.uid, updatedUser);
+  ngOnInit() {
+    this.af.auth.subscribe(user => {
+      if(!user) {
+        this._router.navigate[('sign-in')];
+      } else {
+        this.userName = user.auth.displayName;
+        this.userPic = user.auth.photoURL;
+        if( !localStorage.getItem('currentUser') ) {
+          this._userService.getUserByUID(user.uid).then(result => {
+            this.currentUser = result;
+            localStorage.setItem('currentUser', JSON.stringify( this.currentUser ));
+            this.assignUserData();
+          });
+        } else {
+          this.currentUser = JSON.parse( localStorage.getItem('currentUser') );
+          this.assignUserData();
         }
+
+      }
+    });
+  }
+
+  assignUserData() {
+    this.currentUserSongs = this.currentUser.songs;
+    this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
+    this.currentUserPart = this.currentUser.singingPart;
+    this.lastCompletedSong = this.currentUser.lastCompletedSong;
+    this.currentUserStartDate = this.currentUser.startDate;
+    console.log('currentUser', this.currentUser);
+
+    for(let song of this.currentUserSongs) {
+      if(song.completed == true) {
+        this.completedSongs++;
+      } else {
+        this.unCompletedSongs++;
+      }
     }
 
-    getSingingParts() {
+    this.songCount = this.currentUserSongs.length;
+    this.getSingingParts();
+    this.getSongPercentage(this.completedSongs, this.currentUserSongs);
+  }
 
-        this._userService.getUsersByPart('Bass').then(result => {
-            console.log('bass', result);
-            this.bassPart = result;
-            console.log('users singing part', result);
-        });
+  getSongPercentage(completedSongs, currentUserSongs) {
+    let totalSongs = currentUserSongs.length
+    this.songPercentage = Math.floor(completedSongs / totalSongs * 100);
+    this.updateUserPercentage(this.songPercentage);
+  }
 
-        this._userService.getUsersByPart('First Tenor').then(result => {
-            console.log('first tenor', result);
-            this.firstTenorPart = result;
-            console.log('users singing part', result);
-        });
+  updateUserPercentage(songPercentage) {
+    if(this.currentUser.percentage !== songPercentage) {
+      let updatedUser = {
+        percentage: this.songPercentage,
+        completedSongs: this.completedSongs
+      }
+      this._userService.updateUser(this.currentUser.uid, updatedUser);
+      localStorage.setItem('songPercentage', JSON.stringify( this.songPercentage ));
+    }
+  }
 
-        this._userService.getUsersByPart('Second Tenor').then(result => {
-            console.log('second tenors', result);
-            this.secondTenorPart = result;
-            console.log('users singing part', result);
-        });
+  getSingingParts() {
 
-        this._userService.getUsersByPart('Baritone').then(result => {
-            console.log('baritones', result);
-            this.baritonePart = result;
-            console.log('users singing part', this.baritonePart);
-    });
+    // Checks Local Storage before grabbing from firebase on all parts
+    if( !localStorage.getItem('bassPart') ) {
+      this._userService.getUsersByPart('Bass').then(result => {
+        this.bassPart = result;
+        localStorage.setItem('bassPart', JSON.stringify( this.bassPart ));
+      });
+    } else {
+      this.bassPart = JSON.parse( localStorage.getItem('bassPart') );
+    }
+
+    if( !localStorage.getItem('firstTenorPart') ) {
+      this._userService.getUsersByPart('Bass').then(result => {
+        this.firstTenorPart = result;
+        localStorage.setItem('firstTenorPart', JSON.stringify( this.firstTenorPart ));
+      });
+    } else {
+      this.firstTenorPart = JSON.parse( localStorage.getItem('firstTenorPart') );
+    }
+
+    if( !localStorage.getItem('secondTenorPart') ) {
+      this._userService.getUsersByPart('Bass').then(result => {
+        this.secondTenorPart = result;
+        localStorage.setItem('secondTenorPart', JSON.stringify( this.secondTenorPart ));
+      });
+    } else {
+      this.secondTenorPart = JSON.parse( localStorage.getItem('secondTenorPart') );
+    }
+
+    if( !localStorage.getItem('baritonePart') ) {
+      this._userService.getUsersByPart('Baritone').then(result => {
+        this.baritonePart = result;
+        localStorage.setItem('baritonePart', JSON.stringify( this.baritonePart ));
+      });
+    } else {
+      this.baritonePart = JSON.parse( localStorage.getItem('baritonePart') );
+    }
 
   }
 
