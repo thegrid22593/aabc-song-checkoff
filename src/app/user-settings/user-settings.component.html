@@ -1,3 +1,5 @@
+<sidebar-nav></sidebar-nav>
+
 <div class="container">
     <h1>Hello {{currentUserName}}</h1>
     <form action="">
@@ -26,7 +28,7 @@
       <input type="text" [(ngModel)]="currentUserPart" name="currentUserPart">
     </div>
     <div>
-      <button type="button" (click)="saveSettings()" *ngIf="currentUser" >Save Settings</button>
+      <button type="button" (click)="saveSettings()" *ngIf="currentUser">Save Settings</button>
     </div>
   </form>
 </div>
