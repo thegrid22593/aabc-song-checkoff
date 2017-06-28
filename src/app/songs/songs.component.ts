@@ -43,13 +43,6 @@ export class SongsComponent implements OnInit {
           });
       }
 
-      filterByDifficulty(difficulty) {
-        this._songsService.filterSongByDifficulty(difficulty, this.activeUserUID).then(result => {
-          console.log(result);
-          this.activeUserSongs = result;
-        });
-      }
-
       openSongDetails(name:string) {
           console.log(this.detailPanelCollapsed);
           if(!this.detailPanelCollapsed) {

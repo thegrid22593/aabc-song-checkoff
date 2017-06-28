@@ -31,40 +31,13 @@ export class SongService {
             .catch(this.handleError);
     }
 
-    searchSongs(str:string) {
-        return this._http.get('./assets/fixtures/songs.json')
-            .map((response: Response) => _.find(response.json().songs, {'name': str}))
-    }
-
-    // searchSong(userId:string, term: string): Observable<Song[]> {
-    //     return this._http
-    //         .get('https://aabc-checkoff.firebaseio.com/users/' + userId + '/songs/?name=${term}')
-    //         .map(( response: Response ) => response.json().data);
-    // }
-
-    filterSongByDifficulty(difficulty: string, userId: string) {
-      return this._http
-          .get('https://aabc-checkoff.firebaseio.com/users/' + userId + '/songs/')
-          .map(( response: Response ) => _.orderBy(response.json(), {'difficulty': difficulty}))
-          .toPromise()
-          .catch(this.handleError);
-    }
-
     fetchData() {
-        console.log('running');
         return this._http.get('https://aabc-checkoff.firebaseio.com/.json').map(
             (res) => res.json()
         ).subscribe(
-            (data) => console.log(data)
+            (data) => console.log('subscribe', data)
         );
     }
-
-    // getPartSongs(partName) {
-    //     return this._http.get('/fixutres/songs.json')
-    //         .map((response: Response) => _.find(response.json().songs.bartione, {'part': partName}))
-    //         .toPromise()
-    //         .catch(this.handleError);
-    // }
 
     private handleError(error: Response) {
         console.error(error);

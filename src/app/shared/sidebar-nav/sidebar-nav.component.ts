@@ -1,5 +1,8 @@
-import {Component} from '@angular/core';
 import * as _ from 'lodash';
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
+import { AngularFire, FirebaseObjectObservable} from 'angularfire2';
+import {Router, ActivatedRoute} from '@angular/router';
+import {UserService} from "../../services/user.service";
 
 @Component({
     selector: 'sidebar-nav',
@@ -8,11 +11,46 @@ import * as _ from 'lodash';
 })
 
 export class SidebarNavComponent {
+    private currentUser;
+    private currentUserSongs;
+    private completedSongs: number = 0;
+    private unCompletedSongs: number = 0;
+    private songCount;
+    private userPercentage;
+    private userSongsRemaining;
 
-    constructor() {
+    constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
 
     }
 
     ngOnInit() {
+      this.af.auth.subscribe(user => {
+        this._userService.getUserByUID(user.uid).then(result => {
+          this.currentUser = result;
+          localStorage.setItem('currentUser', this.currentUser);
+          this.currentUserSongs = this.currentUser.songs;
+          this.userPercentage = this.currentUser.percentage.toString();
+          console.log(this.userPercentage);
+          console.log('currentUser', this.currentUser);
+
+          for(let song of this.currentUserSongs) {
+            if(song.completed == true) {
+              this.completedSongs++;
+            } else {
+              this.unCompletedSongs++;
+            }
+          }
+
+          this.songCount = this.currentUserSongs.length;
+          console.log(this.completedSongs);
+          console.log(this.unCompletedSongs);
+          console.log(this.currentUserSongs.length);
+          this.userSongsRemaining = this.currentUserSongs.length - this.completedSongs;
+        });
+      });
     }
+
+    // private completionBarStyles: Object = {
+    //   'width': this.userPercentage
+    // }
   }

@@ -1,8 +1,10 @@
 @import '../../../scss/partials/base';
 
 nav.main-nav {
-  background: $aabc-dark-blue;
-  min-height: 51px;
+  background: lighten($aabc-dark-blue, 5%);
+  min-height: 40px;
+  @include clearfix();
+
 
   a.nav-branding {
     float: left;
@@ -16,7 +18,9 @@ nav.main-nav {
   ul.nav-links {
     list-style: none;
     width: 80%;
-    float: left;
+    float: right;
+    text-align: right;
+    margin-bottom: 0;
 
     li {
       display: inline-block;

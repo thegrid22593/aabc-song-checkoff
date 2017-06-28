@@ -1,14 +1,14 @@
 @import '../../../scss/partials/base';
 
-.sidebar-nav {
+nav.sidebar-nav {
   background: #fbfbfb;
   height: 100vh;
   border-right: 1px solid #ddd;
   padding: 0;
   width: 15%;
   float: left;
-  margin-top: -16px;
-  ul {
+  position: relative;
+  ul.nav-links {
     list-style: none;
     li {
       display: block;
@@ -17,9 +17,10 @@
         font-family: 'PT Sans Narrow', sans-serif;
         font-weight: 800;
         text-transform: uppercase;
+        font-size: 0.85rem;
         padding: 1.5rem;
         display: block;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
         color: $aabc-cool-grey;
         vertical-align: middle;
         @include aabc-transition(0.2s all ease-in-out);
@@ -44,6 +45,7 @@
 
           &:hover {
             color: $aabc-light-grey;
+            background: $aabc-dark-blue;
             svg {
               fill: $aabc-light-grey;
             }
@@ -54,10 +56,49 @@
         > a {
             color: $aabc-gold;
             text-decoration: none;
+            background: lighten($aabc-light-grey, 25%);
             svg {
               fill: $aabc-gold;
             }
         }
+      }
+    }
+  }
+
+  ul.user-details {
+    padding: 1.5rem;
+    position: absolute;
+    bottom: 1.5rem;
+    width: 100%;
+
+    .completion-percentage,
+    .songs-remaining {
+      margin-bottom: 0.5rem;
+      font-family: $aabc-pt-sans-narrow;
+      font-size: 0.9rem;
+      font-weight: normal;
+      span {
+        font-weight: 800;
+        text-transform: uppercase;
+        font-family: $aabc-pt-sans-narrow;
+        letter-spacing: 1px;
+        color: $aabc-cool-grey;
+      }
+    }
+
+    .completion-percentage-bar,
+    .songs-remaining-percentage-bar
+     {
+      width: 100%;
+      background: $aabc-light-grey;
+      height: 10px;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+      .completion,
+      .remaining {
+        background: $aabc-completed-green;
+        height: 10px;
+        border-radius: 5px;
       }
     }
   }

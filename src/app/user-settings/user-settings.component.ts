@@ -34,6 +34,7 @@ export class UserSettingsComponent implements OnInit {
     public currentUserStartDate: string;
     public currentUserFirstName: string;
     public currentUserLastName: string;
+    public currentUserProfilePic: string;
 
     constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
       // Set Firebase Storage Reference
@@ -57,6 +58,8 @@ export class UserSettingsComponent implements OnInit {
                       this.currentUserLastName = this.currentUser.lastName;
                       this.currentUserFirstName = this.currentUser.firstName;
                       this.currentUserPart = this.currentUser.singingPart;
+                      this.currentUserProfilePic = this.currentUser.profilePicURL;
+                      console.log(this.currentUserProfilePic);
                       // this.lastCompletedSong = this.currentUser.lastCompletedSong;
                       // TODO: Format this date...
                       this.currentUserStartDate = this.currentUser.startDate;
@@ -75,8 +78,8 @@ export class UserSettingsComponent implements OnInit {
       let uploadTask = this.storageref.put(files);
 
       uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, function(snapshot) {
-          console.log(snapshot.bytesTransferred);
-          console.log(snapshot.totalBytes);
+        console.log(snapshot);
+        //   console.log(snapshot.totalBytes);
         this.uploadProgress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log('Upload is ' + this.uploadProgress + '% done!');
         switch(snapshot.state) {

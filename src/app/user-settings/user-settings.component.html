@@ -1,35 +1,39 @@
 <sidebar-nav></sidebar-nav>
 
-<div class="container">
+<div class="container settings">
+
     <h1>Hello {{currentUserName}}</h1>
     <form action="">
+        <div class="user-pic-container">
+            <img class="profile-pic" [src]="currentUserProfilePic" *ngIf="currentUserProfilePic" alt="">
+            <span><i class="fa fa-camera" aria-hidden="true"></i>Upload Photo</span>
+        </div>
+
         <input type="text" name="name" [(ngModel)]="newDisplayName">
         <input type="file" id="filebutton" value="upload" #filebtn (change)="filebuttoni($event)">
-        <div *ngIf="uploadProgress">{{uploadProgress}}</div>
+        <div>{{uploadProgress}}</div>
         <button type="button" (click)="updateDisplayName(newDisplayName)">Update</button>
     </form>
-</div>
 
-<div class="container">
-  <form action="" class="user-settings">
-    <div>
-      <label for="currentUserFirstName">First Name</label>
-      <input type="text" [(ngModel)]="currentUserFirstName" name="currentUserFirstName">
-    </div>
-    <div>
-      <label for="currentUserLastName">Last Name</label>
-      <input type="text" [(ngModel)]="currentUserLastName" name="currentUserLastName">
-    </div>
-    <div>
-      <label for="currentUserStartDate">Start Date</label>
-      <input type="text" [(ngModel)]="currentUserStartDate" name="currentUserStartDate">
-    </div>
-    <div>
-      <label for="currentUserPart">Part</label>
-      <input type="text" [(ngModel)]="currentUserPart" name="currentUserPart">
-    </div>
-    <div>
-      <button type="button" (click)="saveSettings()" *ngIf="currentUser">Save Settings</button>
-    </div>
-  </form>
+    <form action="" class="user-settings">
+      <div>
+        <label for="currentUserFirstName">First Name</label>
+        <input type="text" [(ngModel)]="currentUserFirstName" name="currentUserFirstName">
+      </div>
+      <div>
+        <label for="currentUserLastName">Last Name</label>
+        <input type="text" [(ngModel)]="currentUserLastName" name="currentUserLastName">
+      </div>
+      <div>
+        <label for="currentUserStartDate">Start Date</label>
+        <input type="text" [(ngModel)]="currentUserStartDate" name="currentUserStartDate">
+      </div>
+      <div>
+        <label for="currentUserPart">Part</label>
+        <input type="text" [(ngModel)]="currentUserPart" name="currentUserPart">
+      </div>
+      <div>
+        <button type="button" (click)="saveSettings()" *ngIf="currentUser">Save Settings</button>
+      </div>
+    </form>
 </div>
