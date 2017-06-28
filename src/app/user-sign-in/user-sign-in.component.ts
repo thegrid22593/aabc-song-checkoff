@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import { Validators } from '@angular/forms';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {AngularFire, FirebaseListObservable, FirebaseAuthState} from 'angularfire2';
 import {UserService} from "../services/user.service";
 import {SongService} from "../services/songs.service";
 import 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/observable/fromPromise';
 
 @Component({
   selector: 'user-sign-in',
@@ -20,6 +22,8 @@ export class UserSignInComponent implements OnInit {
     public email: string;
     public password: string;
     public activeUser: any;
+
+    private emailAlreadyInUse: boolean;
 
     // State Variables
     public logInIsActive: boolean = true;
@@ -62,7 +66,11 @@ export class UserSignInComponent implements OnInit {
     }
 
     signUp(email, password) {
-      this.af.auth.createUser({ email: email, password: password }).then(success => {
+      this.af.auth.createUser({
+        email: email,
+        password: password
+      })
+      .then(success => {
         this.af.auth.subscribe(user => {
           if(!user) {
             alert('this did not work');
@@ -73,10 +81,14 @@ export class UserSignInComponent implements OnInit {
             }), function (error) {
               console.log(error);
             }
-            // this._router.navigate(['user-settings']);
           }
         })
       })
+      .catch((error:any) => {
+        if(error.code == 'auth/email-already-in-use') {
+          this.emailAlreadyInUse = true;
+        }
+      });
     }
 
     logInActivated() {

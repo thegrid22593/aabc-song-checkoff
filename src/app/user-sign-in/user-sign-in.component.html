@@ -11,7 +11,8 @@
         <div class="sign-up-form" [ngClass]="{'active': signUpIsActive}">
             <h3>Sign Up</h3>
             <form action="" class="sign-up" #createUserForm="ngForm">
-                <input type="email" name="signUpEmail" id="signUpEmail" [(ngModel)]="email" placeholder="email">
+                <input type="email" name="signUpEmail" id="signUpEmail" [(ngModel)]="email" placeholder="email" [ngClass]="{'error': emailAlreadyInUse}">
+                <span *ngIf="emailAlreadyInUse" class="error-message">Email already in use.</span>
                 <input type="password" name="signUpPassword" id="signUpPassword" [(ngModel)]="password" placeholder="password">
                 <button type="submit" (click)="signUp(email, password)">Sign Up</button>
             </form>

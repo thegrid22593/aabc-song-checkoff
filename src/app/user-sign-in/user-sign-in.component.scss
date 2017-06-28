@@ -146,6 +146,15 @@
 
   form.sign-up {
 
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    }
+
+    span.error-message {
+      display: block;
+      color: $aabc-red;
+    }
+
     input[type="email"],
     input[type="password"] {
       border: none;
@@ -153,13 +162,19 @@
       box-shadow: none;
       display: block;
       width: 100%;
-      padding: 0.5rem 0;
+      padding: 0.5rem;
       margin-bottom: 1rem;
       border-bottom: 1px solid #ddd;
       color: #333;
 
       &:focus {
         outline: none;
+      }
+
+      &.error {
+        border-bottom: 1px solid $aabc-red;
+        background: lighten($aabc-red, 50%);
+        color: $aabc-red;
       }
     }
 
