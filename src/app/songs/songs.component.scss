@@ -204,3 +204,7 @@ section.songs {
     opacity: 1;
   }
 }
+
+.table tr:hover {
+  background: lighten($aabc-light-grey, 10%);
+}

@@ -19,7 +19,7 @@
 section.dashboard {
   width: 85%;
   float: right;
-  
+
   .dashboard-member-info {
     background: #fbfbfb;
     border-bottom: 1px solid #ddd;
@@ -67,9 +67,11 @@ section.dashboard {
   }
 
   h5 {
-    color: $aabc-light-grey;
-    font-size: 1.2rem;
-    font-family: 'Crimson Text', serif;
+    color: darken($aabc-light-grey, 8%);
+    font-size: 0.9rem;
+    font-family: $aabc-pt-sans-narrow;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     font-weight: 900;
     padding-top: 1.3rem;
   }
@@ -106,14 +108,27 @@ $pulse-duration: 750ms;
       }
     }
     h3 {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
       color: $aabc-cold-grey;
-      padding-bottom: 1rem;
-      margin-bottom: 1rem;
+      font-family: $aabc-pt-sans-narrow;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.25rem;
+      background: lighten($aabc-light-grey, 10%);
+      padding: 0.5rem;
     }
 
     table {
       tr {
+        th {
+          border-top: none;
+          font-family: $aabc-pt-sans-narrow;
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 0.95rem;
+          letter-spacing: 1px;
+        }
         td {
           img {
             border-radius: 50%;
