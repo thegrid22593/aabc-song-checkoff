@@ -1,6 +1,6 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 import {UserService} from '../services/user.service';
-import { AngularFire } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
 import {Router, ActivatedRoute} from '@angular/router';
 import * as firebase from 'firebase';
 
@@ -36,14 +36,14 @@ export class UserSettingsComponent implements OnInit {
     public currentUserLastName: string;
     public currentUserProfilePic: string;
 
-    constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
+    constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) {
       // Set Firebase Storage Reference
       this.storage = firebase.storage().ref();
     }
 
     ngOnInit() {
         // Grab Current User
-          this.af.auth.subscribe(user => {
+          this.af.authState.subscribe(user => {
               if(!user) {
 
                   alert('please log in or sign up!');
@@ -110,8 +110,8 @@ export class UserSettingsComponent implements OnInit {
     }
 
     updateDisplayName(name) {
-        this.af.auth.subscribe(user => {
-            user.auth.updateProfile({displayName: name, photoURL: this.newPhotoURL}).then(success => {
+        this.af.authState.subscribe(user => {
+            user.updateProfile({displayName: name, photoURL: this.newPhotoURL}).then(success => {
                 console.log('success!');
                 console.log(user);
                 this._router.navigate(['user-settings']);

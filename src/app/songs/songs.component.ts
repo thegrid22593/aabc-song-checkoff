@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Observable} from 'rxjs';
 import {SongService} from '../services/songs.service';
-import {AngularFire, FirebaseListObservable } from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
 import {UserService} from "../services/user.service";
 import * as _ from 'lodash';
 import {Subject} from 'rxjs/Subject';
@@ -27,11 +27,11 @@ export class SongsComponent implements OnInit {
   public activeSongDetail: any;
   public activeUserUID: string;
 
-  constructor(private _songsService: SongService, private _af: AngularFire, private _userService: UserService) { }
+  constructor(private _songsService: SongService, private _af: AngularFireAuth, private _userService: UserService) { }
 
       ngOnInit() {
           let activeUserUID;
-          this._af.auth.subscribe(user => {
+          this._af.authState.subscribe(user => {
               if(user) {
                   this.activeUserUID = user.uid;
                   this._userService.getUserByUID(this.activeUserUID).then(result => {

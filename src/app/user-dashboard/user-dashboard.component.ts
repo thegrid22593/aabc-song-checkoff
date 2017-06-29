@@ -1,5 +1,5 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
-import { AngularFire, FirebaseObjectObservable} from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
 import {Router, ActivatedRoute} from '@angular/router';
 import {UserService} from "../services/user.service";
 import * as _ from 'lodash';
@@ -43,17 +43,17 @@ export class UserDashboardComponent implements OnInit {
   public baritonePart;
   public baritonePartPreOrdered;
 
-  constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
+  constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) {
 
   }
 
   ngOnInit() {
-    this.af.auth.subscribe(user => {
+    this.af.authState.subscribe(user => {
       if(!user) {
         this._router.navigate[('sign-in')];
       } else {
-        this.userName = user.auth.displayName;
-        this.userPic = user.auth.photoURL;
+        this.userName = user.displayName;
+        this.userPic = user.photoURL;
         this._userService.getUserByUID(user.uid).then(result => {
           this.currentUser = result;
           localStorage.setItem('currentUser', this.currentUser);

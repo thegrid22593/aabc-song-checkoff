@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
-import { AngularFire, FirebaseObjectObservable} from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
 import {Router, ActivatedRoute} from '@angular/router';
 import {UserService} from "../../services/user.service";
 
@@ -19,12 +19,12 @@ export class SidebarNavComponent {
     private userPercentage;
     private userSongsRemaining;
 
-    constructor(private _router: Router, public af: AngularFire, private _userService: UserService) {
+    constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) {
 
     }
 
     ngOnInit() {
-      this.af.auth.subscribe(user => {
+      this.af.authState.subscribe(user => {
         this._userService.getUserByUID(user.uid).then(result => {
           this.currentUser = result;
           localStorage.setItem('currentUser', this.currentUser);

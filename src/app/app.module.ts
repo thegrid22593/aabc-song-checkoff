@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import {AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
-import {AngularFireConfigModule} from './app-angularFire.module';
+import { environment } from '../environments/environment';
 
 import {SongService} from './services/songs.service';
 import {UserService} from './services/user.service';
@@ -22,19 +24,6 @@ import {UserSignUpComponent} from './user-sign-up/user-sign-up.component';
 import {SidebarNavComponent} from './shared/sidebar-nav/sidebar-nav.component';
 import {NavBarComponent} from './shared/navbar/navbar.component';
 import {WhiteShirtSongsComponent} from './white-shirt-songs/white-shirt-songs.component';
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAYThpdcu3zb4ll_q6BJkpaWYS8XTVVz4Y",
-  authDomain: "aabc-checkoff.firebaseapp.com",
-  databaseURL: "https://aabc-checkoff.firebaseio.com",
-  storageBucket: "aabc-checkoff.appspot.com",
-  messagingSenderId: "920421563150"
-}
-
-const firebaseAuthConfig = {
-  provider: AuthProviders.Password,
-  method: AuthMethods.Password
-}
 
 const routes: Routes = [
   {
@@ -104,8 +93,10 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes),
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule, // imports firebase/database, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    RouterModule.forRoot(routes)
   ],
   providers: [
   SongService,

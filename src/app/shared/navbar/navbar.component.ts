@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import { AngularFire } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
 import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
@@ -15,12 +15,12 @@ export class NavBarComponent {
     displayName: string;
 
 
-    constructor(public af: AngularFire, private _router: Router) {
-        this.af.auth.subscribe(user => {
+    constructor(public af: AngularFireAuth, private _router: Router) {
+        this.af.authState.subscribe(user => {
 
             if(user) {
               this.activeUser = user;
-              this.displayName = user.auth.displayName;
+              this.displayName = user.displayName;
               console.log('active', this.activeUser);
             }
 
@@ -29,9 +29,9 @@ export class NavBarComponent {
 
     logout() {
         console.log('logout');
-        this.af.auth.logout();
+        this.af.auth.signOut();
 
-        if(!this.af.auth.subscribe(auth => console.log(auth))) {
+        if(!this.af.authState.subscribe(auth => console.log(auth))) {
           this._router.navigate(['sign-in']);
         }
       }

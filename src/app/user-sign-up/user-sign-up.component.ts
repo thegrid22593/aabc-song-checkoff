@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import 'rxjs/Rx';
 import {Router, ActivatedRoute} from '@angular/router';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
 import {UserService} from "../services/user.service";
 import {SongService} from "../services/songs.service";
+import 'rxjs/Rx';
 
 @Component({
   selector: 'user-sign-up',
@@ -21,8 +21,8 @@ export class UserSignUpComponent implements OnInit {
     songs: any;
     date: any;
 
-    constructor(public af: AngularFire, private _userService: UserService, private _router: Router, private _songsService: SongService) {
-        this.af.auth.subscribe(user => {
+    constructor(public af: AngularFireAuth, private _userService: UserService, private _router: Router, private _songsService: SongService) {
+        this.af.authState.subscribe(user => {
             if(user) {
                 this.newUserUID = user.uid;
             }

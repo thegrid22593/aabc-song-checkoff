@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SongService} from './services/songs.service';
-import 'rxjs/Rx';
 import {Router, ActivatedRoute} from '@angular/router';
-import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,12 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 
 export class AppComponent implements OnInit {
 
-  constructor(private _router: Router, public af: AngularFire) {
+  constructor(private _router: Router, public afAuth: AngularFireAuth) {
 
   }
 
   ngOnInit() {
-    this.af.auth.subscribe(user => {
+    this.afAuth.authState.subscribe(user => {
       if(user) {
         this._router.navigate(['dashboard']);
         console.log('user', user);

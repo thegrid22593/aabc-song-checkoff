@@ -4,12 +4,13 @@ import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
 import {Router, ActivatedRoute} from '@angular/router';
-import {AngularFire} from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
 export class UserService {
 
-    constructor(private _http: Http, private _af: AngularFire, private _router: Router) {
+    constructor(private _http: Http, private _af: AngularFireAuth, private _router: Router, private db: AngularFireDatabase) {
 
     }
 
@@ -29,20 +30,20 @@ export class UserService {
 
     addUser(key, user) {
         console.log('service:', user);
-        this._af.database.list('users').update(key, user).then(success => {
+        this.db.list('users').update(key, user).then(success => {
             this._router.navigate(['blue-shirt-songs']);
         })
     }
 
     updateUser(key, user) {
         console.log('service', user);
-        this._af.database.list('users').update(key, user).then(success => {
+        this.db.list('users').update(key, user).then(success => {
             console.log('updated user');
         })
     }
 
     getCurrentUser() {
-        this._af.database.list('https://aabc-checkoff.firebaseio.com/users/EWMIQ5yKlcgj3vxL6WZxu0Uuq5o1');
+        this.db.list('https://aabc-checkoff.firebaseio.com/users/EWMIQ5yKlcgj3vxL6WZxu0Uuq5o1');
     }
 
     getSongByName(songName:string) {

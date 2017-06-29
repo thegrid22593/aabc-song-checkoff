@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import { Validators } from '@angular/forms';
-import {AngularFire, FirebaseListObservable, FirebaseAuthState} from 'angularfire2';
+import {AngularFireAuth} from 'angularfire2/auth';
 import {UserService} from "../services/user.service";
 import {SongService} from "../services/songs.service";
-import 'rxjs/Rx';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/observable/fromPromise';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'user-sign-in',
@@ -33,7 +33,7 @@ export class UserSignInComponent implements OnInit {
     signInEmail: string;
     signInPassword: string;
 
-    constructor(private _songsService: SongService, private _router: Router, public af: AngularFire) {
+    constructor(private _songsService: SongService, private _router: Router, public af: AngularFireAuth) {
         this.backgroundImage = './assets/images/main-bg.jpg';
         this.logoIcon = './assets/images/logo-icon.png';
     }
@@ -44,8 +44,8 @@ export class UserSignInComponent implements OnInit {
 
     login() {
       console.log('login');
-      this.af.auth.login({ email: this.signInEmail, password: this.signInPassword }).then(success => {
-        this.af.auth.subscribe(user => {
+      this.af.auth.signInWithEmailAndPassword(this.signInEmail, this.signInPassword).then(success => {
+        this.af.authState.subscribe(user => {
           if(!user) {
             alert('Please Log In!');
           } else {
@@ -58,29 +58,29 @@ export class UserSignInComponent implements OnInit {
     }
 
     logout() {
-      this.af.auth.logout();
+      this.af.auth.signOut();
 
-      if(!this.af.auth.subscribe(auth => console.log(auth))) {
+      if(!this.af.authState.subscribe(auth => console.log(auth))) {
         this._router.navigate(['']);
       }
     }
 
     signUp(email, password) {
-      this.af.auth.createUser({
-        email: email,
-        password: password
-      })
+      this.af.auth.createUserWithEmailAndPassword(
+        email,
+        password
+      )
       .then(success => {
-        this.af.auth.subscribe(user => {
+        this.af.authState.subscribe(user => {
           if(!user) {
             alert('this did not work');
           } else {
-            user.auth.sendEmailVerification().then(success => {
-              console.log('email sent');
-              this._router.navigate(['user-sign-up']);
-            }), function (error) {
-              console.log(error);
-            }
+            // user.auth.sendEmailVerification().then(success => {
+            //   console.log('email sent');
+            //   this._router.navigate(['user-sign-up']);
+            // }), function (error) {
+            //   console.log(error);
+            // }
           }
         })
       })

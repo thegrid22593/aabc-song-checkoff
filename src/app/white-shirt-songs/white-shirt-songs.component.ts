@@ -25,18 +25,18 @@ export class WhiteShirtSongsComponent implements OnInit {
     });
   }
 
-  playSong(songName:string) {
-    console.log('clicked song:', songName)
-
-    this._songsService.getSongByName(songName).then(result => {
-      this.activeSong = result;
-      console.log('active song', this.activeSong);
-      this.activeSongURL = this.activeSong.baritone.pianoWords;
-      console.log(this.activeSongURL);
-    })
-  }
-
-  selectSong(songName:string) {
-    this.router.navigate(['/song'], songName);
-  }
+  // playSong(songName:string) {
+  //   console.log('clicked song:', songName)
+  //
+  //   this._songsService.getSongByName(songName).then(result => {
+  //     this.activeSong = result;
+  //     console.log('active song', this.activeSong);
+  //     this.activeSongURL = this.activeSong.baritone.pianoWords;
+  //     console.log(this.activeSongURL);
+  //   })
+  // }
+  //
+  // selectSong(songName:string) {
+  //   this.router.navigate(['/song'], songName);
+  // }
 }
