@@ -42,7 +42,6 @@ export class UserSignUpComponent implements OnInit {
     }
 
     updateUserInfo(firstName, lastName, singingPart) {
-        // console.log('singingPart:', singingPart);
         this._songsService.getAllSongs().then(result => {
             this.songs = result;
             console.log('inside service call songs: ', this.songs);

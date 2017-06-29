@@ -42,15 +42,8 @@ export class SidebarNavComponent {
           }
 
           this.songCount = this.currentUserSongs.length;
-          console.log(this.completedSongs);
-          console.log(this.unCompletedSongs);
-          console.log(this.currentUserSongs.length);
           this.userSongsRemaining = this.currentUserSongs.length - this.completedSongs;
         });
       });
     }
-
-    // private completionBarStyles: Object = {
-    //   'width': this.userPercentage
-    // }
   }

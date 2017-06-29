@@ -99,6 +99,8 @@ nav.sidebar-nav {
         background: $aabc-completed-green;
         height: 10px;
         border-radius: 5px;
+        width: 0;
+        @include aabc-transition(0.8s all ease-in-out);
       }
     }
   }

@@ -23,6 +23,14 @@ form.user-settings {
 }
 
 .settings {
+  float: left;
+  width: 85%;
+  padding: 2rem;
+  h1 {
+    border-bottom: 1px solid $aabc-light-grey;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
   div.user-pic-container {
     position: relative;
   }
