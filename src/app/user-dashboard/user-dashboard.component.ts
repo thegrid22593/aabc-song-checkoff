@@ -54,8 +54,11 @@ export class UserDashboardComponent implements OnInit {
       } else {
         this.userName = user.displayName;
         this.userPic = user.photoURL;
+        console.log('user', user);
+        console.log(user.uid);
         this._userService.getUserByUID(user.uid).then(result => {
           this.currentUser = result;
+          console.log('current', this.currentUser);
           localStorage.setItem('currentUser', this.currentUser);
           this.currentUserSongs = this.currentUser.songs;
           this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;

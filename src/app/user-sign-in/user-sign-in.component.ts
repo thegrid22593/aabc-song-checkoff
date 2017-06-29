@@ -75,12 +75,12 @@ export class UserSignInComponent implements OnInit {
           if(!user) {
             alert('this did not work');
           } else {
-            // user.auth.sendEmailVerification().then(success => {
-            //   console.log('email sent');
-            //   this._router.navigate(['user-sign-up']);
-            // }), function (error) {
-            //   console.log(error);
-            // }
+            this._router.navigate(['user-sign-up']);
+            user.sendEmailVerification().then(success => {
+              console.log('email sent');
+            }), function (error) {
+              console.log(error);
+            }
           }
         })
       })

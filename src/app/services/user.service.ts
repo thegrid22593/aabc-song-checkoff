@@ -16,7 +16,7 @@ export class UserService {
 
     getUserByUID(id:string) {
         return this._http.get('https://aabc-checkoff.firebaseio.com/.json')
-            .map((response: Response) => _.find(response.json().users, {'uid': id}))
+            .map((response: Response) =>  _.find(response.json().users, {'uid': id}))
             .toPromise()
             .catch(this.handleError);
     }
