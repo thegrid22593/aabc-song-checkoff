@@ -43,6 +43,8 @@ export class UserDashboardComponent implements OnInit {
   public baritonePart;
   public baritonePartPreOrdered;
 
+  public totalKidsPercentage: Number = 0;
+
   constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) {
 
   }
@@ -127,15 +129,38 @@ export class UserDashboardComponent implements OnInit {
       this.secondTenorPart = JSON.parse( localStorage.getItem('secondTenorPart') );
     }
 
-    if( !localStorage.getItem('baritonePart') ) {
+    if( localStorage.getItem('baritonePart') ) {
       this._userService.getUsersByPart('Baritone').then(result => {
         this.baritonePart = result;
         localStorage.setItem('baritonePart', JSON.stringify( this.baritonePart ));
+        this.getWholePartAverage(this.baritonePart);
       });
     } else {
       this.baritonePart = JSON.parse( localStorage.getItem('baritonePart') );
     }
 
+  }
+
+  getWholePartAverage(singingPart) {
+    // Find number of kids in part
+    let totalKidsInPart = singingPart.length;
+    let totalPercentage = totalKidsInPart * 100;
+    let addedPercentage = 0;
+    // Get all percentagesof the current part
+    for(let member of singingPart) {
+      // Add all percentages of the current part
+      addedPercentage += member.percentage;
+      console.log(member.percentage);
+      console.log(totalPercentage);
+      console.log('totalkidspercentage', addedPercentage);
+    }
+
+    this.totalKidsPercentage = (addedPercentage / totalPercentage) * 100;
+    console.log(this.totalKidsPercentage);
+
+
+
+    // Divide the number from to total number of kids * 100
   }
 
 }
