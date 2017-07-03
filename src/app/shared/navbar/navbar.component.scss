@@ -25,16 +25,28 @@ nav.main-nav {
     li {
       display: inline-block;
       padding: 1rem;
-      font-family: $aabc-crimson-text;
+      font-family: $aabc-pt-sans-narrow;
+      color: $aabc-light-grey;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.1rem;
+      letter-spacing: 2px;
       font-size: 0.8rem;
+      @include aabc-transition(0.2s all ease-in-out);
+
+      i {
+        color: $aabc-light-grey;
+        margin-right: 5px;
+        @include aabc-transition(0.2s all ease-in-out);
+      }
 
       &:hover {
+        color: $aabc-white;
         background: $aabc-red;
+        cursor: pointer;
 
-        a {
-          text-decoration: none;
+        i {
+          color: $aabc-white;
+          margin-right: 2px;
         }
       }
     }

@@ -35,6 +35,7 @@ export class UserSettingsComponent implements OnInit {
     public currentUserFirstName: string;
     public currentUserLastName: string;
     public currentUserProfilePic: string;
+    public currentUserPartLeader: boolean;
 
     constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) {
       // Set Firebase Storage Reference
@@ -59,7 +60,9 @@ export class UserSettingsComponent implements OnInit {
                       this.currentUserFirstName = this.currentUser.firstName;
                       this.currentUserPart = this.currentUser.singingPart;
                       this.currentUserProfilePic = this.currentUser.profilePicURL;
+                      this.currentUserPartLeader = this.currentUser.partLeader;
                       console.log(this.currentUserProfilePic);
+                      console.log('partleader', this.currentUserPartLeader);
                       // this.lastCompletedSong = this.currentUser.lastCompletedSong;
                       // TODO: Format this date...
                       this.currentUserStartDate = this.currentUser.startDate;
@@ -128,7 +131,8 @@ export class UserSettingsComponent implements OnInit {
         let updatedUser = {
             firstName: this.currentUserFirstName,
             lastName: this.currentUserLastName,
-            singingPart: this.currentUserPart
+            singingPart: this.currentUserPart,
+            partLeader: this.currentUserPartLeader
         }
         this._userService.updateUser(this.userID, updatedUser);
     }

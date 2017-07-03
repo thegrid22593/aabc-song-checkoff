@@ -33,6 +33,11 @@
         <input type="text" [(ngModel)]="currentUserPart" name="currentUserPart">
       </div>
       <div>
+        <label for="is-partleader">Partleader?</label>
+        <input type="radio" [(ngModel)]="currentUserPartLeader" name="is-partleader" value="true" (click)="currentUserPartLeader = true" [checked]="currentUserPartLeader === true"> Yes <br>
+        <input type="radio" [(ngModel)]="currentUserPartLeader" name="is-parleader" value="false" (click)="currentUserPartLeader = false"[checked]="currentUserPartLeader === false"> No
+      </div>
+      <div>
         <button type="button" (click)="saveSettings()" *ngIf="currentUser">Save Settings</button>
       </div>
     </form>

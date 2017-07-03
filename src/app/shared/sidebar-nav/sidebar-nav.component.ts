@@ -42,7 +42,6 @@ export class SidebarNavComponent {
               this.unCompletedSongs++;
             }
           }
-
           this.songCount = this.currentUserSongs.length;
           this.userSongsRemaining = this.currentUserSongs.length - this.completedSongs;
         });

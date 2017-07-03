@@ -1,20 +1,8 @@
 <nav class="main-nav">
     <a class="nav-branding" href="#">Music Library</a>
     <ul class="nav-links" *ngIf="activeUser">
-        <!-- <li>
-            <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-        </li>
-        <li>
-            <a routerLink="/songs" routerLinkActive="active">Songs</a>
-        </li>
-        <li>
-            <a routerLink="/solo-songs" routerLinkActive="active">Solo Songs</a>
-        </li>
-        <li>
-            <a routerLink="/white-shirt-songs" routerLinkActive="active">White Shirt Songs</a>
-        </li> -->
-        <li>
-            <a href="#" (click)="logout()">Logout</a>
+        <li (click)="logout()">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out
         </li>
     </ul>
     <ul class="user-info" style="float: right;">

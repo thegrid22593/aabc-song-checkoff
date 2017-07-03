@@ -23,6 +23,8 @@ export class UserSignInComponent implements OnInit {
     public password: string;
     public activeUser: any;
 
+    private loading: boolean = false;
+
     private emailAlreadyInUse: boolean;
 
     // State Variables
@@ -36,6 +38,7 @@ export class UserSignInComponent implements OnInit {
     constructor(private _songsService: SongService, private _router: Router, public af: AngularFireAuth) {
         this.backgroundImage = './assets/images/main-bg.jpg';
         this.logoIcon = './assets/images/logo-icon.png';
+        this.loading = false;
     }
 
     ngOnInit() {
@@ -43,6 +46,7 @@ export class UserSignInComponent implements OnInit {
     }
 
     login() {
+      this.loading = true;
       console.log('login');
       this.af.auth.signInWithEmailAndPassword(this.signInEmail, this.signInPassword).then(success => {
         this.af.authState.subscribe(user => {
