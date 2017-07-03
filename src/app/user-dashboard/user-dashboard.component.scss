@@ -107,17 +107,27 @@ $pulse-duration: 750ms;
         border-width: .5rem;
       }
     }
-    h3 {
-      font-size: 0.9rem;
-      color: $aabc-cold-grey;
-      font-family: $aabc-pt-sans-narrow;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.25rem;
+    .part-container-header {
       background: lighten($aabc-light-grey, 10%);
       padding: 0.5rem;
+      margin-bottom: 0.25rem;
+
+      h3 {
+        font-size: 0.9rem;
+        color: $aabc-cold-grey;
+        font-family: $aabc-pt-sans-narrow;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+      }
+
+      h5 {
+        color: $aabc-cold-grey;
+        padding-top: 0;
+      }
     }
+
 
     table {
       tr {

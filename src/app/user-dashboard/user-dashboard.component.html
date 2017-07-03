@@ -26,9 +26,10 @@
 
   <div class="dashboard-member-part-info">
     <div class="part-container">
-      <h3>Basses</h3>
-      <h5>{{totalKidsPercentage}}</h5>
-      <div class="part-loading"  *ngIf="!bassPart"></div>
+      <div class="part-container-header clearfix">
+        <h3 class="pull-left">Basses</h3>
+        <h5 class="pull-right"*ngIf="bassAvgPercentage">{{bassAvgPercentage}}%</h5>
+      </div>
       <table class="table" *ngIf="bassPart">
         <tr>
           <th>Name</th>
@@ -43,7 +44,10 @@
     </div>
 
     <div class="part-container">
-      <h3>First Tenor</h3>
+      <div class="part-container-header clearfix">
+        <h3 class="pull-left">First Tenor</h3>
+        <h5 class="pull-right" *ngIf="firstTenorAvgPercentage">{{firstTenorAvgPercentage}}%</h5>
+      </div>
       <div class="part-loading" *ngIf="!firstTenorPart"></div>
       <table class="table" *ngIf="firstTenorPart">
         <tr>
@@ -59,7 +63,10 @@
     </div>
 
     <div class="part-container">
-      <h3>Second Tenor</h3>
+      <div class="part-container-header clearfix">
+        <h3 class="pull-left">Second Tenor</h3>
+        <h5 class="pull-right" *ngIf="secondTenorAvgPercentage">{{secondTenorAvgPercentage}}%</h5>
+      </div>
       <div class="part-loading" *ngIf="!secondTenorPart"></div>
       <table class="table" *ngIf="secondTenorPart">
         <tr>
@@ -75,7 +82,10 @@
     </div>
 
     <div class="part-container">
-      <h3>Baritone</h3>
+      <div class="part-container-header clearfix">
+        <h3 class="pull-left">Baritone</h3>
+        <h5 class="pull-right" *ngIf="baritoneAvgPercentage">{{baritoneAvgPercentage}}%</h5>
+      </div>
       <div class="part-loading" *ngIf="!baritonePart"></div>
       <table class="table" *ngIf="baritonePart">
         <tr>

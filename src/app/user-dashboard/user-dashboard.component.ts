@@ -43,7 +43,10 @@ export class UserDashboardComponent implements OnInit {
   public baritonePart;
   public baritonePartPreOrdered;
 
-  public totalKidsPercentage: Number = 0;
+  private baritoneAvgPercentage: number;
+  private secondTenorAvgPercentage: number;
+  private firstTenorAvgPercentage: number;
+  private bassAvgPercentage: number;
 
   constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) {
 
@@ -105,44 +108,53 @@ export class UserDashboardComponent implements OnInit {
     if( !localStorage.getItem('bassPart') ) {
       this._userService.getUsersByPart('Bass').then(result => {
         this.bassPart = result;
-        localStorage.setItem('bassPart', JSON.stringify( this.bassPart ));
+        // localStorage.setItem('bassPart', JSON.stringify( this.bassPart ));
+        this.bassAvgPercentage = this.getWholePartAverage( this.bassPart );
       });
     } else {
       this.bassPart = JSON.parse( localStorage.getItem('bassPart') );
+      this.bassAvgPercentage = this.getWholePartAverage( this.bassPart );
     }
 
     if( !localStorage.getItem('firstTenorPart') ) {
-      this._userService.getUsersByPart('Bass').then(result => {
+      this._userService.getUsersByPart('First Tenor').then(result => {
         this.firstTenorPart = result;
-        localStorage.setItem('firstTenorPart', JSON.stringify( this.firstTenorPart ));
+        // localStorage.setItem('firstTenorPart', JSON.stringify( this.firstTenorPart ));
+        this.firstTenorAvgPercentage = this.getWholePartAverage( this.firstTenorPart );
       });
     } else {
       this.firstTenorPart = JSON.parse( localStorage.getItem('firstTenorPart') );
+      this.firstTenorAvgPercentage = this.getWholePartAverage( this.firstTenorPart );
     }
 
     if( !localStorage.getItem('secondTenorPart') ) {
-      this._userService.getUsersByPart('Bass').then(result => {
+      this._userService.getUsersByPart('Second Tenor').then(result => {
         this.secondTenorPart = result;
-        localStorage.setItem('secondTenorPart', JSON.stringify( this.secondTenorPart ));
+        // localStorage.setItem('secondTenorPart', JSON.stringify( this.secondTenorPart ));
+        this.secondTenorAvgPercentage = this.getWholePartAverage( this.secondTenorPart );
       });
     } else {
       this.secondTenorPart = JSON.parse( localStorage.getItem('secondTenorPart') );
+      this.secondTenorAvgPercentage = this.getWholePartAverage( this.secondTenorPart );
     }
 
-    if( localStorage.getItem('baritonePart') ) {
+    if( !localStorage.getItem('baritonePart') ) {
       this._userService.getUsersByPart('Baritone').then(result => {
         this.baritonePart = result;
-        localStorage.setItem('baritonePart', JSON.stringify( this.baritonePart ));
-        this.getWholePartAverage(this.baritonePart);
+        // localStorage.setItem('baritonePart', JSON.stringify( this.baritonePart ));
+        this.baritoneAvgPercentage = this.getWholePartAverage(this.baritonePart);
       });
     } else {
       this.baritonePart = JSON.parse( localStorage.getItem('baritonePart') );
+      this.baritoneAvgPercentage = this.getWholePartAverage(this.baritonePart);
     }
 
   }
 
   getWholePartAverage(singingPart) {
     // Find number of kids in part
+    console.log('singingPart', singingPart);
+    console.log(singingPart.length);
     let totalKidsInPart = singingPart.length;
     let totalPercentage = totalKidsInPart * 100;
     let addedPercentage = 0;
@@ -150,17 +162,14 @@ export class UserDashboardComponent implements OnInit {
     for(let member of singingPart) {
       // Add all percentages of the current part
       addedPercentage += member.percentage;
-      console.log(member.percentage);
-      console.log(totalPercentage);
-      console.log('totalkidspercentage', addedPercentage);
+      // console.log(member.percentage);
+      // console.log(totalPercentage);
+      // console.log('totalkidspercentage', addedPercentage);
     }
 
-    this.totalKidsPercentage = (addedPercentage / totalPercentage) * 100;
-    console.log(this.totalKidsPercentage);
+    let totalKidsPercentage = Math.round((addedPercentage / totalPercentage) * 100);
+    return totalKidsPercentage;
 
-
-
-    // Divide the number from to total number of kids * 100
   }
 
 }

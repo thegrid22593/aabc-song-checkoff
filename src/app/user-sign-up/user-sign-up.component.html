@@ -11,6 +11,8 @@
         <input type="radio" [(ngModel)]="singingPart" name="user-singing-part" value="Second Tenor"><span>Second Tenor</span>
         <input type="radio" [(ngModel)]="singingPart" name="user-singing-part" value="Baritone"><span>Baritone</span>
         <input type="radio" [(ngModel)]="singingPart" name="user-singing-part" value="Bass"><span>Bass</span>
+        <label for="is-partleader">Partleader?</label>
+        <input type="radio" value="true" name="is-partleader"> Yes
         <button type="button" (click)="updateUserInfo(firstName, lastName, singingPart)">Save</button>
     </form>
 </div>
