@@ -18,6 +18,7 @@ export class SidebarNavComponent {
     private songCount;
     private userPercentage;
     private userSongsRemaining;
+    private totalSongs: number;
 
     constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) {
 
@@ -29,6 +30,7 @@ export class SidebarNavComponent {
           this.currentUser = result;
           localStorage.setItem('currentUser', this.currentUser);
           this.currentUserSongs = this.currentUser.songs;
+          this.totalSongs = this.currentUser.songs.length;
           this.userPercentage = this.currentUser.percentage.toString();
           console.log(this.userPercentage);
           console.log('currentUser', this.currentUser);
