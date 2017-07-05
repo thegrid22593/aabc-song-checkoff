@@ -13,6 +13,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { WhiteShirtSongsComponent } from './white-shirt-songs/white-shirt-songs.component';
+import { CheckoffComponent } from './checkoff/checkoff.component';
 
 
 
@@ -36,6 +37,10 @@ const appRoutes: Routes = [
   {
     path: 'songs',
     component: SongsComponent
+  },
+  {
+    path: 'checkoff',
+    component: CheckoffComponent
   },
   {
     path: 'solo-songs',

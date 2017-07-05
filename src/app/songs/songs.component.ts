@@ -34,12 +34,13 @@ export class SongsComponent implements OnInit {
           this._af.authState.subscribe(user => {
               if(user) {
                   this.activeUserUID = user.uid;
-                  this._userService.getUserByUID(this.activeUserUID).then(result => {
+                  this._userService.getUserByUID(this.activeUserUID).subscribe(result => {
                       console.log(result);
                       this.activeUser = result;
                       this.activeUserSongs = this.activeUser.songs;
                   })
               }
+            this.activeUser = this._userService.user
           });
       }
 

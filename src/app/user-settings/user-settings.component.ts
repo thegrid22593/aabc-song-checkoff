@@ -52,8 +52,8 @@ export class UserSettingsComponent implements OnInit {
                   console.log('settings user', user);
                   this.userID = user.uid;
 
-                  this._userService.getUserByUID(this.userID).then(result => {
-                      this.currentUser = result;
+                  this._userService.getUserByUID(this.userID).subscribe(user => {
+                      this.currentUser = user;
                       // this.currentUserSongs = this.currentUser.songs;
                       this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
                       this.currentUserLastName = this.currentUser.lastName;

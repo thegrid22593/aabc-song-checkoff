@@ -60,8 +60,8 @@ export class UserDashboardComponent implements OnInit {
         this.userName = user.displayName;
         this.userPic = user.photoURL;
 
-        this._userService.getUserByUID(user.uid).then(result => {
-          this.currentUser = result;
+        this._userService.getUserByUID(user.uid).subscribe((user) => {
+          this.currentUser = user;
           localStorage.setItem('currentUser', this.currentUser);
           this.currentUserSongs = this.currentUser.songs;
           this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
@@ -81,6 +81,12 @@ export class UserDashboardComponent implements OnInit {
           this.getSingingParts();
           this.getSongPercentage(this.completedSongs, this.currentUserSongs);
         });
+
+
+        // this._userService.getUserByUID(user.uid).then(result => {
+        //   this.currentUser = result;
+        
+        // });
       }
     });
   }

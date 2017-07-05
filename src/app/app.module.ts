@@ -24,6 +24,7 @@ import {UserSignUpComponent} from './user-sign-up/user-sign-up.component';
 import {SidebarNavComponent} from './shared/sidebar-nav/sidebar-nav.component';
 import {NavBarComponent} from './shared/navbar/navbar.component';
 import {WhiteShirtSongsComponent} from './white-shirt-songs/white-shirt-songs.component';
+import { CheckoffComponent } from './checkoff/checkoff.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'white-shirt-songs',
     component: WhiteShirtSongsComponent
+  },
+  {
+    path: 'checkoff',
+    component: CheckoffComponent
   },
   {
     path: 'songs',
@@ -88,6 +93,7 @@ const routes: Routes = [
     UserSettingsComponent,
     UserSignUpComponent,
     WhiteShirtSongsComponent,
+    CheckoffComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,20 +10,27 @@ import { AngularFireDatabase } from 'angularfire2/database';
 @Injectable()
 export class UserService {
 
+    public user;
+
     constructor(private _http: Http, private _af: AngularFireAuth, private _router: Router, private db: AngularFireDatabase) {
 
     }
 
     getUserByUID(id:string) {
-        return this._http.get('https://aabc-checkoff.firebaseio.com/.json')
-            .map((response: Response) =>  _.find(response.json().users, {'uid': id}))
-            .toPromise()
-            .catch(this.handleError);
+        if(this.user) {
+            return Observable.of(this.user);
+        } else {
+            return this._http.get('https://aabc-checkoff.firebaseio.com/.json')
+                .map((res: Response) =>  _.find(res.json().users, {'uid': id}))
+                .do((user) => {
+                    this.user = user;
+                })
+        };
     }
 
     getUsersByPart(singingPart:string) {
         return this._http.get('https://aabc-checkoff.firebaseio.com/.json')
-            .map((response: Response) => _.filter(response.json().users, {'singingPart': singingPart}))
+            .map((res: Response) => _.filter(res.json().users, {'singingPart': singingPart}))
             .toPromise()
             .catch(this.handleError);
     }

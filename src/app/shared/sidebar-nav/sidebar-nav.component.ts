@@ -12,6 +12,7 @@ import {UserService} from "../../services/user.service";
 
 export class SidebarNavComponent {
     private currentUser;
+    private partLeader: boolean;
     private currentUserSongs;
     private completedSongs: number = 0;
     private unCompletedSongs: number = 0;
@@ -26,9 +27,10 @@ export class SidebarNavComponent {
 
     ngOnInit() {
       this.af.authState.subscribe(user => {
-        this._userService.getUserByUID(user.uid).then(result => {
+        this._userService.getUserByUID(user.uid).subscribe(result => {
           this.currentUser = result;
-          localStorage.setItem('currentUser', this.currentUser);
+          localStorage.setItem('currentUser', JSON.stringify( this.currentUser ));
+          this.partLeader = this.currentUser.partLeader;
           this.currentUserSongs = this.currentUser.songs;
           this.totalSongs = this.currentUser.songs.length;
           this.userPercentage = this.currentUser.percentage.toString();
