@@ -6,14 +6,16 @@ import * as _ from 'lodash';
 import {Router, ActivatedRoute} from '@angular/router';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {User} from '../models/User';
 
 @Injectable()
 export class UserService {
 
-    public user;
+    public user: User;
+
 
     constructor(private _http: Http, private _af: AngularFireAuth, private _router: Router, private db: AngularFireDatabase) {
-        this.user = null;
+
     }
 
     getUserByUID(id:string) {
