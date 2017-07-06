@@ -64,6 +64,7 @@ export class UserDashboardComponent implements OnInit {
           this.currentUser = user;
           localStorage.setItem('currentUser', this.currentUser);
           this.currentUserSongs = this.currentUser.songs;
+          console.log(this.currentUserSongs);
           this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
           this.currentUserPart = this.currentUser.singingPart;
           this.lastCompletedSong = this.currentUser.lastCompletedSong;
@@ -76,17 +77,10 @@ export class UserDashboardComponent implements OnInit {
               this.unCompletedSongs++;
             }
           }
-
           this.songCount = this.currentUserSongs.length;
           this.getSingingParts();
           this.getSongPercentage(this.completedSongs, this.currentUserSongs);
         });
-
-
-        // this._userService.getUserByUID(user.uid).then(result => {
-        //   this.currentUser = result;
-        
-        // });
       }
     });
   }

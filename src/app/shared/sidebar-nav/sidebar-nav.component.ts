@@ -34,8 +34,6 @@ export class SidebarNavComponent {
           this.currentUserSongs = this.currentUser.songs;
           this.totalSongs = this.currentUser.songs.length;
           this.userPercentage = this.currentUser.percentage.toString();
-          console.log(this.userPercentage);
-          console.log('currentUser', this.currentUser);
 
           for(let song of this.currentUserSongs) {
             if(song.completed == true) {

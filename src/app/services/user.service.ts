@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
 import {Router, ActivatedRoute} from '@angular/router';
 import {AngularFireAuth} from 'angularfire2/auth';
-import { AngularFireDatabase } from 'angularfire2/database';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 @Injectable()
 export class UserService {
@@ -13,11 +13,11 @@ export class UserService {
     public user;
 
     constructor(private _http: Http, private _af: AngularFireAuth, private _router: Router, private db: AngularFireDatabase) {
-
+        this.user = null;
     }
 
     getUserByUID(id:string) {
-        if(this.user) {
+        if(this.user != null) {
             return Observable.of(this.user);
         } else {
             return this._http.get('https://aabc-checkoff.firebaseio.com/.json')
@@ -25,6 +25,7 @@ export class UserService {
                 .do((user) => {
                     this.user = user;
                 })
+                .catch(this.handleError);
         };
     }
 
@@ -46,27 +47,8 @@ export class UserService {
         console.log('service', user);
         this.db.list('users').update(key, user).then(success => {
             console.log('updated user');
-        })
-    }
-
-    getCurrentUser() {
-        this.db.list('https://aabc-checkoff.firebaseio.com/users/EWMIQ5yKlcgj3vxL6WZxu0Uuq5o1');
-    }
-
-    getSongByName(songName:string) {
-        return this._http.get('https://aabc-checkoff.firebaseio.com/users/.json')
-            .map((response: Response) => _.find(response.json().songs, {'name': songName}))
-            .toPromise()
-            .catch(this.handleError);
-    }
-
-    fetchData() {
-        console.log('running');
-        return this._http.get('https://aabc-checkoff.firebaseio.com/users/.json').map(
-            (res) => res.json()
-        ).subscribe(
-            (data) => console.log(data)
-        );
+            console.log(user);
+        });
     }
 
     private handleError(error: Response) {
