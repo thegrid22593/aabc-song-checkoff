@@ -18,6 +18,20 @@ export class UserService {
 
     }
 
+    getCurrentUser() {
+        if(this.user != null) {
+            return Observable.of(this.user); 
+        } else {
+            this._af.authState.subscribe((userAuth) => {
+              return this._http.get('https://aabc-checkoff.firebaseio.com/.json')
+                         .map((res: Response) => _.find(res.json().users, {'uid': userAuth.uid }))
+                         .do(user => this.user = user)
+                         .catch(this.handleError);
+            });
+        }
+        
+    }
+
     getUserByUID(id:string) {
         if(this.user != null) {
             return Observable.of(this.user);
@@ -26,10 +40,9 @@ export class UserService {
                 .map((res: Response) =>  _.find(res.json().users, { 'uid': id }))
                 .do((user) => {
                     this.user = user;
-                    // console.log(this.user);
                 })
                 .catch(this.handleError);
-        };
+        }
     }
 
     getUsersByPart(singingPart:string) {

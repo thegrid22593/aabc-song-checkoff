@@ -22,7 +22,7 @@ export class SidebarNavComponent {
     private totalSongs: number;
 
     constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) {
-
+      
     }
 
     ngOnInit() {

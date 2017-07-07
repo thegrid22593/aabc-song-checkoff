@@ -1,6 +1,15 @@
 <sidebar-nav></sidebar-nav>
 <router-outlet></router-outlet>
 
-<div class="container">
+<section class="checkoff">
     <h1>Checkoff</h1>
-</div>
+    <div class="checkoff-menu-bar">
+        <div class="container-full">
+            <div class="part-info">
+                <div class="part-leader-avatar"><img [src]="partLeaderAvatar" alt="part-leader-profile-pic"></div>
+                <div class="part-leader-name">{{ partLeaderName }}</div>
+                <div class="part-leader-part">{{ partLeaderPart }}</div>
+            </div>
+        </div>
+    </div>
+</section>

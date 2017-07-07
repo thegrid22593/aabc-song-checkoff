@@ -1,0 +1,26 @@
+@import '../../scss/partials/base';
+
+.checkoff-menu-bar {
+    background: $aabc-light-grey;
+    width: 100%;
+    padding: 1rem;
+    .part-info {
+        width: 100%;
+        .part-leader-avatar,
+        .part-leader-name,
+        .part-leader-part {
+            display: inline-block;
+            padding: 0 0.4rem;
+            font-family: $aabc-pt-sans-narrow;
+            font-weight: 900;
+        }
+
+        .part-leader-avatar {
+            margin-left: 3rem;
+            img {
+                max-width: 30px;
+                border-radius: 50%;
+            }
+        }
+    }
+}
