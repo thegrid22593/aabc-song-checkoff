@@ -6,12 +6,12 @@ import * as _ from 'lodash';
 import {Router, ActivatedRoute} from '@angular/router';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
-import {User} from '../models/User';
+import {User} from '../interfaces/User';
 
 @Injectable()
 export class UserService {
 
-    public user: User;
+    public user;
 
 
     constructor(private _http: Http, private _af: AngularFireAuth, private _router: Router, private db: AngularFireDatabase) {
@@ -23,9 +23,10 @@ export class UserService {
             return Observable.of(this.user);
         } else {
             return this._http.get('https://aabc-checkoff.firebaseio.com/.json')
-                .map((res: Response) =>  _.find(res.json().users, {'uid': id}))
+                .map((res: Response) =>  _.find(res.json().users, { 'uid': id }))
                 .do((user) => {
                     this.user = user;
+                    // console.log(this.user);
                 })
                 .catch(this.handleError);
         };

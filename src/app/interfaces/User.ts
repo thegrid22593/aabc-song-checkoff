@@ -1,11 +1,12 @@
 export interface User {
     firstName: string,
     lastName: string,
+    lastCompletedSong: string,
     partLeader: boolean,
     percentage: number,
     profilePicURL: string,
     singingPart: string,
-    songs: any,
+    songs: Array<object>,
     startDate: string,
-    uid: string
+    uid: String
 }
