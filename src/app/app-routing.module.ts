@@ -14,6 +14,8 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { UserSignUpComponent } from './user-sign-up/user-sign-up.component';
 import { WhiteShirtSongsComponent } from './white-shirt-songs/white-shirt-songs.component';
 import { CheckoffComponent } from './checkoff/checkoff.component';
+import { UserDashboardSummaryComponent } from './user-dashboard/user-dashboard-summary/user-dashboard-summary.component';
+import { UserDashboardFeedbackComponent } from './user-dashboard/user-dashboard-feedback/user-dashboard-feedback.component';
 
 
 
@@ -28,7 +30,17 @@ const appRoutes: Routes = [
   },
   {
     path: 'dashboard',
-    component: UserDashboardComponent
+    component: UserDashboardComponent,
+    children: [
+      {
+        path: 'summary',
+        component: UserDashboardSummaryComponent
+      },
+      {
+        path: 'feedback',
+        component: UserDashboardFeedbackComponent
+      }
+    ]
   },
   {
     path: 'white-shirt-songs',

@@ -16,67 +16,6 @@
   color: #ccc;
 }
 
-section.dashboard {
-  width: 85%;
-  float: right;
-
-  .dashboard-member-info {
-    background: #fbfbfb;
-    border-bottom: 1px solid #ddd;
-    padding: 3rem;
-    overflow: hidden;
-    margin-top: 2px;
-    .member-name-and-photo {
-      width: 35%;
-      float: left;
-      h2.current-user-name {
-        font-size: 2rem;
-        font-weight: 900;
-        color: #373a3c;
-      }
-      img {
-        float: left;
-        margin-right: 30px;
-        max-width: 125px;
-        border-radius: 50%;
-      }
-    }
-    .member-songs-completed {
-      width: 20%;
-      float: left;
-      p {
-        font-size: 2rem;
-        font-weight: 900;
-      }
-    }
-    .member-songs-percentage {
-      width: 20%;
-      float: left;
-      p {
-        font-size: 2rem;
-        font-weight: 900;
-      }
-    }
-
-    .member-last-completed-song {
-      p {
-        font-size: 2rem;
-        font-weight: 900;
-      }
-    }
-  }
-
-  h5 {
-    color: darken($aabc-light-grey, 8%);
-    font-size: 0.9rem;
-    font-family: $aabc-pt-sans-narrow;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 900;
-    padding-top: 1.3rem;
-  }
-}
-
 $base-line-height: 24px;
 $spin-duration: 1s;
 $pulse-duration: 750ms;

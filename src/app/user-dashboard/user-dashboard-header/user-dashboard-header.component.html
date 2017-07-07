@@ -1,0 +1,24 @@
+<section class="dashboard">
+  <div class="dashboard-member-info">
+    <div class="member-name-and-photo">
+      <img class="user-profile-pic" *ngIf="userPic" [src]="userPic" alt="user profile pic">
+      <h5>Details</h5>
+      <h2 class="current-user-name">{{currentUserName}}</h2>
+      <strong class="current-user-part">{{currentUserPart}}</strong>
+    </div>
+    <div class="member-songs-completed">
+      <h5>Songs Completed</h5>
+      <p>{{this.completedSongs}} / {{songCount}}</p>
+    </div>
+
+    <div class="member-songs-percentage">
+      <h5>Percentage</h5>
+      <p>{{songPercentage}}%</p>
+    </div>
+
+    <div class="member-last-completed-song">
+      <h5>Last Completed Song:</h5>
+      <p>{{lastCompletedSong}}</p>
+    </div>
+  </div>
+</section>

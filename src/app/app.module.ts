@@ -27,57 +27,63 @@ import {WhiteShirtSongsComponent} from './white-shirt-songs/white-shirt-songs.co
 import { CheckoffComponent } from './checkoff/checkoff.component';
 import { CheckoffMemberComponent } from './checkoff/checkoff-member/checkoff-member.component';
 import { CheckoffSongComponent } from './checkoff/checkoff-song/checkoff-song.component';
-import { DashboardMenuComponent } from './shared/dashboard-menu/dashboard-menu.component';
-import { UserFeedbackComponent } from './user-dashboard/user-feedback/user-feedback.component';
+import { UserDashboardHeaderComponent } from './user-dashboard/user-dashboard-header/user-dashboard-header.component';
+import { UserDashboardFeedbackComponent } from './user-dashboard/user-dashboard-feedback/user-dashboard-feedback.component';
+import { UserDashboardSummaryComponent } from './user-dashboard/user-dashboard-summary/user-dashboard-summary.component';
+import { UserDashboardMenuComponent } from './user-dashboard/user-dashboard-menu/user-dashboard-menu.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: AppComponent
-  },
-  {
-    path: 'sign-in',
-    component: UserSignInComponent
-  },
-  {
-    path: 'dashboard',
-    component: UserDashboardComponent,
-    children: [
-      {
-        path: 'blue-shirt-songs',
-        component: SongsComponent
-      }
-    ]
-  },
-  {
-    path: 'white-shirt-songs',
-    component: WhiteShirtSongsComponent
-  },
-  {
-    path: 'checkoff',
-    component: CheckoffComponent
-  },
-  {
-    path: 'songs',
-    component: SongsComponent
-  },
-  {
-    path: 'solo-songs',
-    component: SoloSongsComponent
-  },
-  {
-    path: 'user-settings',
-    component: UserSettingsComponent
-  },
-  {
-    path: 'user-sign-up',
-    component: UserSignUpComponent
-  },
-  {
-    path: 'song',
-    component: SongDetailComponent
-  }
-];
+// const routes: Routes = [
+//   {
+//     path: '',
+//     component: AppComponent
+//   },
+//   {
+//     path: 'sign-in',
+//     component: UserSignInComponent
+//   },
+//   {
+//     path: 'dashboard',
+//     component: UserDashboardComponent,
+//     children: [
+//       {
+//         path: 'summary',
+//         component: UserDashboardSummaryComponent
+//       },
+//       {
+//         path: 'feedback',
+//         component: UserDashboardFeedbackComponent
+//       }
+//     ]
+//   },
+//   {
+//     path: 'white-shirt-songs',
+//     component: WhiteShirtSongsComponent
+//   },
+//   {
+//     path: 'checkoff',
+//     component: CheckoffComponent
+//   },
+//   {
+//     path: 'songs',
+//     component: SongsComponent
+//   },
+//   {
+//     path: 'solo-songs',
+//     component: SoloSongsComponent
+//   },
+//   {
+//     path: 'user-settings',
+//     component: UserSettingsComponent
+//   },
+//   {
+//     path: 'user-sign-up',
+//     component: UserSignUpComponent
+//   },
+//   {
+//     path: 'song',
+//     component: SongDetailComponent
+//   }
+// ];
 
 @NgModule({
   declarations: [
@@ -100,8 +106,10 @@ const routes: Routes = [
     CheckoffComponent,
     CheckoffMemberComponent,
     CheckoffSongComponent,
-    DashboardMenuComponent,
-    UserFeedbackComponent,
+    UserDashboardHeaderComponent,
+    UserDashboardFeedbackComponent,
+    UserDashboardSummaryComponent,
+    UserDashboardMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,7 +118,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    RouterModule.forRoot(routes)
+    RouterModule
   ],
   providers: [
   SongService,
