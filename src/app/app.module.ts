@@ -25,6 +25,8 @@ import {SidebarNavComponent} from './shared/sidebar-nav/sidebar-nav.component';
 import {NavBarComponent} from './shared/navbar/navbar.component';
 import {WhiteShirtSongsComponent} from './white-shirt-songs/white-shirt-songs.component';
 import { CheckoffComponent } from './checkoff/checkoff.component';
+import { CheckoffMemberComponent } from './checkoff/checkoff-member/checkoff-member.component';
+import { CheckoffSongComponent } from './checkoff/checkoff-song/checkoff-song.component';
 
 const routes: Routes = [
   {
@@ -94,6 +96,8 @@ const routes: Routes = [
     UserSignUpComponent,
     WhiteShirtSongsComponent,
     CheckoffComponent,
+    CheckoffMemberComponent,
+    CheckoffSongComponent,
   ],
   imports: [
     BrowserModule,

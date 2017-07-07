@@ -11,7 +11,11 @@ export class CheckoffComponent implements OnInit {
   private partLeader;
   private partLeaderName;
   private partLeaderPart;
-  private partLeaderAvatar
+  private partLeaderAvatar;
+  private partMembers;
+  private totalSongs;
+  private activeMember;
+  private activeMemberSongs;
 
   constructor(private _userService: UserService) { 
     this._userService.getCurrentUser().subscribe(user => this.partLeader = user);
@@ -25,20 +29,30 @@ export class CheckoffComponent implements OnInit {
     this.partLeaderAvatar = this.partLeader.profilePicURL;
     console.log('partLeaderName', this.partLeaderName);
 
-    // Get the part of the current part leader
-
     // Grab that partleaders part and display the users from the part
+    this._userService.getUsersByPart(this.partLeaderPart).then((partMembers) => {
+      this.partMembers = partMembers;
+      console.log('part members', this.partMembers);
+    });
 
+  }
+
+  seeMemberSongs(uid:string) {
     // Allow the partleader to click into the user and see the songs they need to check off
-    // and see how many tries they have had
+    this._userService.getUserByUID(uid).subscribe((member) => {
+      this.activeMember = member;
+
+      // Passes this data to a check off member component with list of songs to check off.
+      this.activeMemberSongs = member.songs;
+    });
+    
+    // I need to add tries to data structure
 
     // Save the blueshirts tries in their data so we can display that on their dashboard
 
     // Possibly add a section for the partleader to add notes for the blueshirt to reference in his dashboard
 
     // Allow the partleader to select a song they have checked off. ( possible e-sig? )
-  }
-  
-  
+  }  
 
 }
