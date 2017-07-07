@@ -11,6 +11,11 @@ import * as _ from 'lodash';
 })
 export class UserDashboardComponent implements OnInit {
 
+  // TODO: 
+  // Add a dashboard menu...
+  // Adds a section for the partleaders of the current part.
+  // Add a section called messages/notes that has the notes for all the users songs. Unread and read. etc.
+
   public user: any;
   public userName: string;
 

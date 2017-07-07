@@ -14,8 +14,10 @@ export class CheckoffComponent implements OnInit {
   private partLeaderAvatar;
   private partMembers;
   private totalSongs;
-  private activeMember;
-  private activeMemberSongs;
+
+  public activeMember;
+  public activeMemberSongs;
+  public memberDialogActive: boolean = false;
 
   constructor(private _userService: UserService) { 
     this._userService.getCurrentUser().subscribe(user => this.partLeader = user);
@@ -41,9 +43,9 @@ export class CheckoffComponent implements OnInit {
     // Allow the partleader to click into the user and see the songs they need to check off
     this._userService.getUserByUID(uid).subscribe((member) => {
       this.activeMember = member;
-
       // Passes this data to a check off member component with list of songs to check off.
       this.activeMemberSongs = member.songs;
+      this.memberDialogActive = true;
     });
     
     // I need to add tries to data structure
@@ -53,6 +55,12 @@ export class CheckoffComponent implements OnInit {
     // Possibly add a section for the partleader to add notes for the blueshirt to reference in his dashboard
 
     // Allow the partleader to select a song they have checked off. ( possible e-sig? )
+  }
+
+  closeMember() {
+    this.activeMember = false;
+    this.activeMemberSongs = false;
+    this.memberDialogActive = false;
   }  
 
 }

@@ -27,6 +27,8 @@ import {WhiteShirtSongsComponent} from './white-shirt-songs/white-shirt-songs.co
 import { CheckoffComponent } from './checkoff/checkoff.component';
 import { CheckoffMemberComponent } from './checkoff/checkoff-member/checkoff-member.component';
 import { CheckoffSongComponent } from './checkoff/checkoff-song/checkoff-song.component';
+import { DashboardMenuComponent } from './shared/dashboard-menu/dashboard-menu.component';
+import { UserFeedbackComponent } from './user-dashboard/user-feedback/user-feedback.component';
 
 const routes: Routes = [
   {
@@ -98,6 +100,8 @@ const routes: Routes = [
     CheckoffComponent,
     CheckoffMemberComponent,
     CheckoffSongComponent,
+    DashboardMenuComponent,
+    UserFeedbackComponent,
   ],
   imports: [
     BrowserModule,

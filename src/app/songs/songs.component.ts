@@ -14,6 +14,9 @@ import {Song} from '../song';
 })
 
 export class SongsComponent implements OnInit {
+
+    // Allow the user to view a songs notes from a partleader ( possibly add an unread section )
+
   public songs: any;
   public activeSong: any;
   public activeSongURL: any;
