@@ -118,7 +118,8 @@ import { UserDashboardMenuComponent } from './user-dashboard/user-dashboard-menu
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    RouterModule
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [
   SongService,
