@@ -1,14 +1,21 @@
 <nav class="dashboard-menu">
   <ul>
     <li>
-      <a routerLink="/summary" routerLinkActive="active">
+      <a routerLink="/dashboard/summary" routerLinkActive="active">
         <i class="fa fa-pie-chart" aria-hidden="true"></i>Summary
       </a>
     </li>
     <li>
-      <a routerLink="/feedback" routerLinkActive="active">
+      <a routerLink="/dashboard/feedback" routerLinkActive="active">
       <i class="fa fa-comment-o" aria-hidden="true"></i>Messages
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard/part-comparison" routerLinkActive="active">
+      <i class="fa fa-bar-chart" aria-hidden="true"></i>Part Comparison
       </a>
     </li>
   </ul>
 </nav>
+
+  <router-outlet></router-outlet>

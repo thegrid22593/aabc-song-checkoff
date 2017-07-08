@@ -8,7 +8,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class UserDashboardMenuComponent implements OnInit {
 
-  constructor(private _router: Router, private _route: ActivatedRoute) { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
   }

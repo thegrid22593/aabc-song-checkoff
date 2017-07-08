@@ -31,6 +31,7 @@ import { UserDashboardHeaderComponent } from './user-dashboard/user-dashboard-he
 import { UserDashboardFeedbackComponent } from './user-dashboard/user-dashboard-feedback/user-dashboard-feedback.component';
 import { UserDashboardSummaryComponent } from './user-dashboard/user-dashboard-summary/user-dashboard-summary.component';
 import { UserDashboardMenuComponent } from './user-dashboard/user-dashboard-menu/user-dashboard-menu.component';
+import { UserDashboardPartComparisonComponent } from './user-dashboard/user-dashboard-part-comparison/user-dashboard-part-comparison.component';
 
 // const routes: Routes = [
 //   {
@@ -110,6 +111,7 @@ import { UserDashboardMenuComponent } from './user-dashboard/user-dashboard-menu
     UserDashboardFeedbackComponent,
     UserDashboardSummaryComponent,
     UserDashboardMenuComponent,
+    UserDashboardPartComparisonComponent,
   ],
   imports: [
     BrowserModule,

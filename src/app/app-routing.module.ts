@@ -16,6 +16,7 @@ import { WhiteShirtSongsComponent } from './white-shirt-songs/white-shirt-songs.
 import { CheckoffComponent } from './checkoff/checkoff.component';
 import { UserDashboardSummaryComponent } from './user-dashboard/user-dashboard-summary/user-dashboard-summary.component';
 import { UserDashboardFeedbackComponent } from './user-dashboard/user-dashboard-feedback/user-dashboard-feedback.component';
+import { UserDashboardPartComparisonComponent } from './user-dashboard/user-dashboard-part-comparison/user-dashboard-part-comparison.component';
 
 
 
@@ -34,11 +35,20 @@ const appRoutes: Routes = [
     children: [
       {
         path: 'summary',
-        component: UserDashboardSummaryComponent
+        component: UserDashboardSummaryComponent,
       },
       {
         path: 'feedback',
-        component: UserDashboardFeedbackComponent
+        component: UserDashboardFeedbackComponent,
+      },
+      {
+        path: 'part-comparison',
+        component: UserDashboardPartComparisonComponent
+      },
+      {
+        path: '',
+        redirectTo: 'summary',
+        pathMatch: 'full'
       }
     ]
   },
