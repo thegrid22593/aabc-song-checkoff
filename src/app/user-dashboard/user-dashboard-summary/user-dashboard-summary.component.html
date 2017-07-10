@@ -1,10 +1,87 @@
 <div class="dashboard-member-part-info">
-    <div class="part-container">
-      <div class="part-container-header clearfix">
-        <h3 class="pull-left">Basses</h3>
-        <h5 class="pull-right"*ngIf="bassAvgPercentage">{{bassAvgPercentage}}%</h5>
+  <div class="container-full">
+
+    <div class="row">
+      <div class="col-lg-5 col-md-6 col-sm-12">
+        <div class="part-container">
+          <div class="part-container-header clearfix">
+            <h3 class="col-lg-6">Basses</h3>
+            <h5 class="col-lg-6" *ngIf="bassAvgPercentage">{{bassAvgPercentage}}%</h5>
+          </div>
+          <div class="part-table" *ngIf="bassPart">
+            <div class="col-lg-8">Name</div>
+            <div class="col-lg-4">Percentage</div>
+          </div>
+          <div *ngFor="let bassMember of bassPart" class="col-lg-12 part-member">
+            <div class="col-lg-2"><img class="part-member-avatar" src="{{bassMember.profilePicURL}}" alt=""></div>
+            <div class="col-lg-6">{{bassMember.firstName}} {{bassMember.lastName}}</div>
+            <div class="col-lg-4" *ngIf="bassMember.percentage > 0">{{bassMember.percentage}}%</div>
+            <div class="col-lg-4" *ngIf="bassMember.percentage == 0">0%</div>
+          </div>
+        </div>
       </div>
-      <table class="table" *ngIf="bassPart">
+
+      <div class="col-lg-5 col-md-6 col-sm-12">
+        <div class="part-container">
+          <div class="part-container-header clearfix">
+            <h3 class="col-lg-6">Second Tenor</h3>
+            <h5 class="col-lg-6" *ngIf="secondTenorAvgPercentage">{{secondTenorAvgPercentage}}%</h5>
+          </div>
+          <div class="part-table" *ngIf="secondTenorPart">
+            <div class="col-lg-8">Name</div>
+            <div class="col-lg-4">Percentage</div>
+          </div>
+          <div *ngFor="let secondTenorMember of secondTenorPart" class="col-lg-12 part-member">
+            <div class="col-lg-2"><img class="part-member-avatar" src="{{secondTenorMember.profilePicURL}}" alt=""></div>
+            <div class="col-lg-6">{{secondTenorMember.firstName}} {{secondTenorMember.lastName}}</div>
+            <div class="col-lg-4" *ngIf="secondTenorMember.percentage > 0">{{secondTenorMember.percentage}}%</div>
+            <div class="col-lg-4" *ngIf="secondTenorMember.percentage == 0">0%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-md-6 col-sm-12">
+        <div class="part-container">
+          <div class="part-container-header clearfix">
+            <h3 class="col-lg-6">First Tenor</h3>
+            <h5 class="col-lg-6" *ngIf="firstTenorAvgPercentage">{{firstTenorAvgPercentage}}%</h5>
+          </div>
+          <div class="part-table" *ngIf="firstTenorPart">
+            <div class="col-lg-8">Name</div>
+            <div class="col-lg-4">Percentage</div>
+          </div>
+          <div *ngFor="let firstTenorMember of firstTenorPart" class="col-lg-12 part-member">
+            <div class="col-lg-2"><img class="part-member-avatar" src="{{firstTenorMember.profilePicURL}}" alt=""></div>
+            <div class="col-lg-6">{{firstTenorMember.firstName}} {{firstTenorMember.lastName}}</div>
+            <div class="col-lg-4" *ngIf="firstTenorMember.percentage > 0">{{firstTenorMember.percentage}}%</div>
+            <div class="col-lg-4" *ngIf="firstTenorMember.percentage == 0">0%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-md-6 col-sm-12">
+        <div class="part-container">
+          <div class="part-container-header clearfix">
+            <h3 class="col-lg-6">Baritone</h3>
+            <h5 class="col-lg-6" *ngIf="baritoneAvgPercentage">{{baritoneAvgPercentage}}%</h5>
+          </div>
+          <div class="part-table" *ngIf="baritonePart">
+            <div class="col-lg-8">Name</div>
+            <div class="col-lg-4">Percentage</div>
+          </div>
+          <div *ngFor="let baritoneMember of baritonePart" class="col-lg-12 part-member">
+            <div class="col-lg-2"><img class="part-member-avatar" src="{{baritoneMember.profilePicURL}}" alt=""></div>
+            <div class="col-lg-6">{{baritoneMember.firstName}} {{baritoneMember.lastName}}</div>
+            <div class="col-lg-4" *ngIf="baritoneMember.percentage > 0">{{baritoneMember.percentage}}%</div>
+            <div class="col-lg-4" *ngIf="baritoneMember.percentage == 0">0%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+      <!-- <table class="table" *ngIf="bassPart">
         <tr>
           <th>Name</th>
           <th>Percentage</th>
@@ -15,7 +92,7 @@
           <td *ngIf="bassMember.percentage == 0">0%</td>
         </tr>
       </table>
-    </div>
+
 
     <div class="part-container">
       <div class="part-container-header clearfix">
@@ -81,4 +158,4 @@
       <td>{{song.difficulty}}</td>
       <td>{{song.time}}</td>
     </tr>
-  </tbody>
+  </tbody> -->

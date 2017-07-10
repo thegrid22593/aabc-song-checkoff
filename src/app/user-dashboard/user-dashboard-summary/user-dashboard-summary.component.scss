@@ -15,9 +15,7 @@ $pulse-duration: 750ms;
 
 .dashboard-member-part-info {
   .part-container {
-    width: calc(50% - 10px);
     display: inline-block;
-    padding: 1rem 2rem;
     .part-loading {
         border-radius: 50%;
         width: $base-line-height;
@@ -42,14 +40,30 @@ $pulse-duration: 750ms;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 1px;
-
+        margin-bottom: 0;
       }
 
       h5 {
         color: $aabc-cold-grey;
         padding-top: 0;
+        margin-bottom: 0;
+        font-size: 0.9rem;
       }
     }
+
+    .part-member {
+      margin: 0.5rem 0;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid $aabc-light-grey;
+
+      .part-member-avatar {
+        border-radius: 50%;
+        max-width: 40px;
+        margin-right: 15px;
+      }
+    }
+
+
 
 
     table {
@@ -61,13 +75,6 @@ $pulse-duration: 750ms;
           text-transform: uppercase;
           font-size: 0.95rem;
           letter-spacing: 1px;
-        }
-        td {
-          img {
-            border-radius: 50%;
-            max-width: 40px;
-            margin-right: 15px;
-          }
         }
       }
     }

@@ -57,7 +57,7 @@ const appRoutes: Routes = [
     component: WhiteShirtSongsComponent
   },
   {
-    path: 'songs',
+    path: 'music-library',
     component: SongsComponent
   },
   {
