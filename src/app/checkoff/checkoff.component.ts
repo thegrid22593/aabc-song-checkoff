@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from "../services/user.service";
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-checkoff',
@@ -19,12 +20,11 @@ export class CheckoffComponent implements OnInit {
   public activeMemberSongs;
   public memberDialogActive: boolean = false;
 
-  constructor(private _userService: UserService) { 
+  constructor(private _userService: UserService, private _router: Router) {
     this._userService.getCurrentUser().subscribe(user => this.partLeader = user);
   }
 
   ngOnInit() {
-    //TODO
 
     this.partLeaderName = this.partLeader.firstName + ' ' + this.partLeader.lastName;
     this.partLeaderPart = this.partLeader.singingPart;
@@ -39,15 +39,11 @@ export class CheckoffComponent implements OnInit {
 
   }
 
-  seeMemberSongs(uid:string) {
+  seeMemberSongs(id:string) {
+    console.log('working');
     // Allow the partleader to click into the user and see the songs they need to check off
-    this._userService.getUserByUID(uid).subscribe((member) => {
-      this.activeMember = member;
-      // Passes this data to a check off member component with list of songs to check off.
-      this.activeMemberSongs = member.songs;
-      this.memberDialogActive = true;
-    });
-    
+    this._router.navigate(['/checkoff/member', id]);
+
     // I need to add tries to data structure
 
     // Save the blueshirts tries in their data so we can display that on their dashboard
@@ -61,6 +57,6 @@ export class CheckoffComponent implements OnInit {
     this.activeMember = false;
     this.activeMemberSongs = false;
     this.memberDialogActive = false;
-  }  
+  }
 
 }

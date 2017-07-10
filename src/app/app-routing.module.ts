@@ -17,6 +17,7 @@ import { CheckoffComponent } from './checkoff/checkoff.component';
 import { UserDashboardSummaryComponent } from './user-dashboard/user-dashboard-summary/user-dashboard-summary.component';
 import { UserDashboardFeedbackComponent } from './user-dashboard/user-dashboard-feedback/user-dashboard-feedback.component';
 import { UserDashboardPartComparisonComponent } from './user-dashboard/user-dashboard-part-comparison/user-dashboard-part-comparison.component';
+import { CheckoffMemberComponent} from './checkoff/checkoff-member/checkoff-member.component';
 
 
 
@@ -63,6 +64,10 @@ const appRoutes: Routes = [
   {
     path: 'checkoff',
     component: CheckoffComponent
+  },
+  {
+    path: 'checkoff/member/:id',
+    component: CheckoffMemberComponent
   },
   {
     path: 'solo-songs',

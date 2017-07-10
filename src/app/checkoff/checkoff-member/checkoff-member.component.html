@@ -1,0 +1,18 @@
+<sidebar-nav></sidebar-nav>
+<h1>Checkoff Member</h1>
+
+<ul>
+  <li *ngFor="let song of checkoffMemberSongs">
+    <div class="song-name">{{ song.name }}</div>
+    <div class="add-note"><i class="fa fa-sticky-note" aria-hidden="true" (click)="addNote(song.name)"></i></div>
+  </li>
+</ul>
+
+
+<div class="note" [ngClass]="{'active': addNoteActive}">
+  <form class="add-note"  method="post">
+    <input type="text" name="note" value="" [(ngModel)]="noteTitle">
+    <textarea name="name" rows="8" cols="80" [(ngModel)]="noteContent"></textarea>
+    <button type="submit" name="button" (click)="submitNote()">Submit Note</button>
+  </form>
+</div>

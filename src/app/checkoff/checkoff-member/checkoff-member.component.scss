@@ -1,0 +1,11 @@
+.note {
+  display: none;
+
+  &.active {
+    display: block;
+    position: absolute;
+    top: 0;
+    background: aqua;
+    width: 100%;
+  }
+}
