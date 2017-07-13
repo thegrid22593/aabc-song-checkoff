@@ -1,8 +1,10 @@
 <section class="feedback">
-  <div class="song-with-feedback" *ngFor="let song of songWithNotes">
+  <div class="song-with-feedback" *ngFor="let song of songsWithNotes ">
     <div class="song-name">{{ song.name }}</div>
     <div class="feedback" *ngFor="let feedback of song.notes">
-      
+      <div class="feedback-title">{{ feedback.title }}</div>
+      <div class="feedback-content">{{ feedback.content }}</div>
+      <div class="feedback-partleader">{{ feedback.partLeader }}</div>
     </div>
   </div>
 </section>
