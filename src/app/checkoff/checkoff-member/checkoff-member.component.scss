@@ -1,11 +1,37 @@
+@import '../../../scss/partials/base';
+
 .note {
   display: none;
 
   &.active {
     display: block;
-    position: absolute;
-    top: 0;
-    background: aqua;
-    width: 100%;
+    @include center-align;
+    padding: 3rem;
+    background: white;
+    width: 35%;
+    border: 1px solid $aabc-light-grey;
+    @include aabc-box-shadow(0px 2px 10px rgba(0,0,0, 0.2));
+  }
+
+  form.add-note {
+    div {
+      padding: 1rem 0;
+      label {
+        display: block;
+      }
+      input[type="text"] {
+        &:focus {
+          outline: none;
+        }
+      }
+      textarea {
+      width: 100%;
+      border: 1px solid $aabc-light-grey;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    
   }
 }

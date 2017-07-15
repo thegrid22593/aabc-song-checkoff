@@ -1,5 +1,5 @@
 <section class="feedback">
-  <div class="song-with-feedback" *ngFor="let song of songsWithNotes ">
+  <div class="song-with-feedback" *ngFor="let song of songWithNotes ">
     <div class="song-name">{{ song.name }}</div>
     <div class="feedback" *ngFor="let feedback of song.notes">
       <div class="feedback-title">{{ feedback.title }}</div>

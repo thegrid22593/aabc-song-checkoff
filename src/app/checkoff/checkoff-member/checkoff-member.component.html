@@ -11,8 +11,16 @@
 
 <div class="note" [ngClass]="{'active': addNoteActive}">
   <form class="add-note"  method="post">
-    <input type="text" name="note" value="" [(ngModel)]="noteTitle">
-    <textarea name="name" rows="8" cols="80" [(ngModel)]="noteContent"></textarea>
-    <button type="submit" name="button" (click)="submitNote()">Submit Note</button>
+    <div>
+      <label for="note">Title</label>
+      <input type="text" name="note" value="" [(ngModel)]="noteTitle">
+    </div>
+    <div>
+      <label for="name">Comment</label>
+      <textarea name="name" rows="8" cols="80" [(ngModel)]="noteContent"></textarea>
+    </div>
+    <div>
+      <button type="submit" name="button" (click)="submitNote()">Submit Note</button>
+    </div>
   </form>
 </div>

@@ -19,8 +19,9 @@ export class UserDashboardHeaderComponent implements OnInit {
   public currentUserPart;
   public lastCompletedSong: string;
   public currentUserStartDate: string;
-  public completedSongs;
-  public unCompletedSongs;
+  public completedSongs: number = 0;
+  public unCompletedSongs: number = 0;
+  public songPercentage: number;
   public songCount;
 
   constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) { }
@@ -51,10 +52,27 @@ export class UserDashboardHeaderComponent implements OnInit {
           }
           this.songCount = this.currentUserSongs.length;
           // this.getSingingParts();
-          // this.getSongPercentage(this.completedSongs, this.currentUserSongs);
+          this.getSongPercentage(this.completedSongs, this.currentUserSongs);
         });
       }
     });
+  }
+
+  getSongPercentage(completedSongs, currentUserSongs) {
+    let totalSongs = currentUserSongs.length
+    this.songPercentage = Math.floor(completedSongs / totalSongs * 100);
+    this.updateUserPercentage(this.songPercentage);
+  }
+
+  updateUserPercentage(songPercentage) {
+    if(this.currentUser.percentage !== songPercentage) {
+      let updatedUser = {
+        percentage: this.songPercentage,
+        completedSongs: this.completedSongs
+      }
+      this._userService.updateUser(this.currentUser.uid, updatedUser);
+      localStorage.setItem('songPercentage', JSON.stringify( this.songPercentage ));
+    }
   }
 
 }
