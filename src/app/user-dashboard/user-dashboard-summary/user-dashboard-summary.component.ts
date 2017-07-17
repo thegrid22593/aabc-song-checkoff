@@ -128,11 +128,11 @@ export class UserDashboardSummaryComponent implements OnInit {
       this._userService.getUsersByPart('Baritone').then(result => {
         this.baritonePart = result;
         // localStorage.setItem('baritonePart', JSON.stringify( this.baritonePart ));
-        this.baritoneAvgPercentage = this.getWholePartAverage(this.baritonePart);
+        this.baritoneAvgPercentage = this.getWholePartAverage( this.baritonePart );
       });
     } else {
       this.baritonePart = JSON.parse( localStorage.getItem('baritonePart') );
-      this.baritoneAvgPercentage = this.getWholePartAverage(this.baritonePart);
+      this.baritoneAvgPercentage = this.getWholePartAverage( this.baritonePart );
     }
 
   }
@@ -144,7 +144,7 @@ export class UserDashboardSummaryComponent implements OnInit {
     let totalKidsInPart = singingPart.length;
     let totalPercentage = totalKidsInPart * 100;
     let addedPercentage = 0;
-    // Get all percentagesof the current part
+    // Get all percentages of the current part
     for(let member of singingPart) {
       // Add all percentages of the current part
       addedPercentage += member.percentage;
