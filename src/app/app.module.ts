@@ -32,6 +32,7 @@ import { UserDashboardFeedbackComponent } from './user-dashboard/user-dashboard-
 import { UserDashboardSummaryComponent } from './user-dashboard/user-dashboard-summary/user-dashboard-summary.component';
 import { UserDashboardMenuComponent } from './user-dashboard/user-dashboard-menu/user-dashboard-menu.component';
 import { UserDashboardPartComparisonComponent } from './user-dashboard/user-dashboard-part-comparison/user-dashboard-part-comparison.component';
+import { UserDashboardFeedbackMessageComponent } from './user-dashboard/user-dashboard-feedback/user-dashboard-feedback-message/user-dashboard-feedback-message.component';
 
 // const routes: Routes = [
 //   {
@@ -112,6 +113,7 @@ import { UserDashboardPartComparisonComponent } from './user-dashboard/user-dash
     UserDashboardSummaryComponent,
     UserDashboardMenuComponent,
     UserDashboardPartComparisonComponent,
+    UserDashboardFeedbackMessageComponent,
   ],
   imports: [
     BrowserModule,

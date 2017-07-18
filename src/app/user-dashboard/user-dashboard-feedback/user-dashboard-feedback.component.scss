@@ -1,0 +1,13 @@
+@import '../../../scss/partials/base';
+
+.feedback {
+  padding: 2rem;
+  width: 55%;
+  float: left;
+
+  .song-with-feedback {
+    .feedback {
+      border-bottom: 1px solid $aabc-light-grey;
+    }
+  }
+}
