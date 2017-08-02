@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'user-dashboard-feedback-message',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-dashboard-feedback-message.component.scss']
 })
 export class UserDashboardFeedbackMessageComponent implements OnInit {
-
+  @Input() public activeNote;
   constructor() { }
 
   ngOnInit() {

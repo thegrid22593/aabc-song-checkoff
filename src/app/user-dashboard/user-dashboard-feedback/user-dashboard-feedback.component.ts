@@ -11,6 +11,7 @@ export class UserDashboardFeedbackComponent implements OnInit {
   public currentUser;
   public currentUserSongs;
   public songsWithNotes;
+  public activeNote;
 
   constructor(private _userService: UserService) { 
     this._userService.getCurrentUser().subscribe((user) => {
@@ -22,6 +23,11 @@ export class UserDashboardFeedbackComponent implements OnInit {
 
   ngOnInit() {
     console.log('feedback', this.currentUser);
+  }
+
+  activateNote(note) {
+    console.log(note);
+    this.activeNote = note;
   }
 
   filterSongs() {

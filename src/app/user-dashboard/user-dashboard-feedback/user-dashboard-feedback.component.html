@@ -1,13 +1,12 @@
 <div class="clearfix">
   <section class="feedback">
     <div class="song-with-feedback" *ngFor="let song of songsWithNotes ">
-      <div class="song-name">{{ song.name }}</div>
-      <div class="feedback" *ngFor="let feedback of song.notes">
-        <div class="feedback-title">{{ feedback.title }}</div>
-        <div class="feedback-content">{{ feedback.content }}</div>
-        <div class="feedback-partleader">{{ feedback.partLeader }}</div>
-      </div>
+      <ul class="feedback-list" *ngFor="let feedback of song.notes">
+        <li class="feedback-title" (click)="activateNote(feedback)">{{feedback.title}}</li>
+      </ul>
+      <!-- <div class="feedback-song">{{song.name}}</div> -->
+      
     </div>
   </section>
-  <user-dashboard-feedback-message></user-dashboard-feedback-message>
+  <user-dashboard-feedback-message *ngIf="activeNote" [activeNote]="activeNote"></user-dashboard-feedback-message> 
 </div>
