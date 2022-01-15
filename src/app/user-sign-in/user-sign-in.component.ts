@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import { Validators } from '@angular/forms';
-import {AngularFireAuth} from 'angularfire2/auth';
 import {UserService} from "../services/user.service";
 import {SongService} from "../services/songs.service";
 import { Observable } from 'rxjs/Rx';
@@ -35,7 +34,7 @@ export class UserSignInComponent implements OnInit {
     signInEmail: string;
     signInPassword: string;
 
-    constructor(private _songsService: SongService, private _router: Router, public af: AngularFireAuth) {
+    constructor(private _songsService: SongService, private _router: Router) {
         this.backgroundImage = './assets/images/main-bg.jpg';
         this.logoIcon = './assets/images/logo-icon.png';
         this.loading = false;
@@ -48,51 +47,51 @@ export class UserSignInComponent implements OnInit {
     login() {
       this.loading = true;
       console.log('login');
-      this.af.auth.signInWithEmailAndPassword(this.signInEmail, this.signInPassword).then(success => {
-        this.af.authState.subscribe(user => {
-          if(!user) {
-            alert('Please Log In!');
-          } else {
-            this.activeUser = user;
-            console.log('activeUser:', this.activeUser);
-            this._router.navigate(['dashboard']);
-          }
-        })
-      });
+      // this.af.auth.signInWithEmailAndPassword(this.signInEmail, this.signInPassword).then(success => {
+      //   this.af.authState.subscribe(user => {
+      //     if(!user) {
+      //       alert('Please Log In!');
+      //     } else {
+      //       this.activeUser = user;
+      //       console.log('activeUser:', this.activeUser);
+      //       this._router.navigate(['dashboard']);
+      //     }
+      //   })
+      // });
     }
 
     logout() {
-      this.af.auth.signOut();
-
-      if(!this.af.authState.subscribe(auth => console.log(auth))) {
-        this._router.navigate(['']);
-      }
+      // this.af.auth.signOut();
+      //
+      // if(!this.af.authState.subscribe(auth => console.log(auth))) {
+      //   this._router.navigate(['']);
+      // }
     }
 
     signUp(email, password) {
-      this.af.auth.createUserWithEmailAndPassword(
-        email,
-        password
-      )
-      .then(success => {
-        this.af.authState.subscribe(user => {
-          if(!user) {
-            alert('this did not work');
-          } else {
-            this._router.navigate(['user-sign-up']);
-            user.sendEmailVerification().then(success => {
-              console.log('email sent');
-            }), function (error) {
-              console.log(error);
-            }
-          }
-        })
-      })
-      .catch((error:any) => {
-        if(error.code == 'auth/email-already-in-use') {
-          this.emailAlreadyInUse = true;
-        }
-      });
+      // this.af.auth.createUserWithEmailAndPassword(
+      //   email,
+      //   password
+      // )
+      // .then(success => {
+      //   this.af.authState.subscribe(user => {
+      //     if(!user) {
+      //       alert('this did not work');
+      //     } else {
+      //       this._router.navigate(['user-sign-up']);
+      //       user.sendEmailVerification().then(success => {
+      //         console.log('email sent');
+      //       }), function (error) {
+      //         console.log(error);
+      //       }
+      //     }
+      //   })
+      // })
+      // .catch((error:any) => {
+      //   if(error.code == 'auth/email-already-in-use') {
+      //     this.emailAlreadyInUse = true;
+      //   }
+      // });
     }
 
     logInActivated() {

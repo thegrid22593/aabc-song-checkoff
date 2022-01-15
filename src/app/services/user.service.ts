@@ -4,8 +4,6 @@ import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import * as _ from 'lodash';
 import {Router, ActivatedRoute} from '@angular/router';
-import {AngularFireAuth} from 'angularfire2/auth';
-import {AngularFireDatabase} from 'angularfire2/database';
 import {User} from '../interfaces/User';
 
 @Injectable()
@@ -14,7 +12,7 @@ export class UserService {
     public user;
 
 
-    constructor(private _http: Http, private _af: AngularFireAuth, private _router: Router, private db: AngularFireDatabase) {
+    constructor(private _http: Http, private _router: Router) {
 
     }
 
@@ -22,12 +20,12 @@ export class UserService {
         if(this.user != null) {
             return Observable.of(this.user);
         } else {
-            this._af.authState.subscribe((userAuth) => {
-              return this._http.get('https://aabc-checkoff.firebaseio.com/.json')
-                         .map((res: Response) => _.find(res.json().users, {'uid': userAuth.uid }))
-                         .do(user => this.user = user)
-                         .catch(this.handleError);
-            });
+            // this._af.authState.subscribe((userAuth) => {
+            //   return this._http.get('https://aabc-checkoff.firebaseio.com/.json')
+            //              .map((res: Response) => _.find(res.json().users, {'uid': userAuth.uid }))
+            //              .do(user => this.user = user)
+            //              .catch(this.handleError);
+            // });
         }
 
     }
@@ -50,17 +48,17 @@ export class UserService {
 
     addUser(key, user) {
         console.log('service:', user);
-        this.db.list('users').update(key, user).then(success => {
-            this._router.navigate(['blue-shirt-songs']);
-        })
+        // this.db.list('users').update(key, user).then(success => {
+        //     this._router.navigate(['blue-shirt-songs']);
+        // })
     }
 
     updateUser(key, user) {
         console.log('service', user);
-        this.db.list('users').update(key, user).then(success => {
-            console.log('updated user');
-            console.log(user);
-        });
+        // this.db.list('users').update(key, user).then(success => {
+        //     console.log('updated user');
+        //     console.log(user);
+        // });
     }
 
     private handleError(error: Response) {

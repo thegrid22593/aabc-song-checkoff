@@ -1,8 +1,6 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 import {UserService} from '../services/user.service';
-import { AngularFireAuth } from 'angularfire2/auth';
 import {Router, ActivatedRoute} from '@angular/router';
-import * as firebase from 'firebase';
 
 @Component({
     selector: 'user-settings',
@@ -37,38 +35,38 @@ export class UserSettingsComponent implements OnInit {
     public currentUserProfilePic: string;
     public currentUserPartLeader: boolean;
 
-    constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) {
+    constructor(private _router: Router, private _userService: UserService) {
       // Set Firebase Storage Reference
-      this.storage = firebase.storage().ref();
+      // this.storage = firebase.storage().ref();
     }
 
     ngOnInit() {
         // Grab Current User
-          this.af.authState.subscribe(user => {
-              if(!user) {
-
-                  alert('please log in or sign up!');
-              } else {
-                  console.log('settings user', user);
-                  this.userID = user.uid;
-
-                  this._userService.getUserByUID(this.userID).subscribe(user => {
-                      this.currentUser = user;
-                      // this.currentUserSongs = this.currentUser.songs;
-                      this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
-                      this.currentUserLastName = this.currentUser.lastName;
-                      this.currentUserFirstName = this.currentUser.firstName;
-                      this.currentUserPart = this.currentUser.singingPart;
-                      this.currentUserProfilePic = this.currentUser.profilePicURL;
-                      this.currentUserPartLeader = this.currentUser.partLeader;
-                      console.log(this.currentUserProfilePic);
-                      console.log('partleader', this.currentUserPartLeader);
-                      // this.lastCompletedSong = this.currentUser.lastCompletedSong;
-                      // TODO: Format this date...
-                      this.currentUserStartDate = this.currentUser.startDate;
-                  });
-              }
-          });
+        //   this.af.authState.subscribe(user => {
+        //       if(!user) {
+        //
+        //           alert('please log in or sign up!');
+        //       } else {
+        //           console.log('settings user', user);
+        //           this.userID = user.uid;
+        //
+        //           this._userService.getUserByUID(this.userID).subscribe(user => {
+        //               this.currentUser = user;
+        //               // this.currentUserSongs = this.currentUser.songs;
+        //               this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
+        //               this.currentUserLastName = this.currentUser.lastName;
+        //               this.currentUserFirstName = this.currentUser.firstName;
+        //               this.currentUserPart = this.currentUser.singingPart;
+        //               this.currentUserProfilePic = this.currentUser.profilePicURL;
+        //               this.currentUserPartLeader = this.currentUser.partLeader;
+        //               console.log(this.currentUserProfilePic);
+        //               console.log('partleader', this.currentUserPartLeader);
+        //               // this.lastCompletedSong = this.currentUser.lastCompletedSong;
+        //               // TODO: Format this date...
+        //               this.currentUserStartDate = this.currentUser.startDate;
+        //           });
+        //       }
+        //   });
 
     }
 
@@ -80,46 +78,46 @@ export class UserSettingsComponent implements OnInit {
       this.storageref = this.storage.child(this.path);
       let uploadTask = this.storageref.put(files);
 
-      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, function(snapshot) {
-        console.log(snapshot);
-        //   console.log(snapshot.totalBytes);
-        this.uploadProgress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + this.uploadProgress + '% done!');
-        switch(snapshot.state) {
-          case firebase.storage.TaskState.PAUSED:
-          console.log('upload is paused');
-          break;
-          case firebase.storage.TaskState.RUNNING:
-          console.log('Upload is running');
-          break;
-        }
-      }, function(error) {
-      switch (error) {
-        case 'storage/unauthorized':
-          break;
-
-        case 'storage/canceled':
-          break;
-
-        case 'storage/unknown':
-          break;
-      }
-    }, function() {
-        let downloadURL = uploadTask.snapshot.downloadURL;
-        console.log('Upload done!');
-        self.storageref.getDownloadURL().then(url => self.newPhotoURL = url);
-      });
+    //   uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, function(snapshot) {
+    //     console.log(snapshot);
+    //     //   console.log(snapshot.totalBytes);
+    //     this.uploadProgress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    //     console.log('Upload is ' + this.uploadProgress + '% done!');
+    //     switch(snapshot.state) {
+    //       case firebase.storage.TaskState.PAUSED:
+    //       console.log('upload is paused');
+    //       break;
+    //       case firebase.storage.TaskState.RUNNING:
+    //       console.log('Upload is running');
+    //       break;
+    //     }
+    //   }, function(error) {
+    //   switch (error) {
+    //     case 'storage/unauthorized':
+    //       break;
+    //
+    //     case 'storage/canceled':
+    //       break;
+    //
+    //     case 'storage/unknown':
+    //       break;
+    //   }
+    // }, function() {
+    //     let downloadURL = uploadTask.snapshot.downloadURL;
+    //     console.log('Upload done!');
+    //     self.storageref.getDownloadURL().then(url => self.newPhotoURL = url);
+    //   });
 
     }
 
     updateDisplayName(name) {
-        this.af.authState.subscribe(user => {
-            user.updateProfile({displayName: name, photoURL: this.newPhotoURL}).then(success => {
-                console.log('success!');
-                console.log(user);
-                this._router.navigate(['user-settings']);
-            });
-        });
+        // this.af.authState.subscribe(user => {
+        //     user.updateProfile({displayName: name, photoURL: this.newPhotoURL}).then(success => {
+        //         console.log('success!');
+        //         console.log(user);
+        //         this._router.navigate(['user-settings']);
+        //     });
+        // });
         console.log(this.userID);
         let updatedUser = {
           profilePicURL: this.newPhotoURL

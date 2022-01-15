@@ -3,9 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
-import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 
@@ -119,18 +116,27 @@ import { UserDashboardFeedbackMessageComponent } from './user-dashboard/user-das
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule, // imports firebase/database, only needed for database features
-    AngularFireAuthModule, // imports firebase/auth, only needed for auth features
     RouterModule,
     AppRoutingModule
   ],
   providers: [
-  SongService,
-  UserService,
-  UserAuthService
+    SongService,
+    UserService,
+    UserAuthService
 ],
   bootstrap: [AppComponent]
 })
 
 export class AppModule { }
+
+// Old imports 1-15-22
+// imports: [
+//   BrowserModule,
+//   FormsModule,
+//   HttpModule,
+//   AngularFireModule.initializeApp(environment.firebase),
+//   AngularFireDatabaseModule, // imports firebase/database, only needed for database features
+//   AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+//   RouterModule,
+//   AppRoutingModule
+// ],

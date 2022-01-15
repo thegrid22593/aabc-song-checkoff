@@ -1,5 +1,4 @@
 import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
-import {AngularFireAuth} from 'angularfire2/auth';
 import {Router, ActivatedRoute} from '@angular/router';
 import {UserService} from "../services/user.service";
 import * as _ from 'lodash';
@@ -11,7 +10,7 @@ import * as _ from 'lodash';
 })
 export class UserDashboardComponent implements OnInit {
 
-  // TODO: 
+  // TODO:
   // Add a dashboard menu...
   // Adds a section for the partleaders of the current part.
   // Add a section called messages/notes that has the notes for all the users songs. Unread and read. etc.
@@ -53,40 +52,40 @@ export class UserDashboardComponent implements OnInit {
   private firstTenorAvgPercentage: number;
   private bassAvgPercentage: number;
 
-  constructor(private _router: Router, public af: AngularFireAuth, private _userService: UserService) {
+  constructor(private _router: Router, private _userService: UserService) {
 
   }
 
   ngOnInit() {
-    this.af.authState.subscribe(user => {
-      if(!user) {
-        this._router.navigate[('sign-in')];
-      } else {
-        this.userName = user.displayName;
-        this.userPic = user.photoURL;
-
-        this._userService.getUserByUID(user.uid).subscribe((user) => {
-          this.currentUser = user;
-          localStorage.setItem('currentUser', this.currentUser);
-          this.currentUserSongs = this.currentUser.songs;
-          this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
-          this.currentUserPart = this.currentUser.singingPart;
-          this.lastCompletedSong = this.currentUser.lastCompletedSong;
-          this.currentUserStartDate = this.currentUser.startDate;
-
-          for(let song of this.currentUserSongs) {
-            if(song.completed == true) {
-              this.completedSongs++;
-            } else {
-              this.unCompletedSongs++;
-            }
-          }
-          this.songCount = this.currentUserSongs.length;
-          this.getSingingParts();
-          this.getSongPercentage(this.completedSongs, this.currentUserSongs);
-        });
-      }
-    });
+    // this.af.authState.subscribe(user => {
+    //   if(!user) {
+    //     this._router.navigate[('sign-in')];
+    //   } else {
+    //     this.userName = user.displayName;
+    //     this.userPic = user.photoURL;
+    //
+    //     this._userService.getUserByUID(user.uid).subscribe((user) => {
+    //       this.currentUser = user;
+    //       localStorage.setItem('currentUser', this.currentUser);
+    //       this.currentUserSongs = this.currentUser.songs;
+    //       this.currentUserName = this.currentUser.firstName + ' ' + this.currentUser.lastName;
+    //       this.currentUserPart = this.currentUser.singingPart;
+    //       this.lastCompletedSong = this.currentUser.lastCompletedSong;
+    //       this.currentUserStartDate = this.currentUser.startDate;
+    //
+    //       for(let song of this.currentUserSongs) {
+    //         if(song.completed == true) {
+    //           this.completedSongs++;
+    //         } else {
+    //           this.unCompletedSongs++;
+    //         }
+    //       }
+    //       this.songCount = this.currentUserSongs.length;
+    //       this.getSingingParts();
+    //       this.getSongPercentage(this.completedSongs, this.currentUserSongs);
+    //     });
+    //   }
+    // });
   }
 
   getSongPercentage(completedSongs, currentUserSongs) {

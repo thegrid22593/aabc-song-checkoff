@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SongService} from './services/songs.service';
 import {Router, ActivatedRoute} from '@angular/router';
-import {AngularFireAuth} from 'angularfire2/auth';
 import 'rxjs/Rx';
 
 @Component({
@@ -12,19 +11,19 @@ import 'rxjs/Rx';
 
 export class AppComponent implements OnInit {
 
-  constructor(private _router: Router, public afAuth: AngularFireAuth) {
+  constructor(private _router: Router) {
 
   }
 
   ngOnInit() {
-    this.afAuth.authState.subscribe(user => {
-      if(user) {
-        this._router.navigate(['dashboard']);
-        console.log('user', user);
-      } else {
-        this._router.navigate(['sign-in']);
-        console.log('user', user);
-      }
-    });
+    // this.afAuth.authState.subscribe(user => {
+    //   if(user) {
+    //     this._router.navigate(['dashboard']);
+    //     console.log('user', user);
+    //   } else {
+    //     this._router.navigate(['sign-in']);
+    //     console.log('user', user);
+    //   }
+    // });
   }
 }
